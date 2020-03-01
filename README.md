@@ -9,9 +9,9 @@ The goal of this project is to create a website that A&R managers could visit to
 * Making Calls to Spotify API: https://developer.spotify.com/documentation/general/guides/authorization-guide/#authorization-code-flow
 
 ### Comments 
-* Taken from Spotify Autorization link: 
-Accessing your data without showing a login form
-I want to interact with the web API and show some data on my website. I see that the endpoints I require authorization, but I don’t need/want a login window to pop-up, because I want to grant my own app access to my own playlists once. Is there any way of doing this?
+Taken from Spotify Autorization link: 
+* Accessing your data without showing a login form
+- I want to interact with the web API and show some data on my website. I see that the endpoints I require authorization, but I don’t need/want a login window to pop-up, because I want to grant my own app access to my own playlists once. Is there any way of doing this?
 You basically need an access token and a refresh token issued for your user account. To obtain a pair of access token - refresh token, follow the Authorization Code Flow (if you need a certain scope to be approved) or Client Credentials (if you just need to sign your request, like when fetching a certain playlist). Once you obtain them, you can use your access token and refresh it when it expires without having to show any login form.
-I want to create a quick script to add a new song every day to my playlist. Is there a way I can do this without having to open the browser and log in every day? I could set my user and password in the script.
-The Spotify Web API does not support authorization through username and password. For this use case you would obtain an access token through the Authorization code. See the response above.
+* I want to create a quick script to add a new song every day to my playlist. Is there a way I can do this without having to open the browser and log in every day? I could set my user and password in the script.
+- The Spotify Web API does not support authorization through username and password. For this use case you would obtain an access token through the Authorization code. See the response above.
