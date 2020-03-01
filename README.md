@@ -16,5 +16,5 @@ You basically need an access token and a refresh token issued for your user acco
 * I want to create a quick script to add a new song every day to my playlist. Is there a way I can do this without having to open the browser and log in every day? I could set my user and password in the script.
 > The Spotify Web API does not support authorization through username and password. For this use case you would obtain an access token through the Authorization code. See the response above.
 
-*Reason for using Client Credentials Flow:
+* Reason for using Client Credentials Flow:
 > The advantage here in comparison with requests to the Web API made without an access token, is that a higher rate limit is applied.
