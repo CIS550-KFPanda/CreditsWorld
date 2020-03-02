@@ -3,6 +3,10 @@
 Artists and repertoire (known as A&R) is the division of a record label or music publishing company that is responsible for talent scouting and overseeing the artistic development of recording artists and songwriters1. To create meaningful music sessions, A&R managers need to pair up artists, songwriters, and producers. This matchmaking is often done by leveraging personal connections and is kept personally. 
 
 The goal of this project is to create a website that A&R managers could visit to learn about what type of connections worked in the past, to create more meaningful connections in the future.
+## Postman API routes 
+Current Strategy is to do the following:
+1. Get a public playlist of your choice from Spotify and populate your "Songs" data table with all the info you want from that song. 
+2. Using this new table, get the song title and song artist and create a new "People" table by calling Genius API. You will need to make two separate routes to make this table, fist get the songID and then use the songID to get info on that song. 
 
 ### Helpful links 
 * Node Wrapper for making Spotify API Calls: https://github.com/thelinmichael/spotify-web-api-node
