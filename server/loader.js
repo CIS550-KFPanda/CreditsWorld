@@ -68,6 +68,12 @@ const tableDDLs = {
     )
   `
 }
+const songSql = []
+const artistSql = []
+const personSql = []
+const singsSql = []
+const entriesSql = []
+const crewinSql = []
 
 
 const dropTables = function() {
@@ -106,11 +112,13 @@ const searchSong = function(songName, author) {
 
 
 // Make an entry in the entries table for the song id, position, date, etc.
-const addEntryEntry = function(data, song) {
+const addEntryEntry = function(data, song_id) {
   const date = data[5]; 
   const num_streams = data[3]; 
   db.query(`INSERT INTO Entries (song_id, position, date, streams)
-            VALUES (${song.id}, ${data[0]}, ${moment(date).unix()}, ${num_streams})`)
+            VALUES (${song_id}, ${data[0]}, ${moment(date).unix()}, ${num_streams})`)
+    .then(data => { console.log('successfully added entry'); return data })
+    .catch(err => err.errno === 1062 ? console.log("duplicate entry") : Promise.reject(err))
 }
 
 const addAuthorEntry = function (data) {
@@ -121,21 +129,25 @@ const addSongToDB = function (song) {
   const label = song.custom_performances.find(el => el.label === 'Label')
   const label_name = label === undefined ? "NULL" : label.artists[0].name;
   var label_names = []; 
-  console.log(song)
-  console.log(label)
+  // console.log(song)
+  // console.log(label)
   if (!!label && !!label.artists) 
     label.artists.forEach(el => label_names.push(el.name))
   
   const youtube_obj = song.media.find(media => media.provider === 'youtube')
   const youtube_url = youtube_obj ? youtube_obj.url : "NULL"
-  db.query(`INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-  VALUES (${song.id}, ${song.title}, ${song.album.name}, ${label_names.join() || 'NULL'}, ${youtube_url}, ${ song.song_art_image_thumbnail_url }, ${song.release_date_for_display})`)
+  return db.query(`INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
+                   VALUES ("${song.id}", "${song.title}", "${song.album.name}", "${label_names.join() || 'NULL'}", "${youtube_url}", "${ song.song_art_image_thumbnail_url }", "${song.release_date_for_display}")`)
+           .then(data => { console.log('successfully added song'); return data })
+           .catch(err => err.errno === 1062 ? console.log("duplicate song") : Promise.reject(err))
 }
 
 const addSongEntry = async function (song_id) {
   //Make API request to get song data 
-  const song = await api.getSong(song_id).then(data => data.response.song)    
-  addSongToDB(song)
+  return api.getSong(song_id)
+            .then(data => data.response.song)
+            .then(addSongToDB)
+            // .catch(err => console.log("HERE",err))
       
 }
 
@@ -152,19 +164,19 @@ const readCsv = function() {
       .then(song => {
         const artist_id = song.primary_artist.id
         const song_id = song.id
-
+        const promises = []
         // if (!authors.has[artist_id]) {
         //   authors.add(artist_id);
         //   addAuthorEntry(artist_id)
         // }
         if (!songs.has(song_id)) {
           songs.add(song_id);
-          addSongEntry(song_id)
+          promises.push(addSongEntry(song_id))
         }
-        // addEntryEntry(data, song) 
-        
+        promises.push(addEntryEntry(data, song_id))
+        return Promise.all(promises)
       })
-      .catch(console.log)
+      .catch(err => console.log("ERROR",err))
     
   })
   .on('end', () => {
@@ -174,8 +186,8 @@ const readCsv = function() {
 }
 
 const loadData = async function() {
-  // await dropTables();
-  // await createTables();
+  await dropTables();
+  await createTables();
   await readCsv()
   // await db.connection.end();
 }
