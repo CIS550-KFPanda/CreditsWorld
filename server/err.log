@@ -1,88 +1,10 @@
-dropped Entries
-dropped Crew_in
-dropped Sings
-dropped Artists
-dropped Person
-dropped Songs
-created Songs
-created Person
-created Artists
-created Sings
-created Crew_in
-created Entries
 ERROR Cannot read property 'result' of undefined Happy - From "Despicable Me 2" Pharrell Williams
 ERROR Cannot read property 'result' of undefined 美女と野獣 Ariana Grande
-ERROR Cannot read property 'name' of null Ain't No Mountain High Enough Marvin Gaye
-ERROR Cannot read property 'name' of null Lighthouse - Andrelli Remix Hearts & Colors
-ERROR invalid json response body at https://api.genius.com/songs/2450584? reason: Unexpected token < in JSON at position 0 One Dance Drake
-ERROR invalid json response body at https://api.genius.com/songs/2953759? reason: Unexpected token < in JSON at position 0 Eraser Ed Sheeran
-ERROR Cannot read property 'name' of null Gassed Up Nebu Kiniza
-ERROR Cannot read property 'name' of null Sucker For Pain Lil Wayne
-ERROR Cannot read property 'name' of null Make Me Noah Cyrus
-ERROR Cannot read property 'name' of null pick up the phone Young Thug
-ERROR Cannot read property 'name' of null Steady 1234 Vice
-ERROR Cannot read property 'name' of null City Of Stars - From "La La Land" Soundtrack Ryan Gosling
-ERROR Cannot read property 'name' of null No Frauds Nicki Minaj
-ERROR Cannot read property 'name' of null Sneakin’ Drake
-ERROR Cannot read property 'name' of null From The D To The A Tee Grizzley
 ERROR Cannot read property 'result' of undefined  
-ERROR Cannot read property 'name' of null Rolex Ayo & Teo
-ERROR Cannot read property 'name' of null Good Life G-Eazy
-ERROR Cannot read property 'name' of null Obsession Vice
-ERROR Cannot read property 'name' of null Light San Holo
-ERROR Cannot read property 'name' of null Whippin Kiiara
-ERROR Cannot read property 'name' of null XXX. FEAT. U2. Kendrick Lamar
-ERROR Cannot read property 'name' of null Outlet Desiigner
-ERROR Cannot read property 'name' of null Biking Frank Ocean
-ERROR Cannot read property 'name' of null High For Hours J. Cole
-ERROR Cannot read property 'name' of null Chanel Frank Ocean
-ERROR Cannot read property 'name' of null The Heart Part 4 Kendrick Lamar
-ERROR Cannot read property 'name' of null Nights With You MØ
-ERROR Cannot read property 'name' of null Crying in the Club Camila Cabello
-ERROR Cannot read property 'name' of null Congratulations - Remix Post Malone
-ERROR Cannot read property 'name' of null Signs Drake
 finished parsing
-ERROR Cannot read property 'name' of null Would You Ever Skrillex
-ERROR Cannot read property 'name' of null Nothing Wrong G-Eazy
 ERROR Cannot read property 'result' of undefined Carol of the Bells Mykola Dmytrovych Leontovych
-ERROR Cannot read property 'name' of null Get Low Zedd
+ERROR Cannot read property 'result' of undefined You're A Mean One, Mr. Grinch - From Dr. Seuss' 'How The Grinch Stole Christmas' Thurl Ravenscroft
 ERROR Cannot read property 'result' of undefined Have Yourself A Merry Little Christmas - "Meet Me In St. Louis" Original Cast Recording Judy Garland
+ERROR Cannot read property 'result' of undefined The First Noel - 1999 - Remaster Frank Sinatra
 ERROR Cannot read property 'result' of undefined Mistletoe And Holly - 1999 - Remaster Frank Sinatra
 ERROR Cannot read property 'result' of undefined Rockin' Around The Christmas Tree - Recorded at Spotify Studios NYC Miley Cyrus
-ERROR Cannot read property 'result' of undefined The First Noel - 1999 - Remaster Frank Sinatra
-ERROR Cannot read property 'name' of null Provider Frank Ocean
-ERROR Cannot read property 'result' of undefined You're A Mean One, Mr. Grinch - From Dr. Seuss' 'How The Grinch Stole Christmas' Thurl Ravenscroft
-ERROR Cannot read property 'name' of null Reminder - Remix The Weeknd
-ERROR Cannot read property 'name' of null Tu Sabes Que Te Quiero Chucho Flash
-ERROR Cannot read property 'name' of null Winter Wonderland Bing Crosby
-ERROR Cannot read property 'name' of null Three Future
-ERROR Cannot read property 'name' of null Ric Flair Drip Offset
-ERROR Cannot read property 'name' of null This Is Halloween Disney Characters
-ERROR Cannot read property 'name' of null Again Noah Cyrus
-ERROR Cannot read property 'name' of null Do They Know It's Christmas? - 1984 Version Band Aid
-ERROR Cannot read property 'name' of null Somebody's Watching Me - Single Version Rockwell
-ERROR Cannot read property 'name' of null Twelve Days Of Christmas - Single Version Bing Crosby
-ERROR Cannot read property 'name' of null Medley: Caroling, Caroling / The First Noel / Hark! The Herald Angels Sing / Silent Night Perry Como
-ERROR Cannot read property 'name' of null Havana - Remix Camila Cabello
-ERROR Cannot read property 'name' of null Homemade Dynamite - REMIX Lorde
-ERROR Cannot read property 'name' of null Him & I G-Eazy
-ERROR Cannot read property 'name' of null I'll Be Home For Christmas - Single Version Bing Crosby
-ERROR Cannot read property 'name' of null Mele Kalikimaka - Single Version Bing Crosby
-ERROR Cannot read property 'name' of null Feels Great Cheat Codes
-ERROR Cannot read property 'name' of null Youngest Flexer Lil Pump
-ERROR Cannot read property 'name' of null Run Rudolph Run - Single Version Chuck Berry
-ERROR Cannot read property 'name' of null Rockin' Around The Christmas Tree - Single Version Brenda Lee
-ERROR Cannot read property 'name' of null What Child Is This?/The Holly And The Ivy Bing Crosby
-ERROR Cannot read property 'name' of null Wonderful Christmastime - Remastered 2011 / Edited Version Paul McCartney
-ERROR Cannot read property 'name' of null Lemon N.E.R.D
-ERROR Cannot read property 'name' of null No Cap Future
-ERROR Cannot read property 'name' of null A Different Way DJ Snake
-ERROR Cannot read property 'name' of null OMG Camila Cabello
-ERROR Cannot read property 'name' of null Merry Christmas Darling - Album Version/Remix Carpenters
-ERROR Cannot read property 'name' of null God Rest Ye Merry Gentlemen - Single Version Bing Crosby
-ERROR Cannot read property 'name' of null O Christmas Tree Tony Bennett
-ERROR Cannot read property 'name' of null Who's Stopping Me Big Sean
-ERROR Cannot read property 'name' of null Happy Xmas John Lennon
-ERROR Cannot read property 'name' of null Chloraseptic Eminem
-ERROR Cannot read property 'name' of null Downtown Anitta
-ERROR Cannot read property 'name' of null Plain Jane REMIX A$AP Ferg
