@@ -1,74 +1,65 @@
 const moment = require('moment');
-const mysql = require('mysql');
-const db = require('./models/schemas')
 const csv = require('csv-parse')
 const fs = require('fs')
-const fetch = require('node-fetch')
 const api = require('./util/api')
-const api_creds = require('./api_creds')
 
 const NULL = 'NULL'
 const NULLABLE = item => item ? `'${item}'` : NULL 
 const tables = ['Songs', 'Person', 'Artists', 'Sings', 'Crew_in', 'Entries'];
 const tableDDLs = {
-  'Songs' : `
-    CREATE TABLE Songs (
-      id varchar(255),
-      title varchar(255),
-      album varchar(255),
-      label varchar(255),
-      youtube_url varchar(255),
-      song_art_image_thumbnail_url varchar(255),
-      release_date_for_display varchar(255),
-      PRIMARY KEY (id)
-    ); `,
-  'Person' : `
-    CREATE TABLE Person (
-      id varchar(255),
-      name varchar(255),
-      image_url varchar(255),
-      url varchar(255),
-      PRIMARY KEY (id)
-    );
-  `,
-  'Artists' : `
-    CREATE TABLE Artists(
-      artist_id varchar(255),
-      genius_followers int,
-      genius_iq int,
-      PRIMARY KEY (artist_id),
-      FOREIGN KEY (artist_id) REFERENCES Person(id)
-    );
-  `,
-  'Sings' : `
-    CREATE TABLE Sings(
-      artist_id varchar(255),
-      song_id varchar(255),
-      PRIMARY KEY (artist_id,song_id),
-      FOREIGN KEY (artist_id) REFERENCES Artists(artist_id),
-      FOREIGN KEY (song_id) REFERENCES Songs(id)
-    );
-  `,
-  'Crew_in' : `
-    CREATE TABLE Crew_in (
-      crew_id varchar(255),
-      song_id varchar(255),
-      type varchar(255),
-      PRIMARY KEY (crew_id, song_id, type),
-      FOREIGN KEY (crew_id) REFERENCES Person(id),
-      FOREIGN KEY (song_id) REFERENCES Songs(id)
-    )
-  `,
-  'Entries' : `
-    CREATE TABLE Entries (
-      song_id varchar(255),
-      position int,
-      date int,
-      streams int,
-      PRIMARY KEY (song_id, date),
-      FOREIGN KEY (song_id) REFERENCES Songs(id)
-    )
-  `
+  'Songs' : 
+`CREATE TABLE Songs (
+  id varchar(255),
+  title varchar(255),
+  album varchar(255),
+  label varchar(255),
+  youtube_url varchar(255),
+  song_art_image_thumbnail_url varchar(255),
+  release_date_for_display varchar(255),
+  PRIMARY KEY (id)
+);`,
+  'Person' : 
+`CREATE TABLE Person (
+  id varchar(255),
+  name varchar(255),
+  image_url varchar(255),
+  url varchar(255),
+  PRIMARY KEY (id)
+);`,
+  'Artists' : 
+`CREATE TABLE Artists(
+  artist_id varchar(255),
+  genius_followers int,
+  genius_iq int,
+  PRIMARY KEY (artist_id),
+  FOREIGN KEY (artist_id) REFERENCES Person(id)
+);`,
+  'Sings' : 
+`CREATE TABLE Sings(
+  artist_id varchar(255),
+  song_id varchar(255),
+  PRIMARY KEY (artist_id,song_id),
+  FOREIGN KEY (artist_id) REFERENCES Artists(artist_id),
+  FOREIGN KEY (song_id) REFERENCES Songs(id)
+);`,
+  'Crew_in' : 
+`CREATE TABLE Crew_in (
+  crew_id varchar(255),
+  song_id varchar(255),
+  type varchar(255),
+  PRIMARY KEY (crew_id, song_id, type),
+  FOREIGN KEY (crew_id) REFERENCES Person(id),
+  FOREIGN KEY (song_id) REFERENCES Songs(id)
+);`,
+  'Entries' : 
+`CREATE TABLE Entries (
+  song_id varchar(255),
+  position int,
+  date int,
+  streams int,
+  PRIMARY KEY (song_id, date, position),
+  FOREIGN KEY (song_id) REFERENCES Songs(id)
+);`
 }
 const songSql = new Set()
 const artistSql = new Set()
@@ -78,10 +69,11 @@ const entriesSql = new Set()
 const crewinSql = new Set()
 const artists = new Set()
 const songs = new Set()
-const persons = new Set()
 const songAuthors = {}
 const sas = new Set()
-
+const rows_later = []
+const db = require('./models/schemas')
+db.connection.end()
 const dropTables = function() {
   return Promise.all(tables.slice(0).reverse().map(table => 
     db.query('DROP TABLE ' + table)
@@ -116,10 +108,12 @@ const addBool = function (set, item) {
   Param: songName = 'Closer', author = 'The Chainsmokers';
   Return:  the first entry that comes back from Genius api for '/search' 
 */ 
+
+let dropped = 0
 const searchSong = function(songName, author, data) {
   const sa = songName + "," + author
   if (!addBool(sas, sa)) {
-    if (sa in songAuthors) addEntryEntry(data, songAuthors[sa])
+    rows_later.push(data)
     return Promise.reject(new Error("accessed"))
   }
   return api.searchGenuisSong(songName, author)
@@ -141,7 +135,6 @@ const addArtistToDB = function (artist) {
   if (!artist) return console.log("artist is undefined")
   personSql.add(`INSERT INTO Person (id, name, image_url, url)\nVALUES ('${artist.id}', ${NULLABLE(artist.name)}, ${NULLABLE(artist.image_url)}, ${NULLABLE(artist.url)});`)
   artistSql.add(`INSERT INTO Artists (artist_id, genius_followers, genius_iq)\nVALUES ('${artist.id}', ${NULLABLE(artist.followers_count)}, ${NULLABLE(artist.iq)});`)
-  // console.log("ARTIST",artistSql)
 }
 
 const addArtistEntry = function (artist_id) {
@@ -159,20 +152,17 @@ const addSongToDB = function (song) {
   
   const youtube_obj = song.media.find(media => media.provider === 'youtube')
   const youtube_url = youtube_obj ? youtube_obj.url : 'NULL'
-  songSql.add(`INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)\nVALUES ('${song.id}', '${song.title}', '${song.album.name}', ${NULLABLE(label_names.join())}, '${youtube_url}', '${ song.song_art_image_thumbnail_url }', '${song.release_date_for_display}');`)
+  const album = song.album ? song.album.name : 'NULL'
+  songSql.add(`INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)\nVALUES ('${song.id}', '${song.title}', ${NULLABLE(album)}, ${NULLABLE(label_names.join())}, ${NULLABLE(youtube_url)}, ${NULLABLE( song.song_art_image_thumbnail_url )}, ${NULLABLE(song.release_date_for_display)});`)
   addProducerEntries(song)
-  // console.log("SONG",songSql)
 
 }
 
 
 
 const addProducerEntries = function (song) {
-  let mapped = []
-  // crew_id varchar(255),
-  // song_id varchar(255),
-  // type varchar(255),
-  if (!!song.producer_artists && !!song.writer_artists) { //TODO doesnt seem to be working
+
+  if (!!song.producer_artists && !!song.writer_artists) {
     const producers = [...song.producer_artists, ...song.writer_artists]
     producers
         .map(producer => 
@@ -199,7 +189,7 @@ const addSongEntry = async function (song_id) {
 }
 
 const addSingsEntry = function(artist_id, song_id) {
-  singsSql.add(`INSERT INTO Sings (artist_id, song_id)\nVALUES (${artist_id}, ${song_id});`)
+  singsSql.add(`INSERT INTO Sings (artist_id, song_id)\nVALUES ('${artist_id}', '${song_id}');`)
 }
 
 const entriesForRow = function(data) {
@@ -236,12 +226,18 @@ const readCsv = function() {
   .on('end', async () => {
     console.log('finished parsing');
     await Promise.all(promises)
+    rows_later.forEach(row => { 
+      let sa = row[2] + "," + row[1]
+      if (sa in songAuthors) addEntryEntry(row, songAuthors[sa]) 
+    })
     writeToFile()
   });
 }
 
 const writeToFile = function() {
-  const total = [...songSql, ...personSql, ...artistSql, ...singsSql, ...crewinSql, ...entriesSql]
+  const drops = tables.slice(0).reverse().map(table => 'DROP TABLE IF EXISTS ' + table + ';')
+  const adds = tables.map(table => tableDDLs[table])
+  const total = [...drops, ...adds, ...songSql, ...personSql, ...artistSql, ...singsSql, ...crewinSql, ...entriesSql]
 
   const str = total.reduce((acc, query) => acc += query + '\n', "")
 
@@ -249,15 +245,8 @@ const writeToFile = function() {
   return fs1.writeFile('loader.sql', str).catch(console.log)
 }
 
-const loadData = async function() {
-  await dropTables();
-  await createTables();
-  await readCsv();
-  // await writeToFile();
-  await db.connection.end();
-}
 
-loadData();
+readCsv();
 
 
 
