@@ -1,0 +1,563 @@
+{
+  "alternate_names": [
+    "Peter G. Hernandez",
+    "Peter Gene Hernandez"
+  ],
+  "api_path": "/artists/500",
+  "description": {
+    "dom": {
+      "tag": "root",
+      "children": [
+        {
+          "tag": "p",
+          "children": [
+            "Peter Gene Hernandez (born October 8, 1985), known by his stage name Bruno Mars, is an American singer-songwriter and record producer."
+          ]
+        },
+        "",
+        {
+          "tag": "p",
+          "children": [
+            "Raised in Honolulu, Hawaii, by a family of musicians, Mars began making music at a young age and performed in various musical venues in his hometown throughout his childhood. He graduated from high school and moved to Los Angeles, California, to pursue a musical career."
+          ]
+        },
+        "",
+        {
+          "tag": "p",
+          "children": [
+            "His debut album ",
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "tag": "a",
+                  "attributes": {
+                    "href": "https://genius.com/albums/Bruno-mars/Doo-wops-hooligans",
+                    "rel": "noopener"
+                  },
+                  "data": {
+                    "api_path": "/albums/13120"
+                  },
+                  "children": [
+                    "Doo-Wops and Hooligans"
+                  ]
+                }
+              ]
+            },
+            " was released in 2010 with three hit singles. His second album, ",
+            {
+              "tag": "em",
+              "children": [
+                {
+                  "tag": "a",
+                  "attributes": {
+                    "href": "https://genius.com/albums/Bruno-mars/Unorthodox-jukebox",
+                    "rel": "noopener"
+                  },
+                  "data": {
+                    "api_path": "/albums/493008"
+                  },
+                  "children": [
+                    "Unorthodox Jukebox"
+                  ]
+                },
+                ","
+              ]
+            },
+            " was released in 2012 and quickly reached the number one selling album in the U.S. at the time while spawning multiple hit singles of its own. On Friday, October 7th, 2016, he released the lead single and music video for “",
+            {
+              "tag": "a",
+              "attributes": {
+                "href": "https://genius.com/Bruno-mars-24k-magic-lyrics",
+                "rel": "noopener"
+              },
+              "data": {
+                "api_path": "/songs/2872960"
+              },
+              "children": [
+                "24k Magic"
+              ]
+            },
+            ",” from his third studio album of the same name."
+          ]
+        },
+        "",
+        {
+          "tag": "p",
+          "children": [
+            "Having sold over 100 million records in the short span of his career, he is one of the best-selling artists of all time. To date, he has had six number-one singles on the Billboard 100 and having launched his career in 2010 he is the fastest artist to get 5 number one hits since rockstar, Elvis Presley."
+          ]
+        },
+        "",
+        {
+          "tag": "p",
+          "children": [
+            "Mars has produced many hit songs for other artists with his production team, The Smeezingtons, that came together in 2009."
+          ]
+        }
+      ]
+    }
+  },
+  "facebook_name": "brunomars",
+  "followers_count": 1567,
+  "header_image_url": "https://images.genius.com/25d38ffc3fd6a36ac71a08ff6ed90fa2.1000x666x1.jpg",
+  "id": 500,
+  "image_url": "https://images.genius.com/edca1a867127a07d29f959070b1a2a5f.838x838x1.png",
+  "instagram_name": "brunomars",
+  "is_meme_verified": true,
+  "is_verified": true,
+  "name": "Bruno Mars",
+  "translation_artist": false,
+  "twitter_name": "BrunoMars",
+  "url": "https://genius.com/artists/Bruno-mars",
+  "current_user_metadata": {
+    "permissions": [
+      "follow",
+      "view_activity_stream",
+      "view_contribution_opportunities"
+    ],
+    "excluded_permissions": [
+      "edit",
+      "edit_images",
+      "edit_names",
+      "edit_anything",
+      "merge",
+      "sort_artist_songs",
+      "edit_translation_artist",
+      "see_short_id"
+    ],
+    "interactions": {
+      "following": false
+    }
+  },
+  "iq": 250,
+  "description_annotation": {
+    "_type": "referent",
+    "annotator_id": 720,
+    "annotator_login": "Afif",
+    "api_path": "/referents/6926306",
+    "classification": "accepted",
+    "fragment": "Bruno Mars",
+    "id": 6926306,
+    "is_description": true,
+    "path": "/6926306/Bruno-mars/Bruno-mars",
+    "range": {
+      "content": "Bruno Mars"
+    },
+    "song_id": null,
+    "url": "https://genius.com/6926306/Bruno-mars/Bruno-mars",
+    "verified_annotator_ids": [],
+    "annotatable": {
+      "api_path": "/artists/500",
+      "context": null,
+      "id": 500,
+      "image_url": "https://images.genius.com/edca1a867127a07d29f959070b1a2a5f.838x838x1.png",
+      "link_title": "Bruno Mars",
+      "title": "Bruno Mars",
+      "type": "Artist",
+      "url": "https://genius.com/artists/Bruno-mars"
+    },
+    "annotations": [
+      {
+        "api_path": "/annotations/6926306",
+        "body": {
+          "dom": {
+            "tag": "root",
+            "children": [
+              {
+                "tag": "p",
+                "children": [
+                  "Peter Gene Hernandez (born October 8, 1985), known by his stage name Bruno Mars, is an American singer-songwriter and record producer."
+                ]
+              },
+              "",
+              {
+                "tag": "p",
+                "children": [
+                  "Raised in Honolulu, Hawaii, by a family of musicians, Mars began making music at a young age and performed in various musical venues in his hometown throughout his childhood. He graduated from high school and moved to Los Angeles, California, to pursue a musical career."
+                ]
+              },
+              "",
+              {
+                "tag": "p",
+                "children": [
+                  "His debut album ",
+                  {
+                    "tag": "em",
+                    "children": [
+                      {
+                        "tag": "a",
+                        "attributes": {
+                          "href": "https://genius.com/albums/Bruno-mars/Doo-wops-hooligans",
+                          "rel": "noopener"
+                        },
+                        "data": {
+                          "api_path": "/albums/13120"
+                        },
+                        "children": [
+                          "Doo-Wops and Hooligans"
+                        ]
+                      }
+                    ]
+                  },
+                  " was released in 2010 with three hit singles. His second album, ",
+                  {
+                    "tag": "em",
+                    "children": [
+                      {
+                        "tag": "a",
+                        "attributes": {
+                          "href": "https://genius.com/albums/Bruno-mars/Unorthodox-jukebox",
+                          "rel": "noopener"
+                        },
+                        "data": {
+                          "api_path": "/albums/493008"
+                        },
+                        "children": [
+                          "Unorthodox Jukebox"
+                        ]
+                      },
+                      ","
+                    ]
+                  },
+                  " was released in 2012 and quickly reached the number one selling album in the U.S. at the time while spawning multiple hit singles of its own. On Friday, October 7th, 2016, he released the lead single and music video for “",
+                  {
+                    "tag": "a",
+                    "attributes": {
+                      "href": "https://genius.com/Bruno-mars-24k-magic-lyrics",
+                      "rel": "noopener"
+                    },
+                    "data": {
+                      "api_path": "/songs/2872960"
+                    },
+                    "children": [
+                      "24k Magic"
+                    ]
+                  },
+                  ",” from his third studio album of the same name."
+                ]
+              },
+              "",
+              {
+                "tag": "p",
+                "children": [
+                  "Having sold over 100 million records in the short span of his career, he is one of the best-selling artists of all time. To date, he has had six number-one singles on the Billboard 100 and having launched his career in 2010 he is the fastest artist to get 5 number one hits since rockstar, Elvis Presley."
+                ]
+              },
+              "",
+              {
+                "tag": "p",
+                "children": [
+                  "Mars has produced many hit songs for other artists with his production team, The Smeezingtons, that came together in 2009."
+                ]
+              }
+            ]
+          }
+        },
+        "comment_count": 1,
+        "community": true,
+        "custom_preview": null,
+        "has_voters": true,
+        "id": 6926306,
+        "pinned": false,
+        "share_url": "https://genius.com/6926306",
+        "source": null,
+        "state": "accepted",
+        "url": "https://genius.com/6926306/Bruno-mars/Bruno-mars",
+        "verified": false,
+        "votes_total": 103,
+        "current_user_metadata": {
+          "permissions": [
+            "vote",
+            "propose_edit_to",
+            "create_comment"
+          ],
+          "excluded_permissions": [
+            "edit",
+            "cosign",
+            "uncosign",
+            "destroy",
+            "accept",
+            "reject",
+            "see_unreviewed",
+            "clear_votes",
+            "pin_to_profile",
+            "unpin_from_profile",
+            "update_source",
+            "edit_custom_preview"
+          ],
+          "interactions": {
+            "cosign": false,
+            "pyong": false,
+            "vote": null
+          },
+          "iq_by_action": {
+            "accept": {
+              "primary": {
+                "multiplier": 1,
+                "base": 10,
+                "applicable": true
+              }
+            },
+            "reject": {
+              "primary": {
+                "multiplier": 1,
+                "base": 2,
+                "applicable": true
+              }
+            },
+            "delete": {
+              "primary": {
+                "multiplier": 1,
+                "base": 5,
+                "applicable": true
+              }
+            }
+          }
+        },
+        "authors": [
+          {
+            "attribution": 0.6308411214953271,
+            "pinned_role": null,
+            "user": {
+              "api_path": "/users/1489243",
+              "avatar": {
+                "tiny": {
+                  "url": "https://images.genius.com/avatars/tiny/14cad832fb55d956b934618ec6e8ca67",
+                  "bounding_box": {
+                    "width": 16,
+                    "height": 16
+                  }
+                },
+                "thumb": {
+                  "url": "https://images.genius.com/avatars/thumb/14cad832fb55d956b934618ec6e8ca67",
+                  "bounding_box": {
+                    "width": 32,
+                    "height": 32
+                  }
+                },
+                "small": {
+                  "url": "https://images.genius.com/avatars/small/14cad832fb55d956b934618ec6e8ca67",
+                  "bounding_box": {
+                    "width": 100,
+                    "height": 100
+                  }
+                },
+                "medium": {
+                  "url": "https://images.genius.com/avatars/medium/14cad832fb55d956b934618ec6e8ca67",
+                  "bounding_box": {
+                    "width": 300,
+                    "height": 400
+                  }
+                }
+              },
+              "header_image_url": "https://s3.amazonaws.com/filepicker-images-rapgenius/uTCTw7WbQ6yzb56MuRMb_PurpGradient.jpg",
+              "human_readable_role_for_display": "Editor",
+              "id": 1489243,
+              "iq": 86639,
+              "login": "Noah",
+              "name": "Noah",
+              "role_for_display": "editor",
+              "url": "https://genius.com/Noah",
+              "current_user_metadata": {
+                "permissions": [
+                  "follow"
+                ],
+                "excluded_permissions": [],
+                "interactions": {
+                  "following": false
+                }
+              }
+            }
+          },
+          {
+            "attribution": 0.3551401869158879,
+            "pinned_role": null,
+            "user": {
+              "api_path": "/users/11524",
+              "avatar": {
+                "tiny": {
+                  "url": "https://images.rapgenius.com/avatars/tiny/e7b84a26140d5becfc5614929303367f",
+                  "bounding_box": {
+                    "width": 16,
+                    "height": 16
+                  }
+                },
+                "thumb": {
+                  "url": "https://images.rapgenius.com/avatars/thumb/e7b84a26140d5becfc5614929303367f",
+                  "bounding_box": {
+                    "width": 32,
+                    "height": 32
+                  }
+                },
+                "small": {
+                  "url": "https://images.rapgenius.com/avatars/small/e7b84a26140d5becfc5614929303367f",
+                  "bounding_box": {
+                    "width": 100,
+                    "height": 100
+                  }
+                },
+                "medium": {
+                  "url": "https://images.rapgenius.com/avatars/medium/e7b84a26140d5becfc5614929303367f",
+                  "bounding_box": {
+                    "width": 300,
+                    "height": 400
+                  }
+                }
+              },
+              "header_image_url": "https://images.rapgenius.com/avatars/medium/e7b84a26140d5becfc5614929303367f",
+              "human_readable_role_for_display": "Editor",
+              "id": 11524,
+              "iq": 270150,
+              "login": "tomi",
+              "name": "Tomi Fischer",
+              "role_for_display": "editor",
+              "url": "https://genius.com/tomi",
+              "current_user_metadata": {
+                "permissions": [
+                  "follow"
+                ],
+                "excluded_permissions": [],
+                "interactions": {
+                  "following": false
+                }
+              }
+            }
+          },
+          {
+            "attribution": 0.014018691588785047,
+            "pinned_role": null,
+            "user": {
+              "api_path": "/users/8315100",
+              "avatar": {
+                "tiny": {
+                  "url": "https://images.genius.com/avatars/tiny/f4dc1da1ccb558f844f078eb9cd0ff5d",
+                  "bounding_box": {
+                    "width": 16,
+                    "height": 16
+                  }
+                },
+                "thumb": {
+                  "url": "https://images.genius.com/avatars/thumb/f4dc1da1ccb558f844f078eb9cd0ff5d",
+                  "bounding_box": {
+                    "width": 32,
+                    "height": 32
+                  }
+                },
+                "small": {
+                  "url": "https://images.genius.com/avatars/small/f4dc1da1ccb558f844f078eb9cd0ff5d",
+                  "bounding_box": {
+                    "width": 100,
+                    "height": 100
+                  }
+                },
+                "medium": {
+                  "url": "https://images.genius.com/avatars/medium/f4dc1da1ccb558f844f078eb9cd0ff5d",
+                  "bounding_box": {
+                    "width": 300,
+                    "height": 400
+                  }
+                }
+              },
+              "header_image_url": "https://images.genius.com/175f72ea46da5652fca137873425d540.1000x667x1.jpg",
+              "human_readable_role_for_display": "Moderator",
+              "id": 8315100,
+              "iq": 227869,
+              "login": "glitzy",
+              "name": "​glitzy",
+              "role_for_display": "moderator",
+              "url": "https://genius.com/glitzy",
+              "current_user_metadata": {
+                "permissions": [
+                  "follow"
+                ],
+                "excluded_permissions": [],
+                "interactions": {
+                  "following": false
+                }
+              }
+            }
+          }
+        ],
+        "cosigned_by": [],
+        "rejection_comment": null,
+        "verified_by": null
+      }
+    ]
+  },
+  "user": {
+    "api_path": "/users/3815889",
+    "avatar": {
+      "tiny": {
+        "url": "https://images.genius.com/avatars/tiny/7f82ea896f3c2af130044a399e9e2c53",
+        "bounding_box": {
+          "width": 16,
+          "height": 16
+        }
+      },
+      "thumb": {
+        "url": "https://images.genius.com/avatars/thumb/7f82ea896f3c2af130044a399e9e2c53",
+        "bounding_box": {
+          "width": 32,
+          "height": 32
+        }
+      },
+      "small": {
+        "url": "https://images.genius.com/avatars/small/7f82ea896f3c2af130044a399e9e2c53",
+        "bounding_box": {
+          "width": 100,
+          "height": 100
+        }
+      },
+      "medium": {
+        "url": "https://images.genius.com/avatars/medium/7f82ea896f3c2af130044a399e9e2c53",
+        "bounding_box": {
+          "width": 300,
+          "height": 400
+        }
+      }
+    },
+    "header_image_url": "https://images.genius.com/25d38ffc3fd6a36ac71a08ff6ed90fa2.1000x666x1.jpg",
+    "human_readable_role_for_display": "Verified Artist",
+    "id": 3815889,
+    "iq": 250,
+    "login": "brunomars",
+    "name": "Bruno Mars",
+    "role_for_display": "verified_artist",
+    "url": "https://genius.com/brunomars",
+    "current_user_metadata": {
+      "permissions": [
+        "follow"
+      ],
+      "excluded_permissions": [],
+      "interactions": {
+        "following": false
+      }
+    }
+  }
+}
+dropped Entries
+dropped Crew_in
+dropped Sings
+dropped Artists
+dropped Person
+dropped Songs
+created Songs
+created Person
+created Artists
+created Sings
+created Crew_in
+created Entries
+finished parsing
+dropped Entries
+dropped Crew_in
+dropped Sings
+dropped Artists
+dropped Person
+dropped Songs
+created Songs
+created Person
+created Artists
+created Sings
+created Crew_in
+created Entries

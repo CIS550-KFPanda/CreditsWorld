@@ -7,6 +7,8 @@ const fetch = require('node-fetch')
 const api = require('./util/api')
 const api_creds = require('./api_creds')
 
+const NULL = 'NULL'
+const NULLABLE = item => item ? `'${item}'` : NULL 
 const tables = ['Songs', 'Person', 'Artists', 'Sings', 'Crew_in', 'Entries'];
 const tableDDLs = {
   'Songs' : `
@@ -25,15 +27,15 @@ const tableDDLs = {
       id varchar(255),
       name varchar(255),
       image_url varchar(255),
-      instagram_name varchar(255),
+      url varchar(255),
       PRIMARY KEY (id)
     );
   `,
   'Artists' : `
     CREATE TABLE Artists(
       artist_id varchar(255),
-      instagram_follower_count int,
-      facebook_follower_count int,
+      genius_followers int,
+      genius_iq int,
       PRIMARY KEY (artist_id),
       FOREIGN KEY (artist_id) REFERENCES Person(id)
     );
@@ -52,7 +54,7 @@ const tableDDLs = {
       crew_id varchar(255),
       song_id varchar(255),
       type varchar(255),
-      PRIMARY KEY (crew_id, song_id),
+      PRIMARY KEY (crew_id, song_id, type),
       FOREIGN KEY (crew_id) REFERENCES Person(id),
       FOREIGN KEY (song_id) REFERENCES Songs(id)
     )
@@ -68,13 +70,16 @@ const tableDDLs = {
     )
   `
 }
-const songSql = []
-const artistSql = []
-const personSql = []
-const singsSql = []
-const entriesSql = []
-const crewinSql = []
-
+const songSql = new Set()
+const artistSql = new Set()
+const personSql = new Set()
+const singsSql = new Set()
+const entriesSql = new Set()
+const crewinSql = new Set()
+const artists = new Set()
+const songs = new Set()
+const persons = new Set()
+const songAuthors = {}
 
 const dropTables = function() {
   return Promise.all(tables.slice(0).reverse().map(table => 
@@ -99,14 +104,27 @@ const createTables = function() {
 // 4. If we have not made a query to this song id: Use the song id to query the genius api and get the song data. Create an entry in the songs table for that song, and entries in the database for each producer/songwriter
 // 5. If we have not made a query to this artist: Use the artist id to create 
 
+// returns true if added successfully
+const addBool = function (set, item) {
+  const b = !set.has(item); 
+  if (b) set.add(item); 
+  return b
+}
 /*
   Description: Make a call to the Genius search api to find the song id, artist id
   Param: songName = 'Closer', author = 'The Chainsmokers';
   Return:  the first entry that comes back from Genius api for '/search' 
 */ 
-const searchSong = function(songName, author) {
+const searchSong = function(songName, author, data) {
+  const sa = songName + "," + author
+  if (sa in songAuthors) {
+    addEntryEntry(data, songAuthors[sa])
+    return Promise.reject(new Error("accessed"))
+  }
   return api.searchGenuisSong(songName, author)
             .then(data => data.response.hits[0].result)
+            .then(song => { songAuthors[sa] = song.id; return song })
+
   
 }
 
@@ -115,31 +133,59 @@ const searchSong = function(songName, author) {
 const addEntryEntry = function(data, song_id) {
   const date = data[5]; 
   const num_streams = data[3]; 
-  db.query(`INSERT INTO Entries (song_id, position, date, streams)
-            VALUES (${song_id}, ${data[0]}, ${moment(date).unix()}, ${num_streams})`)
-    .then(data => { console.log('successfully added entry'); return data })
-    .catch(err => err.errno === 1062 ? console.log("duplicate entry") : Promise.reject(err))
+  entriesSql.add(`INSERT INTO Entries (song_id, position, date, streams)\nVALUES ('${song_id}', ${data[0]}, ${moment(date).unix()}, ${num_streams});`)
 }
 
-const addAuthorEntry = function (data) {
-  //TODO
+const addArtistToDB = function (artist) {
+  if (!artist) return console.log("artist is undefined")
+  personSql.add(`INSERT INTO Person (id, name, image_url, url)\nVALUES ('${artist.id}', ${NULLABLE(artist.name)}, ${NULLABLE(artist.image_url)}, ${NULLABLE(artist.url)});`)
+  artistSql.add(`INSERT INTO Artists (artist_id, genius_followers, genius_iq)\nVALUES ('${artist.id}', ${NULLABLE(artist.followers_count)}, ${NULLABLE(artist.iq)});`)
+  // console.log("ARTIST",artistSql)
+}
+
+const addArtistEntry = function (artist_id) {
+  return api.getArtist(artist_id)
+            .then(data => data.response.artist)
+            .then(addArtistToDB)
 }
 
 const addSongToDB = function (song) {
   const label = song.custom_performances.find(el => el.label === 'Label')
-  const label_name = label === undefined ? "NULL" : label.artists[0].name;
   var label_names = []; 
-  // console.log(song)
-  // console.log(label)
+
   if (!!label && !!label.artists) 
     label.artists.forEach(el => label_names.push(el.name))
   
   const youtube_obj = song.media.find(media => media.provider === 'youtube')
-  const youtube_url = youtube_obj ? youtube_obj.url : "NULL"
-  return db.query(`INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-                   VALUES ("${song.id}", "${song.title}", "${song.album.name}", "${label_names.join() || 'NULL'}", "${youtube_url}", "${ song.song_art_image_thumbnail_url }", "${song.release_date_for_display}")`)
-           .then(data => { console.log('successfully added song'); return data })
-           .catch(err => err.errno === 1062 ? console.log("duplicate song") : Promise.reject(err))
+  const youtube_url = youtube_obj ? youtube_obj.url : 'NULL'
+  songSql.add(`INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)\nVALUES ('${song.id}', '${song.title}', '${song.album.name}', ${NULLABLE(label_names.join())}, '${youtube_url}', '${ song.song_art_image_thumbnail_url }', '${song.release_date_for_display}');`)
+  addPersonEntry(song)
+  // console.log("SONG",songSql)
+
+}
+
+
+
+const addPersonEntry = function (song) {
+  let mapped = []
+  // crew_id varchar(255),
+  // song_id varchar(255),
+  // type varchar(255),
+  if (!!song.producer_artists && !!song.writer_artists) { //TODO doesnt seem to be working
+    const producers = [...song.producer_artists, ...song.writer_artists]
+    producers
+      .map(producer => 
+      `INSERT INTO Person (id, name, image_url, url)\nVALUES ('${producer.id}', ${NULLABLE(producer.name)}, ${NULLABLE(producer.image_url)}, ${NULLABLE(producer.url)});`)
+      .reduce((set, elt) => set.add(elt), personSql)
+    song.producer_artists
+        .map(producer => 
+              `INSERT INTO Crew_in (crew_id, song_id, type)\nVALUES ('${producer.id}', '${song.id}', 'producer');`)
+        .reduce((set, elt) => set.add(elt), crewinSql)
+    song.writer_artists
+        .map(producer => 
+              `INSERT INTO Crew_in (crew_id, song_id, type)\nVALUES ('${producer.id}', '${song.id}', 'writer');`)
+        .reduce((set, elt) => set.add(elt), crewinSql)
+  }
 }
 
 const addSongEntry = async function (song_id) {
@@ -147,49 +193,67 @@ const addSongEntry = async function (song_id) {
   return api.getSong(song_id)
             .then(data => data.response.song)
             .then(addSongToDB)
-            // .catch(err => console.log("HERE",err))
+            // .catch(err => console.log('HERE',err))
       
 }
 
+const addSingsEntry = function(artist_id, song_id) {
+  singsSql.add(`INSERT INTO Sings (artist_id, song_id)\nVALUES (${artist_id}, ${song_id});`)
+}
+
+const entriesForRow = function(data) {
+  const songName = data[1];  
+  const author = data[2];
+  return searchSong(author, songName, data)
+    .then(song => {
+      const artist_id = song.primary_artist.id
+      const song_id = song.id
+      addSingsEntry(artist_id, song_id)
+      const promises = []
+      if (!artists.has[artist_id]) {
+        artists.add(artist_id);
+        promises.push(addArtistEntry(artist_id))
+      }
+      if (!songs.has(song_id)) {
+        songs.add(song_id);
+        promises.push(addSongEntry(song_id))
+      }
+      addEntryEntry(data, song_id)
+      return Promise.all(promises)
+    })
+} 
 
 const readCsv = function() {
-  const authors = new Set()
-  const songs = new Set()
-  fs.createReadStream('data_part.csv') //Reads csv file line by line
+  const promises = []
+  fs.createReadStream('data.csv') //Reads csv file line by line
   .pipe(csv({ separator: ',' }))
   .on('data', async data => { //'data' is an event enum
-    const songName = data[1];  
-    const author = data[2];
-    searchSong(author, songName)
-      .then(song => {
-        const artist_id = song.primary_artist.id
-        const song_id = song.id
-        const promises = []
-        // if (!authors.has[artist_id]) {
-        //   authors.add(artist_id);
-        //   addAuthorEntry(artist_id)
-        // }
-        if (!songs.has(song_id)) {
-          songs.add(song_id);
-          promises.push(addSongEntry(song_id))
-        }
-        promises.push(addEntryEntry(data, song_id))
-        return Promise.all(promises)
-      })
-      .catch(err => console.log("ERROR",err))
-    
+    promises.push(entriesForRow(data)
+                   .catch(err => err.message !== "accessed" ? 
+                   console.log('ERROR',err.message, data[1], data[2]) : ""))
   })
-  .on('end', () => {
-    console.log("finished parsing");
-    
+  .on('end', async () => {
+    console.log('finished parsing');
+    await Promise.all(promises)
+    writeToFile()
   });
+}
+
+const writeToFile = function() {
+  const total = [...songSql, ...personSql, ...artistSql, ...singsSql, ...crewinSql, ...entriesSql]
+
+  const str = total.reduce((acc, query) => acc += query + '\n', "")
+
+  const fs1 = require('fs').promises
+  return fs1.writeFile('loader.sql', str).catch(console.log)
 }
 
 const loadData = async function() {
   await dropTables();
   await createTables();
-  await readCsv()
-  // await db.connection.end();
+  await readCsv();
+  // await writeToFile();
+  await db.connection.end();
 }
 
 loadData();
@@ -199,12 +263,12 @@ loadData();
 // api.searchGenuisSong('24K Magic', 'Bruno Mars')
 //             .then(data => data.response.hits[0])
 //             .then(console.log)
-
-// api.getSong('2872960')
-//   .then(data => data.response.song)
-//   .then(song => song.media.find(media => media.provider === 'youtube') || "NULL")
-//   .then(console.log)
-//   .catch(console.log)
+ 
+// api.getSong('2890553')
+//    .then(data => data.response.song)
+//   //  .then(song => song.media.find(media => media.provider ==NULLABLE( 'youtube'))//)    .then(data => JSON.stringify(data, null, 2))
+//    .then(console.log)
+//    .catch(console.log)
 
 // fetch(new URL('search?q=24K Magic Bruno Mars', 'https://api.genius.com/'), 
 //   {
