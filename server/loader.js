@@ -80,6 +80,7 @@ const artists = new Set()
 const songs = new Set()
 const persons = new Set()
 const songAuthors = {}
+const sas = new Set()
 
 const dropTables = function() {
   return Promise.all(tables.slice(0).reverse().map(table => 
@@ -117,8 +118,8 @@ const addBool = function (set, item) {
 */ 
 const searchSong = function(songName, author, data) {
   const sa = songName + "," + author
-  if (sa in songAuthors) {
-    addEntryEntry(data, songAuthors[sa])
+  if (!addBool(sas, sa)) {
+    if (sa in songAuthors) addEntryEntry(data, songAuthors[sa])
     return Promise.reject(new Error("accessed"))
   }
   return api.searchGenuisSong(songName, author)
@@ -159,14 +160,14 @@ const addSongToDB = function (song) {
   const youtube_obj = song.media.find(media => media.provider === 'youtube')
   const youtube_url = youtube_obj ? youtube_obj.url : 'NULL'
   songSql.add(`INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)\nVALUES ('${song.id}', '${song.title}', '${song.album.name}', ${NULLABLE(label_names.join())}, '${youtube_url}', '${ song.song_art_image_thumbnail_url }', '${song.release_date_for_display}');`)
-  addPersonEntry(song)
+  addProducerEntries(song)
   // console.log("SONG",songSql)
 
 }
 
 
 
-const addPersonEntry = function (song) {
+const addProducerEntries = function (song) {
   let mapped = []
   // crew_id varchar(255),
   // song_id varchar(255),
@@ -174,9 +175,9 @@ const addPersonEntry = function (song) {
   if (!!song.producer_artists && !!song.writer_artists) { //TODO doesnt seem to be working
     const producers = [...song.producer_artists, ...song.writer_artists]
     producers
-      .map(producer => 
-      `INSERT INTO Person (id, name, image_url, url)\nVALUES ('${producer.id}', ${NULLABLE(producer.name)}, ${NULLABLE(producer.image_url)}, ${NULLABLE(producer.url)});`)
-      .reduce((set, elt) => set.add(elt), personSql)
+        .map(producer => 
+              `INSERT INTO Person (id, name, image_url, url)\nVALUES ('${producer.id}', ${NULLABLE(producer.name)}, ${NULLABLE(producer.image_url)}, ${NULLABLE(producer.url)});`)
+        .reduce((set, elt) => set.add(elt), personSql)
     song.producer_artists
         .map(producer => 
               `INSERT INTO Crew_in (crew_id, song_id, type)\nVALUES ('${producer.id}', '${song.id}', 'producer');`)
@@ -210,7 +211,7 @@ const entriesForRow = function(data) {
       const song_id = song.id
       addSingsEntry(artist_id, song_id)
       const promises = []
-      if (!artists.has[artist_id]) {
+      if (!artists.has(artist_id)) {
         artists.add(artist_id);
         promises.push(addArtistEntry(artist_id))
       }
