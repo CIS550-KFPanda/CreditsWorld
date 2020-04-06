@@ -5,14 +5,14 @@ Artists and repertoire (known as A&R) is the division of a record label or music
 The goal of this project is to create a website that A&R managers could visit to learn about what type of connections worked in the past, to create more meaningful connections in the future.
 
 ## Server
-To run the server 
+To run the server:
 ```
 cd server
 node server
 ```
 
 ## Client
-To run the client
+To run the client:
 ```
 cd client
 npm start 
@@ -39,3 +39,8 @@ Once you login into the database switch the database to creditsworld using:
 use creditsworld;
 ```
 Then you should be good to go!
+To load data from the loader, open a new terminal (or logout of mysql) and run:
+```
+cd server
+mysql -u root -p creditsworld < loader.sql
+```
