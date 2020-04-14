@@ -37,7 +37,7 @@ and enter 5648 for the password.
 
 Once you login to the databse create the creditsworld database:
 ```
-CREATE creditsworld;
+CREATE DATABASE creditsworld;
 ```
 Switch the database to creditsworld using:
 ```
