@@ -1,3 +1,9 @@
+Re Credentials: We do not yet have the database on a cloud platform.
+Instructions to create and populate our database can be found at
+https://github.com/salo1serfati/CreditsWorld/blob/master/README.md
+We are planning to use AWS down the line
+
+Queries:
 All queries were worked on by Max and Will.
 However, the loader was created and designed by Neil and Salo.
 The loader was non-trivial and dynamically cleans and loads the data from our
