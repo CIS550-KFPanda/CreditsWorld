@@ -1,0 +1,162 @@
+All queries were worked on by Max and Will.
+However, the loader was created and designed by Neil and Salo.
+The loader was non-trivial and dynamically cleans and loads the data from our
+different data sources, and generates SQL DDL to populate the database.
+
+1.
+For a given artist or producer this query retrieves everybody they have
+collaborated with in the past.
+
+********************************************************************************
+(SELECT crew_id as id
+FROM Crew_in
+WHERE song_id
+IN(
+	SELECT song_id
+	FROM sings
+	WHERE artist_id =  {input id}
+	)
+AND crew_id <> {input id})
+UNION
+(SELECT artist_id as id
+FROM sings
+WHERE song_id
+IN(
+	SELECT song_id
+	FROM Crew_in
+	WHERE crew_id = {input id}
+)
+AND artist_id<>609667)
+********************************************************************************
+
+
+2.
+For a given song, see all the different parties that worked on the song.
+
+********************************************************************************
+SELECT crew_id as id
+FROM Crew_in
+WHERE song_id = {input song id}
+UNION
+SELECT artist_id
+FROM Sings
+WHERE song_id = {input song id}
+********************************************************************************
+
+3.
+List all songs in order of popularity based on our popularity metric (calculated
+in the query) - streams / rank for now.
+
+********************************************************************************
+SELECT Songs.title, Person.id as id,Person.name, scores.cumulative_score
+FROM Sings LEFT JOIN Person ON Person.id = Sings.artist_id
+LEFT JOIN Songs ON Sings.song_id = Songs.id
+LEFT JOIN (Select id, SUM(score) AS cumulative_score
+	FROM(Select song_id as id, (streams / position) AS score
+			FROM Entries) x
+			GROUP BY id)
+	 scores ON Songs.id = scores.id
+Order BY scores.cumulative_score DESC;
+********************************************************************************
+
+4.
+For two or more artists, producers, and/or writers check whether they have
+worked together.
+NOTE: The query is dynamically generated. For 3 or more artists we must repeat
+the query for each artist and check if the intersection contains all three
+artists. For 2 artists, we can simply run the query on the first artist and
+check if the second is in the result.
+
+********************************************************************************
+(Select crew_id as id
+FROM Crew_in
+Where song_id
+IN(
+	Select song_id
+	From sings
+	Where artist_id = ######
+	)
+)
+UNION
+(Select artist_id as id
+From sings
+Where song_id
+IN(
+	Select song_id
+	FROM Crew_in
+	Where crew_id = ######
+)
+)
+.
+.
+.
+INTERSECT
+.
+.
+.
+********************************************************************************
+
+5.
+For a group of artists, producers, and/or writers see who they have all worked
+with in the past.
+NOTE: This query is similar to Query 1 and Query 4. It is the same basic query
+as Query 1 but dynamically generated like Query 4.
+
+********************************************************************************
+(SELECT crew_id as id
+FROM Crew_in
+WHERE song_id
+IN(
+	SELECT song_id
+	FROM sings
+	WHERE artist_id =  {input id}
+	)
+AND crew_id <> {input id})
+UNION
+(SELECT artist_id as id
+FROM sings
+WHERE song_id
+IN(
+	SELECT song_id
+	FROM Crew_in
+	WHERE crew_id = {input id}
+)
+AND artist_id<>609667)
+.
+.
+.
+INTERSECT
+.
+.
+.
+********************************************************************************
+
+6.
+List songs ranked by the size of the range of days they've been on charts.
+
+********************************************************************************
+SELECT ((max_date - min_date) / 86400 + 1) as days_on_chart, song_id
+FROM (Select MIN(date) as min_date, MAX(date) max_date,song_id
+FROM Entries
+GROUP BY song_id
+) x
+ORDER BY days_on_chart
+********************************************************************************
+
+7.
+For a given artist this will return the number of days the artist had songs on
+the charts.
+NOTE: If an artist has 2 songs on charts on same day both count
+
+********************************************************************************
+SELECT SUM(SongCounter.num_days_on_charts) as cumulative_days_on_chart,
+artist_id, Person.name
+FROM
+(SELECT count(DISTINCT date) as num_days_on_charts, song_id
+FROM Entries
+GROUP BY song_id) SongCounter
+LEFT JOIN Sings ON SongCounter.song_id = Sings.song_id
+LEFT JOIN Person ON Sings.artist_id = Person.id
+GROUP BY artist_id, Person.name
+ORDER BY cumulative_days_on_chart DESC;
+********************************************************************************
