@@ -34,7 +34,12 @@ Now to login to MySQL run:
 mysql -u root -p 
 ```
 and enter 5648 for the password.
-Once you login into the database switch the database to creditsworld using:
+
+Once you login to the databse create the creditsworld database:
+```
+CREATE creditsworld;
+```
+Switch the database to creditsworld using:
 ```
 use creditsworld;
 ```
