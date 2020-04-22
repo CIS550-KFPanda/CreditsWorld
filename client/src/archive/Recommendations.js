@@ -1,5 +1,5 @@
 import React from 'react';
-import PageNavbar from './PageNavbar';
+import PageNavbar from '../components/PageNavbar';
 import RecommendationsRow from './RecommendationsRow';
 import '../style/Recommendations.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
