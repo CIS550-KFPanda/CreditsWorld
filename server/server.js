@@ -20,7 +20,13 @@ app.use(session({
 
 app.use(morgan('tiny'))
 
-
+app.get('/searchsong', routes.search_song)
+app.post('/searchgroup', routes.search_group)
+app.get('/searchperson', routes.search_person)
+app.get('/leaderboardsongs', routes.leaderboard_songs)
+app.get('/leaderboardArtists', routes.leaderboard_artists)
+app.get('/leaderboardWriters', routes.leaderboard_writers)
+app.get('/leaderboardProducers', routes.leaderboard_producers)
 
 
 console.log('Authors: Neil Shweky (nshweky), Salo Serfati (sserfati)');
