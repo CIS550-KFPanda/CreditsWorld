@@ -4,41 +4,43 @@ import {
 	Route,
 	Switch
 } from 'react-router-dom';
-import Dashboard from './Dashboard';
-import Recommendations from './Recommendations';
-import BestGenres from './BestGenres';
+
+import Landing from './Landing'; 
+import SearchSong from './SearchSong'; 
+import SearchPerson from './SearchPerson'; 
+import Leaderboard from './Leaderboard'; 
 
 export default class App extends React.Component {
 
 	render() {
 		return (
-			<div className="App">
+			<div className="App" style={{height: '100%',}}>
 				<Router>
 					<Switch>
 						<Route
 							exact
 							path="/"
 							render={() => (
-								<Dashboard />
+								<Landing />
 							)}
 						/>
 						<Route
 							exact
-							path="/dashboard"
+							path="/search-song"
 							render={() => (
-								<Dashboard />
+								<SearchSong />
 							)}
 						/>
 						<Route
-							path="/recommendations"
+							path="/search-person"
 							render={() => (
-								<Recommendations />
+								<SearchPerson />
 							)}
 						/>
 						<Route
-							path="/bestgenres"
+							path="/leaderboard"
 							render={() => (
-								<BestGenres />
+								<Leaderboard />
 							)}
 						/>
 					</Switch>
