@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/Dashboard.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import PageNavbar from './PageNavbar';
+import PageNavbar from '../components/PageNavbar';
 import GenreButton from './GenreButton';
 import DashboardMovieRow from './DashboardMovieRow';
 
