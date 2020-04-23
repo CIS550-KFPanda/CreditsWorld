@@ -17,7 +17,7 @@ const query = str => {
   return new Promise(function(resolve, reject) {
     connection.query(str, function (err, rows, fields) {
       if (err) return reject(err)
-      else return resolve(rows, fields)
+      else return resolve(rows)
     })
   })
 }
