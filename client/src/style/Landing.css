@@ -1,7 +1,6 @@
 .mainContainer {
     display: flex; 
     justify-content: center;
-    align-items: flex-end; 
     height: '100%';
     /* background-image: linear-gradient(0deg, #fdfcfb 0%, #e2d1c3 100%);  */
 }
