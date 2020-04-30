@@ -1,3 +1,6 @@
+.mainContainer{
+    
+}
 .searchBarContainer {
     display: flex;
     justify-content: flex-end;
@@ -5,18 +8,19 @@
     /* background-color: pink; */
 }
 
-.mainContainer {
+.mainCardContainer {
     display: flex;
     flex-direction: row;
-    /* background-color: green; */
+    justify-content: center;
+    height: '100%';
     padding: 24px;
 }
 .leftContainer {
     display: flex;
-    flex-direction: column;
-    background-color: rgba(196, 129, 62, 0.63);    
+    flex-direction: column;    
     justify-content: center;
     padding: 48px;
+    /* color: white */
 }
 
 .rightContainer {

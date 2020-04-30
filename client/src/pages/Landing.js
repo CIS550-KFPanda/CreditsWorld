@@ -25,45 +25,42 @@ export default class Landing extends React.Component {
 
   render() {    
     return (
-      <div>
+      <div className="mainContainer">
         <PageNavbar active="landing" />
-
+          <div className="landingMainContainer" > 
             <div className="logoContainer"> 
-                <img src={logo} alt="logo" height="500"></img>
+                <img src={logo} alt="logo" height="500px"></img>
             </div>
             <div className="cardContainers"> 
-            <Card style={{ width: '18rem' }}>
-              
-              <Card.Body>
-                <Card.Title>Search Song</Card.Title>
-                <Card.Text>
-                  Find the crew that made your favorite song a reality here 
-                </Card.Text>
-                <Button variant="primary" href = "/search-song">Find your song</Button>
-              </Card.Body>
-            </Card>
-        <Card style={{ width: '18rem' }}>
-         
-          <Card.Body>
-            <Card.Title>Search Person</Card.Title>
-            <Card.Text>
-              Look up your favorite singer, songwriter or producer and we'll show you who they have worked with in the past and all the songs they helped create.
-            </Card.Text>
-            <Button variant="primary" href = "/search-person" >Look up an artist</Button>
-          </Card.Body>
-          </Card>
-      <Card style={{ width: '18rem' }}>
-        
-          <Card.Body>
-            <Card.Title>Leaderboard</Card.Title>
-            <Card.Text>
-              See what artists and song are topping the charts 
-            </Card.Text>
-            <Button variant="primary" href = "/leaderboard"> See the what's trending</Button>
-          </Card.Body>
-          </Card>
-
+              <Card bg={'info'} className="text-center" style={{ width: '18rem', justifyContent:'space-around', height:'300px'}}>
+                  <h2 style={{ paddingTop: '18px'}}>Search Song</h2>
+                    <p style={{ marginRight:'18px', marginLeft:'18px'}}>
+                      Find the crew that made your favorite song a reality here 
+                    </p>
+                  <div style={{ paddingBottom:'18px'}}> 
+                    <Button variant="light" href = "/search-song" style={{ width: '50%'}}>Find your song</Button>
+                  </div>
+              </Card>
+              <Card bg={'danger'} className="text-center" style={{ width: '18rem', justifyContent:'space-around', height:'300px'}}>  
+                <h2 style={{ paddingTop: '18px'}}>Search Person</h2>
+                <p style={{ marginRight:'18px', marginLeft:'18px'}}>
+                Look up your favorite singer, songwriter or producer and we'll show you who they have worked with in the past and all the songs they helped create.
+                </p>
+                <div style={{ paddingBottom:'18px'}}> 
+                  <Button variant="light" href = "/search-song" style={{ width: '50%'}}>Find your song</Button>
+                </div>
+              </Card>
+              <Card bg={'warning'} className="text-center" style={{ width: '18rem',justifyContent:'space-around', height:'300px' }}>
+                <h2 style={{ paddingTop: '18px'}}>Leaderboard</h2>
+                <p style={{ marginRight:'18px', marginLeft:'18px'}}>
+                See what artists and song are topping the charts 
+                </p>
+                <div style={{ paddingBottom:'18px'}}> 
+                  <Button variant="light" href = "/search-song" style={{ width: '50%'}}>Find your song</Button>
+                </div>
+              </Card>
             </div>
+          </div>
       </div>
     );
   }
