@@ -24,7 +24,7 @@ export default class SearchSong extends React.Component {
 
   render() {    
     return (
-      <div>
+      <div className="mainContainer">
         <PageNavbar active="search-song" />
         <div className="searchBarContainer"> 
           <Form inline>
@@ -33,25 +33,25 @@ export default class SearchSong extends React.Component {
           </Form>
         </div>
 
-        <div className="mainContainer"> 
-          <div className="leftContainer"> 
+        <div className="mainCardContainer"> 
+          <div className="leftContainer" style={{backgroundColor: '#E9AFA3'}}> 
               <h4> Publisher </h4> 
               <p> Universal Music Group </p> 
               <h4> Label </h4>
               <p> Interscope </p>
-              <h4> Location </h4>
+              <h4> Album </h4>
               <p> California, CA </p>
           </div> 
           <div className="rightContainer">
             <div className="topRowContainer"> 
               <div className="topRowLeftContainer"> 
-                <h1 style={{fontSize: '4.5rem'}}> Justin Bieber </h1>
-                <h6 style={{alignSelf:'flex-end', paddingRight: 24}}> @justinbieber </h6>
+                <h1 style={{fontSize: '4.5rem'}}> The Days </h1>
+                <h4 style={{alignSelf:'flex-end', paddingRight: 24, color: '#989898' }}> (2014) </h4>
               </div>
-              <Image src="https://images.genius.com/b8a71aef947716b9e24dcbea07fd23d1.800x800x1.jpg" rounded  height="250"/>
+              <Image src="https://t2.genius.com/unsafe/220x220/https%3A%2F%2Fimages.rapgenius.com%2F88f1c79b41f2a59d70af856c65266ef5.1000x1000x1.jpg" rounded  height="250"/>
             </div>
             <div className="bottomRowContainer"> 
-              <h2 style={{padding: 8}}> Collaborators</h2> 
+              <h2 style={{padding: 8}}> Collaborations</h2> 
               <div className="tablesContainer">
                 {/* Artists  */}
                 <div className="singleTableContainer">

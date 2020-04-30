@@ -1,0 +1,25 @@
+
+
+.leaderboardContainer {
+    display: flex; 
+    flex-direction: column;
+    background-color: white;
+    margin: 80px; 
+    border-radius: 12px;
+}
+
+.leaderboardTableContainer {
+    padding: 12px;
+    /* background-color: aqua; */
+}
+
+.titleContainer {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    padding-right: 24px;
+    padding-left: 24px;
+    /* background-color: aqua; */
+}
