@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default class PageNavbar extends React.Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			navDivs: []
 		}
@@ -22,7 +21,7 @@ export default class PageNavbar extends React.Component {
 
 	componentDidMount() {
 		const pageList = ['search-song', 'search-person', 'leaderboard'];
-
+		console.log(this.props.active)
 		let navbarDivs = pageList.map((page, i) => {
 			if (this.props.active === page) {
 				return <a className="nav-item nav-link active" key={i} href={"/" + page}>{this.formatString(page)}</a>
