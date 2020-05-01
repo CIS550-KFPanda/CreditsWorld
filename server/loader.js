@@ -68,6 +68,7 @@ const singsSql = new Set()
 const entriesSql = new Set()
 const crewinSql = new Set()
 const artists = new Set()
+const artistsAdded = new Set()
 const songs = new Set()
 const songAuthors = {}
 const sas = new Set()
@@ -133,8 +134,10 @@ const addEntryEntry = function(data, song_id) {
 
 const addArtistToDB = function (artist) {
   if (!artist) return console.log("artist is undefined")
-  personSql.add(`INSERT INTO Person (id, name, image_url, url)\nVALUES ('${artist.id}', ${NULLABLE(artist.name)}, ${NULLABLE(artist.image_url)}, ${NULLABLE(artist.url)});`)
-  artistSql.add(`INSERT INTO Artists (artist_id, genius_followers, genius_iq)\nVALUES ('${artist.id}', ${NULLABLE(artist.followers_count)}, ${NULLABLE(artist.iq)});`)
+  if (addBool(artistsAdded, artist.id)) {
+    personSql.add(`INSERT INTO Person (id, name, image_url, url)\nVALUES ('${artist.id}', ${NULLABLE(artist.name)}, ${NULLABLE(artist.image_url)}, ${NULLABLE(artist.url)});`)
+    artistSql.add(`INSERT INTO Artists (artist_id, genius_followers, genius_iq)\nVALUES ('${artist.id}', ${NULLABLE(artist.followers_count)}, ${NULLABLE(artist.iq)});`)
+  }
 }
 
 const addArtistEntry = function (artist_id) {
