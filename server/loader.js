@@ -155,6 +155,8 @@ const addSongToDB = function (song) {
   const album = song.album ? song.album.name : 'NULL'
   songSql.add(`INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)\nVALUES ('${song.id}', '${song.title}', ${NULLABLE(album)}, ${NULLABLE(label_names.join())}, ${NULLABLE(youtube_url)}, ${NULLABLE( song.song_art_image_thumbnail_url )}, ${NULLABLE(song.release_date_for_display)});`)
   addProducerEntries(song)
+  song.featured_artists.forEach(addArtistToDB)
+  song.featured_artists.forEach(a => addSingsEntry(a.id, song.id))
 
 }
 
@@ -250,13 +252,13 @@ readCsv();
 
 
 
-// api.searchGenuisSong('24K Magic', 'Bruno Mars')
+// api.searchGenuisSong('Rockabye', 'Clean Bandit')
 //             .then(data => data.response.hits[0])
 //             .then(console.log)
  
-// api.getSong('2890553')
+// api.getSong('2880960')
 //    .then(data => data.response.song)
-//   //  .then(song => song.media.find(media => media.provider ==NULLABLE( 'youtube'))//)    .then(data => JSON.stringify(data, null, 2))
+// //   //  .then(song => song.media.find(media => media.provider ==NULLABLE( 'youtube'))//)    .then(data => JSON.stringify(data, null, 2))
 //    .then(console.log)
 //    .catch(console.log)
 
