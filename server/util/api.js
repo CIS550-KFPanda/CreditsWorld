@@ -19,7 +19,7 @@ const methods = {
     const response = await fetch(`${baseUrl}/${endpoint}?${paramString}`, options);
     const json = await response.json();
 
-    if (!response.ok) throw Error(json.message); 
+    if (!response.ok) throw Error(JSON.stringify(json)); 
     return json;
   },
 
@@ -94,12 +94,16 @@ async function getArtist(artist_id) {
   return methods.get(geniusBaseUrl, `artists/${artist_id}`, { }, api_creds.token);
 }
 
+async function getSongLyrics(song_id) {
+  return methods.get(geniusBaseUrl, `songs/${song_id}/lyrics`, { }, api_creds.token);
+}
 
 
 
 module.exports = {
   searchGenuisSong,
   getSong,
-  getArtist
+  getArtist,
+  getSongLyrics
 }
 

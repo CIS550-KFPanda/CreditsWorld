@@ -33,7 +33,7 @@ const search_group = (req, res) => {
 }
 
 const leaderboard_songs = (req, res) => {
-  db.leadeboardSongs()
+  db.leaderboardSongs()
     .then(rows => res.status(200).send(rows))
     .catch(err => res.status(500).send(errorMessageForError(err)))
 }
