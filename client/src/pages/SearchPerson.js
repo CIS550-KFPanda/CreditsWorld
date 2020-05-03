@@ -28,42 +28,44 @@ export default class SearchPerson extends React.Component {
   componentDidMount() {
     const qs = require('qs')
     let artist_id = qs.parse(this.props.location.search, { ignoreQueryPrefix: true }).artist_id || undefined
+    let queryString = 'http://localhost:8080/getrandomcollaborators'
     if (!artist_id) {
-      console.log("NOOO")
+      console.log("getting random artist")
     } else {
       this.setState({ artist_id })
-      console.log(artist_id)
-      fetch('http://localhost:8080/getcollaborators/' + artist_id)
-        .then(res => res.json())
-        .then(result => {
-          console.log('HERE', result.person)
-          let artist = result.person;
-          artist.user = "@" + artist.name.replace(" ", "")
-          this.setState({ artist })
-          let i = 0;
-          let mat = result.collaborators.reduce((acc, crew) => {
-            let jsx = <tr key={i++}>
-              <td><a href={crew.url}>{crew.name}</a></td>
-              <td>{crew.song_title}</td>
-            </tr>
-            if (crew.type === 'primary')
-              acc[0].unshift(jsx)
-            else if (crew.type === 'featured')
-              acc[0].push(jsx)
-            else if (crew.type === 'writer')
-              acc[1].push(jsx)
-            else if (crew.type === 'producer')
-              acc[2].push(jsx)
-            return acc
-          }, [[],[],[]])
-
-          this.setState({
-            artists: mat[0],
-            writers: mat[1],
-            producers: mat[2]
-          })
-        })      
+      queryString = 'http://localhost:8080/getcollaborators/' + artist_id;
     }
+    fetch(queryString)
+      .then(res => res.json())
+      .then(result => {
+        console.log('HERE', result.person)
+        let artist = result.person;
+        artist.user = "@" + artist.name.replace(" ", "")
+        this.setState({ artist })
+        let i = 0;
+        let mat = result.collaborators.reduce((acc, crew) => {
+          let jsx = <tr key={i++}>
+            <td><a href={crew.url}>{crew.name}</a></td>
+            <td>{crew.song_title}</td>
+          </tr>
+          if (crew.type === 'primary')
+            acc[0].unshift(jsx)
+          else if (crew.type === 'featured')
+            acc[0].push(jsx)
+          else if (crew.type === 'writer')
+            acc[1].push(jsx)
+          else if (crew.type === 'producer')
+            acc[2].push(jsx)
+          return acc
+        }, [[],[],[]])
+
+        this.setState({
+          artists: mat[0],
+          writers: mat[1],
+          producers: mat[2]
+        })
+      })      
+    
   }
 
   render() {    

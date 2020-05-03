@@ -126,17 +126,40 @@ const getCrew = function(id) {
 const getHead = arr => Array.isArray(arr) ? arr[0] : arr
 
 const getSongAndCrew = function(id) {
+  console.log('Get song and crew:', id)
   const q1 = getSong(id)
   const q2 = getCrew(id)
   return Promise
           .all([q1, q2])
           .then(results => {
-            console.log(results)
             return {
-              song: getHead(results[0]),
+              song: getHead(results[0]) || {},
               crew: results[1]
             }
           })
+}
+const getRandomSong = function() {
+  return db.query(`
+  SELECT id FROM Songs
+  ORDER BY RAND()
+  LIMIT 1
+`).then(res => res[0].id)
+}
+
+const getRandomSongAndCrew = function(id) {
+  return getRandomSong().then(getSongAndCrew)
+}
+
+const getRandomArtist = function() {
+  return db.query(`
+  SELECT artist_id FROM Artists
+  ORDER BY RAND()
+  LIMIT 1
+`).then(res => res[0].artist_id)
+}
+
+const getRandomCollaborators = function(){
+  return getRandomArtist().then(getCollaborators)
 }
 
 const getPerson = function(id) {
@@ -181,7 +204,7 @@ const getCollaborators = function(id) {
             .then(results => {
               return {
                 collaborators: results[0],
-                person: getHead(results[1])
+                person: getHead(results[1]) || {}
               }
             });
 
@@ -245,6 +268,8 @@ module.exports = {
   getSongAndCrew,
   getCollaborators,
   dayCount,
-  dayRange
+  dayRange,
+  getRandomSongAndCrew,
+  getRandomCollaborators
 }
 

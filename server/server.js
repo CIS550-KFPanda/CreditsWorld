@@ -30,9 +30,11 @@ app.get('/leaderboardproducers', routes.leaderboard_producers)
 app.get('/getsong/:id', routes.get_song);
 app.get('/getcrew/:id', routes.get_crew);
 app.get('/getsongcrew/:id', routes.get_song_crew);
+app.get('/getrandomsongcrew/', routes.get_random_song_crew);
 app.get('/daycount/:id', routes.day_count);
 app.get('/dayrange', routes.day_range);
 app.get('/getcollaborators/:id', routes.get_collaborators)
+app.get('/getrandomcollaborators/', routes.get_random_collaborators)
 
 console.log('Authors: Neil Shweky (nshweky), Salo Serfati (sserfati)');
 const port = process.env.PORT || '8080';
