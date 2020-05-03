@@ -27,7 +27,8 @@ CREATE TABLE Artists(
 CREATE TABLE Sings(
   artist_id varchar(255),
   song_id varchar(255),
-  PRIMARY KEY (artist_id,song_id),
+  type varchar(255),
+  PRIMARY KEY (artist_id,song_id,type),
   FOREIGN KEY (artist_id) REFERENCES Artists(artist_id),
   FOREIGN KEY (song_id) REFERENCES Songs(id)
 );
