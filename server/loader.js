@@ -38,7 +38,8 @@ const tableDDLs = {
 `CREATE TABLE Sings(
   artist_id varchar(255),
   song_id varchar(255),
-  PRIMARY KEY (artist_id,song_id),
+  type varchar(255),
+  PRIMARY KEY (artist_id,song_id,type),
   FOREIGN KEY (artist_id) REFERENCES Artists(artist_id),
   FOREIGN KEY (song_id) REFERENCES Songs(id)
 );`,
@@ -159,7 +160,7 @@ const addSongToDB = function (song) {
   songSql.add(`INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)\nVALUES ('${song.id}', '${song.title}', ${NULLABLE(album)}, ${NULLABLE(label_names.join())}, ${NULLABLE(youtube_url)}, ${NULLABLE( song.song_art_image_thumbnail_url )}, ${NULLABLE(song.release_date_for_display)});`)
   addProducerEntries(song)
   song.featured_artists.forEach(addArtistToDB)
-  song.featured_artists.forEach(a => addSingsEntry(a.id, song.id))
+  song.featured_artists.forEach(a => addSingsEntry(a.id, song.id, 'featured'))
 
 }
 
@@ -193,8 +194,8 @@ const addSongEntry = async function (song_id) {
       
 }
 
-const addSingsEntry = function(artist_id, song_id) {
-  singsSql.add(`INSERT INTO Sings (artist_id, song_id)\nVALUES ('${artist_id}', '${song_id}');`)
+const addSingsEntry = function(artist_id, song_id, type) {
+  singsSql.add(`INSERT INTO Sings (artist_id, song_id, type)\nVALUES ('${artist_id}', '${song_id}', '${type}');`)
 }
 
 const entriesForRow = function(data) {
@@ -204,7 +205,7 @@ const entriesForRow = function(data) {
     .then(song => {
       const artist_id = song.primary_artist.id
       const song_id = song.id
-      addSingsEntry(artist_id, song_id)
+      addSingsEntry(artist_id, song_id, 'primary')
       const promises = []
       if (!artists.has(artist_id)) {
         artists.add(artist_id);
