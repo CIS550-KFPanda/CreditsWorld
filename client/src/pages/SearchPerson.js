@@ -14,6 +14,11 @@ export default class SearchPerson extends React.Component {
 
     // The state maintained by this React Component.
     this.state = {
+      artist_id: '',
+      artist: {},
+      artists: [],
+      writers: [],
+      producers: []
     }
 
     // this.showMovies = this.showMovies.bind(this);
@@ -21,6 +26,44 @@ export default class SearchPerson extends React.Component {
 
   // React function that is called when the page load.
   componentDidMount() {
+    const qs = require('qs')
+    let artist_id = qs.parse(this.props.location.search, { ignoreQueryPrefix: true }).artist_id || undefined
+    if (!artist_id) {
+      console.log("NOOO")
+    } else {
+      this.setState({ artist_id })
+      console.log(artist_id)
+      fetch('http://localhost:8080/getcollaborators/' + artist_id)
+        .then(res => res.json())
+        .then(result => {
+          console.log('HERE', result.person)
+          let artist = result.person;
+          artist.user = "@" + artist.name.replace(" ", "")
+          this.setState({ artist })
+          let i = 0;
+          let mat = result.collaborators.reduce((acc, crew) => {
+            let jsx = <tr key={i++}>
+              <td><a href={crew.url}>{crew.name}</a></td>
+              <td>{crew.song_title}</td>
+            </tr>
+            if (crew.type === 'primary')
+              acc[0].unshift(jsx)
+            else if (crew.type === 'featured')
+              acc[0].push(jsx)
+            else if (crew.type === 'writer')
+              acc[1].push(jsx)
+            else if (crew.type === 'producer')
+              acc[2].push(jsx)
+            return acc
+          }, [[],[],[]])
+
+          this.setState({
+            artists: mat[0],
+            writers: mat[1],
+            producers: mat[2]
+          })
+        })      
+    }
   }
 
   render() {    
@@ -46,8 +89,8 @@ export default class SearchPerson extends React.Component {
           <div className="rightContainer">
             <div className="topRowContainer"> 
               <div className="topRowLeftContainer"> 
-                <h1 style={{fontSize: '4.5rem'}}> Justin Bieber </h1>
-                <h6 style={{alignSelf:'flex-end', paddingRight: 24}}> @justinbieber </h6>
+                <h1 style={{fontSize: '4.5rem'}}> {this.state.artist.name} </h1>
+    <h6 style={{alignSelf:'flex-end', paddingRight: 24}}> <a href={this.state.artist.url}> {this.state.artist.user} </a> </h6>
               </div>
               <Image src="https://images.genius.com/b8a71aef947716b9e24dcbea07fd23d1.800x800x1.jpg" roundedCircle  height="250"/>
             </div>
@@ -65,18 +108,7 @@ export default class SearchPerson extends React.Component {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td colSpan="2">Larry the Bird</td>
-                      </tr>
+                      {this.state.artists}
                     </tbody>
                   </Table>
                 </div>
@@ -91,18 +123,7 @@ export default class SearchPerson extends React.Component {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td colSpan="2">Larry the Bird</td>
-                      </tr>
+                     {this.state.writers}
                     </tbody>
                   </Table>
                 </div>
@@ -118,18 +139,7 @@ export default class SearchPerson extends React.Component {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td colSpan="2">Larry the Bird</td>
-                      </tr>
+                      {this.state.producers}
                     </tbody>
                   </Table>
                 </div>

@@ -27,15 +27,11 @@ export default class App extends React.Component {
 						<Route
 							exact
 							path="/search-song"
-							render={() => (
-								<SearchSong />
-							)}
+							component={SearchSong}
 						/>
 						<Route
 							path="/search-person"
-							render={() => (
-								<SearchPerson />
-							)}
+							component={SearchPerson}
 						/>
 						<Route
 							path="/leaderboard"
