@@ -40,25 +40,26 @@ export default class SearchSong extends React.Component {
       .then(res => res.json())
       .then(result => {
         let song = result.song
-        song.label = (song.label || "None").replace(",", ", ")
+        song.label = (song.label || "None").split(",").join(", ")
+        console.log(song.label)
         song.year = (song.release_date_for_display || "None    ").slice(-4)
         this.setState({ song })
 
         let mat = result.crew.reduce((acc, crew) => {
           if (crew.type === 'primary')
-            acc[0].unshift(crew.name)
+            acc[0].unshift(crew)
           else if (crew.type === 'featured')
-            acc[0].push(crew.name)
+            acc[0].push(crew)
           else if (crew.type === 'writer')
-            acc[1].push(crew.name)
+            acc[1].push(crew)
           else if (crew.type === 'producer')
-            acc[2].push(crew.name)
+            acc[2].push(crew)
           return acc
         }, [[],[],[]])
 
-        mat = mat.map(arr => arr.map((name, i) => <tr key={i+1}>
+        mat = mat.map(arr => arr.map((crew, i) => <tr key={i+1}>
           <td>{i+1}</td>
-          <td>{name}</td>
+          <td><a href={"/search-person?artist_id=" + crew.id}>{crew.name}</a></td>
         </tr>))
 
         this.setState({
