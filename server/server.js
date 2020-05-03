@@ -20,6 +20,7 @@ app.use(session({
 
 app.use(morgan('tiny'))
 
+app.get('/', (req, res) => res.send('Hello, World'))
 app.get('/searchsong', routes.search_song)
 app.post('/searchgroup', routes.search_group)
 app.get('/searchperson', routes.search_person)
