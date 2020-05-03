@@ -92,7 +92,7 @@ export default class SearchPerson extends React.Component {
                 <h1 style={{fontSize: '4.5rem'}}> {this.state.artist.name} </h1>
     <h6 style={{alignSelf:'flex-end', paddingRight: 24}}> <a href={this.state.artist.url}> {this.state.artist.user} </a> </h6>
               </div>
-              <Image src="https://images.genius.com/b8a71aef947716b9e24dcbea07fd23d1.800x800x1.jpg" roundedCircle  height="250"/>
+              <Image src={this.state.artist.image_url} roundedCircle  height="250"/>
             </div>
             <div className="bottomRowContainer"> 
               <h2 style={{padding: 8}}> Collaborators</h2> 
