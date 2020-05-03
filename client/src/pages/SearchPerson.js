@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl'
 import Image from 'react-bootstrap/Image'
 import Table from 'react-bootstrap/Table'
+import { API_URL } from './Utilities';
 
 
 export default class SearchPerson extends React.Component {
@@ -28,12 +29,12 @@ export default class SearchPerson extends React.Component {
   componentDidMount() {
     const qs = require('qs')
     let artist_id = qs.parse(this.props.location.search, { ignoreQueryPrefix: true }).artist_id || undefined
-    let queryString = 'http://localhost:8080/getrandomcollaborators'
+    let queryString = API_URL + '/getrandomcollaborators'
     if (!artist_id) {
       console.log("getting random artist")
     } else {
       this.setState({ artist_id })
-      queryString = 'http://localhost:8080/getcollaborators/' + artist_id;
+      queryString = API_URL + '/getcollaborators/' + artist_id;
     }
     fetch(queryString)
       .then(res => res.json())

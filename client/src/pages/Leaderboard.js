@@ -5,6 +5,7 @@ import PageNavbar from '../components/PageNavbar';
 import Table from 'react-bootstrap/Table'
 import Image from 'react-bootstrap/Image'
 import Dropdown from 'react-bootstrap/Dropdown'
+import { API_URL } from './Utilities';
 
 
 
@@ -23,7 +24,7 @@ export default class Leaderboard extends React.Component {
  
   // React function that is called when the page load.
   componentDidMount() {
-    fetch('http://localhost:8080/leaderboardartists')
+    fetch(API_URL + '/leaderboardartists')
       .then(res => res.json())
       .then(result => {
         let rows = result.map((row, i) => 

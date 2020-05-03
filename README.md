@@ -4,6 +4,9 @@ Artists and repertoire (known as A&R) is the division of a record label or music
 
 The goal of this project is to create a website that A&R managers could visit to learn about what type of connections worked in the past, to create more meaningful connections in the future.
 
+## Website
+The website is now up! https://creditsworld.herokuapp.com/
+
 ## Server
 To run the server:
 ```
@@ -49,3 +52,10 @@ To load data from the loader, open a new terminal (or logout of mysql) and run:
 cd server
 mysql -u root -p creditsworld < loader.sql
 ```
+## MySQL RDS
+To login to the MySQL RDS run:
+```
+mysql -h credits-world-db-id.chp4hbnqk2jd.us-east-1.rds.amazonaws.com -P 1521 -u admin -p
+Password: KFPanda550
+```
+
