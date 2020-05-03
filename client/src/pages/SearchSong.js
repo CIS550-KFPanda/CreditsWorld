@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl'
 import Image from 'react-bootstrap/Image'
 import Table from 'react-bootstrap/Table'
+import { API_URL } from './Utilities';
 
 
 export default class SearchSong extends React.Component {
@@ -28,12 +29,12 @@ export default class SearchSong extends React.Component {
   componentDidMount() {
     const qs = require('qs')
     let song_id = qs.parse(this.props.location.search, { ignoreQueryPrefix: true }).song_id || undefined
-    let queryString = 'http://localhost:8080/getrandomsongcrew'
+    let queryString = API_URL + '/getrandomsongcrew'
     if (!song_id) {
       console.log("getting random song")
     } else {
       this.setState({ song_id })
-      queryString = 'http://localhost:8080/getsongcrew/' + song_id
+      queryString = API_URL + '/getsongcrew/' + song_id
     }
     fetch(queryString)
       .then(res => res.json())
