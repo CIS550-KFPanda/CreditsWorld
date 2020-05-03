@@ -39,17 +39,6 @@ const leaderboardSongs = function() {
 
 const leaderboardArtists = function() {
   return db.query(`
-  WITH top_artist_songs AS (
-    SELECT song_id, s.artist_id 
-    FROM Sings s
-    JOIN Popularity p ON p.id = s.song_id  
-    JOIN (
-      SELECT s.artist_id, MAX(cumulative_score) as score
-      FROM Sings s
-      JOIN Popularity p ON p.id = s.song_id 
-      GROUP BY artist_id
-    ) t1 ON s.artist_id = t1.artist_id AND p.cumulative_score = t1.score
-  )
   SELECT t1.name, t1.image_url, t1.url, t1.score, s.id AS top_song_id, s.title as top_song_name
   FROM (
     SELECT per.name, image_url, url, artist_id, SUM(p.cumulative_score) as score
@@ -60,7 +49,17 @@ const leaderboardArtists = function() {
     ORDER BY score DESC
     LIMIT 15
   ) t1
-  JOIN top_artist_songs t2 ON t1.artist_id = t2.artist_id
+  JOIN (
+    SELECT song_id, s.artist_id 
+    FROM Sings s
+    JOIN Popularity p ON p.id = s.song_id  
+    JOIN (
+      SELECT s.artist_id, MAX(cumulative_score) as score
+      FROM Sings s
+      JOIN Popularity p ON p.id = s.song_id 
+      GROUP BY artist_id
+    ) t1 ON s.artist_id = t1.artist_id AND p.cumulative_score = t1.score
+  ) t2 ON t1.artist_id = t2.artist_id
   JOIN Songs s ON s.id = t2.song_id;
   `)
 }
