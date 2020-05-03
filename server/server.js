@@ -24,9 +24,9 @@ app.get('/searchsong', routes.search_song)
 app.post('/searchgroup', routes.search_group)
 app.get('/searchperson', routes.search_person)
 app.get('/leaderboardsongs', routes.leaderboard_songs)
-app.get('/leaderboardArtists', routes.leaderboard_artists)
-app.get('/leaderboardWriters', routes.leaderboard_writers)
-app.get('/leaderboardProducers', routes.leaderboard_producers)
+app.get('/leaderboardartists', routes.leaderboard_artists)
+app.get('/leaderboardwriters', routes.leaderboard_writers)
+app.get('/leaderboardproducers', routes.leaderboard_producers)
 app.get('/getsong/:id', routes.get_song);
 app.get('/getcrew/:id', routes.get_crew);
 app.get('/getsongcrew/:id', routes.get_song_crew);
