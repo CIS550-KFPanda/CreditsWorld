@@ -46,8 +46,8 @@ export default class SearchPerson extends React.Component {
         let i = 0;
         let mat = result.collaborators.reduce((acc, crew) => {
           let jsx = <tr key={i++}>
-            <td><a href={crew.url}>{crew.name}</a></td>
-            <td>{crew.song_title}</td>
+            <td><a href={"/search-person?artist_id="+crew.id}>{crew.name}</a></td>
+            <td><a href={"/search-song?song_id="+crew.song_id}>{crew.song_title}</a></td>
           </tr>
           if (crew.type === 'primary')
             acc[0].unshift(jsx)

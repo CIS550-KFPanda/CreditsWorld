@@ -30,10 +30,10 @@ export default class Leaderboard extends React.Component {
         let rows = result.map((row, i) => 
           <tr key={'row'+i}>
             <td>{i+1}</td>
-            <td><a href= "/search-person" >
+            <td><a href= {"/search-person?artist_id="+row.artist_id} >
               <Image src={row.image_url}  height="50" roundedCircle/> {row.name}
               </a></td>
-            <td><a href= "/search-song" >
+            <td><a href= {"/search-song?song_id="+row.top_song_id} >
                 {row.top_song_name}
               </a></td>
             <td><a href={row.url}>{row.url}</a></td>

@@ -39,7 +39,7 @@ const leaderboardSongs = function() {
 
 const leaderboardArtists = function() {
   return db.query(`
-  SELECT t1.name, t1.image_url, t1.url, t1.score, s.id AS top_song_id, s.title as top_song_name
+  SELECT t1.artist_id, t1.name, t1.image_url, t1.url, t1.score, s.id AS top_song_id, s.title as top_song_name
   FROM (
     SELECT per.name, image_url, url, artist_id, SUM(p.cumulative_score) as score
     FROM Sings s

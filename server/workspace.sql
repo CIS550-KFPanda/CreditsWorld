@@ -142,3 +142,11 @@ IN(
 )
 AND artist_id<>326362)) t1
 JOIN Person p ON p.id=t1.id
+
+
+
+
+
+UPDATE Songs
+SET title = 'rockstar'
+WHERE id=2942139
