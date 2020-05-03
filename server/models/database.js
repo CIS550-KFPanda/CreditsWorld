@@ -109,13 +109,13 @@ const getSong = function(id) {
 
 const getCrew = function(id) {
   return db.query(`
-  SELECT p.id, p.name, p.image_url, p.url
+  SELECT p.id, p.name, p.image_url, p.url, type
   FROM (
-    SELECT crew_id as id
+    SELECT crew_id as id, type
     FROM Crew_in
     WHERE song_id='${id}'
     UNION
-    SELECT artist_id as id
+    SELECT artist_id as id, type
     FROM Sings
     WHERE song_id='${id}'
   ) t1
@@ -123,14 +123,17 @@ const getCrew = function(id) {
   `)
 }
 
+const getHead = arr => Array.isArray(arr) ? arr[0] : arr
+
 const getSongAndCrew = function(id) {
   const q1 = getSong(id)
   const q2 = getCrew(id)
   return Promise
           .all([q1, q2])
           .then(results => {
+            console.log(results)
             return {
-              song: results[0][0],
+              song: getHead(results[0]),
               crew: results[1]
             }
           })
@@ -146,28 +149,31 @@ const getPerson = function(id) {
 
 const getCollaborators = function(id) {
   const collaborators =  db.query(`
-  SELECT p.id, p.name, p.image_url, p.url
+  SELECT p.id, p.name, p.image_url, p.url, type, song_id, s.title as song_title
   FROM (
-  (SELECT crew_id as id
+  (SELECT crew_id as id, type, song_id
   FROM Crew_in
   WHERE song_id
   IN(
 	  SELECT song_id
-	  FROM sings
+	  FROM Sings
 	  WHERE artist_id = ${id}
 	)
   AND crew_id <> ${id})
   UNION
-  (SELECT artist_id as id
-  FROM sings
+  (SELECT artist_id as id, type, song_id
+  FROM Sings
   WHERE song_id
   IN(
 	  SELECT song_id
 	  FROM Crew_in
 	  WHERE crew_id = ${id}
   )
-  AND artist_id<>${id})) t1
+  AND artist_id<>${id})
+  ) t1
   JOIN Person p ON p.id=t1.id
+  JOIN Songs s ON s.id = song_id;
+
   `);
   const person_info = getPerson(id);
   return Promise
@@ -175,7 +181,7 @@ const getCollaborators = function(id) {
             .then(results => {
               return {
                 collaborators: results[0],
-                person: results[1]
+                person: getHead(results[1])
               }
             });
 
