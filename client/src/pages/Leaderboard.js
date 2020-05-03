@@ -14,14 +14,32 @@ export default class Leaderboard extends React.Component {
 
     // The state maintained by this React Component.
     this.state = {
+      rows: []
     }
 
     // this.showMovies = this.showMovies.bind(this);
   }
 
+ 
   // React function that is called when the page load.
   componentDidMount() {
-
+    fetch('http://localhost:8080/leaderboardartists')
+      .then(res => res.json())
+      .then(result => {
+        let rows = result.map((row, i) => 
+          <tr key={'row'+i}>
+            <td>{i+1}</td>
+            <td><a href= "/search-person" >
+              <Image src={row.image_url}  height="50" roundedCircle/> {row.name}
+              </a></td>
+            <td><a href= "/search-song" >
+                {row.top_song_name}
+              </a></td>
+            <td><a href={row.url}>{row.url}</a></td>
+          </tr>
+        )
+        this.setState({ rows })
+      }).catch(console.log)
   }
 
   render() {    
@@ -53,50 +71,11 @@ export default class Leaderboard extends React.Component {
                   <th>Rank</th>
                   <th>Artist Name</th>
                   <th>Top Song</th>
-                  <th>Username</th>
+                  <th>Website</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td><a href= "/search-person" >
-                    <Image src = "https://images.genius.com/b8a71aef947716b9e24dcbea07fd23d1.800x800x1.jpg"  height="50" roundedCircle/> Justin Bibebr
-                    </a></td>
-                  <td><a href= "/search-song" >
-                      What do you mean
-                    </a></td>
-                  <td>@justinBieber</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td><a href= "/search-person" >
-                    <Image src = "https://images.genius.com/b8a71aef947716b9e24dcbea07fd23d1.800x800x1.jpg"  height="50" roundedCircle/> Justin Bibebr
-                    </a></td>
-                  <td><a href= "/search-song" >
-                      What do you mean
-                    </a></td>
-                  <td>@justinBieber</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td><a href= "/search-person" >
-                    <Image src = "https://images.genius.com/b8a71aef947716b9e24dcbea07fd23d1.800x800x1.jpg"  height="50" roundedCircle/> Justin Bibebr
-                    </a></td>
-                  <td><a href= "/search-song" >
-                      What do you mean
-                    </a></td>
-                  <td>@justinBieber</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td><a href= "/search-person" >
-                    <Image src = "https://images.genius.com/b8a71aef947716b9e24dcbea07fd23d1.800x800x1.jpg"  height="50" roundedCircle/> Justin Bibebr
-                    </a></td>
-                  <td><a href= "/search-song" >
-                      What do you mean
-                    </a></td>
-                  <td>@justinBieber</td>
-                </tr>
+                {this.state.rows}
               </tbody>
             </Table>
           </div> 
