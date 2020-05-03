@@ -38,7 +38,7 @@ export default class Landing extends React.Component {
                       Find the crew that made your favorite song a reality here 
                     </p>
                   <div style={{ paddingBottom:'18px'}}> 
-                    <Button variant="light" href = "/search-song" style={{ width: '50%'}}>Find your song</Button>
+                    <Button variant="light" href = "/search-song" style={{ width: '50%'}}>Find Song</Button>
                   </div>
               </Card>
               <Card bg={'danger'} className="text-center" style={{ width: '18rem', justifyContent:'space-around', height:'300px'}}>  
@@ -47,7 +47,7 @@ export default class Landing extends React.Component {
                 Look up your favorite singer, songwriter or producer and we'll show you who they have worked with in the past and all the songs they helped create.
                 </p>
                 <div style={{ paddingBottom:'18px'}}> 
-                  <Button variant="light" href = "/search-song" style={{ width: '50%'}}>Find your song</Button>
+                  <Button variant="light" href = "/search-person" style={{ width: '50%'}}>Find Artist</Button>
                 </div>
               </Card>
               <Card bg={'warning'} className="text-center" style={{ width: '18rem',justifyContent:'space-around', height:'300px' }}>
@@ -56,7 +56,7 @@ export default class Landing extends React.Component {
                 See what artists and song are topping the charts 
                 </p>
                 <div style={{ paddingBottom:'18px'}}> 
-                  <Button variant="light" href = "/search-song" style={{ width: '50%'}}>Find your song</Button>
+                  <Button variant="light" href = "/leaderboard" style={{ width: '50%'}}>Leaderboard</Button>
                 </div>
               </Card>
             </div>

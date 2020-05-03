@@ -28,48 +28,50 @@ export default class SearchSong extends React.Component {
   componentDidMount() {
     const qs = require('qs')
     let song_id = qs.parse(this.props.location.search, { ignoreQueryPrefix: true }).song_id || undefined
+    let queryString = 'http://localhost:8080/getrandomsongcrew'
     if (!song_id) {
-      console.log("NOOO")
+      console.log("getting random song")
     } else {
       this.setState({ song_id })
-      console.log(song_id)
-      fetch('http://localhost:8080/getsongcrew/' + song_id)
-        .then(res => res.json())
-        .then(result => {
-          let song = result.song
-          song.label = song.label.replace(",", ", ")
-          song.year = song.release_date_for_display.split(', ')[1]
-          this.setState({ song })
-
-          let mat = result.crew.reduce((acc, crew) => {
-            if (crew.type === 'primary')
-              acc[0].unshift(crew.name)
-            else if (crew.type === 'featured')
-              acc[0].push(crew.name)
-            else if (crew.type === 'writer')
-              acc[1].push(crew.name)
-            else if (crew.type === 'producer')
-              acc[2].push(crew.name)
-            return acc
-          }, [[],[],[]])
-
-          mat = mat.map(arr => arr.map((name, i) => <tr>
-            <td>{i+1}</td>
-            <td>{name}</td>
-          </tr>))
-
-          this.setState({
-            artists: mat[0],
-            writers: mat[1],
-            producers: mat[2]
-          })
-
-          
-
-
-        })
-      
+      queryString = 'http://localhost:8080/getsongcrew/' + song_id
     }
+    fetch(queryString)
+      .then(res => res.json())
+      .then(result => {
+        let song = result.song
+        song.label = (song.label || "None").replace(",", ", ")
+        song.year = (song.release_date_for_display || "None    ").slice(-4)
+        this.setState({ song })
+
+        let mat = result.crew.reduce((acc, crew) => {
+          if (crew.type === 'primary')
+            acc[0].unshift(crew.name)
+          else if (crew.type === 'featured')
+            acc[0].push(crew.name)
+          else if (crew.type === 'writer')
+            acc[1].push(crew.name)
+          else if (crew.type === 'producer')
+            acc[2].push(crew.name)
+          return acc
+        }, [[],[],[]])
+
+        mat = mat.map(arr => arr.map((name, i) => <tr key={i+1}>
+          <td>{i+1}</td>
+          <td>{name}</td>
+        </tr>))
+
+        this.setState({
+          artists: mat[0],
+          writers: mat[1],
+          producers: mat[2]
+        })
+
+        
+
+
+      })
+      
+    
     
   }
 

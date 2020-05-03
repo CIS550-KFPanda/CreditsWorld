@@ -75,6 +75,12 @@ const get_collaborators = (req, res) => {
     .catch(err => res.status(500).send(errorMessageForError(err)))
 }
 
+const get_random_collaborators = (req, res) => {
+  db.getRandomCollaborators(req.params.id)
+    .then(rows => res.status(200).send(rows))
+    .catch(err => res.status(500).send(errorMessageForError(err)))
+}
+
 const get_crew = (req, res) => {
   if(!req.params.id) return res.status(400).send('missing parameter id');
   db.getCrew(req.params.id)
@@ -88,6 +94,13 @@ const get_song_crew = (req, res) => {
     .then(data => res.status(200).send(data))
     .catch(err => res.status(500).send(errorMessageForError(err)))
 }
+
+const get_random_song_crew = (req, res) => {
+  db.getRandomSongAndCrew(req.params.id)
+    .then(data => res.status(200).send(data))
+    .catch(err => res.status(500).send(errorMessageForError(err)))
+}
+
 
 const day_count = (req, res) => {
   if (checkMissingParams(req.params.id)) return res.status(400).send(missing_params('id'))
@@ -118,6 +131,8 @@ module.exports = {
   get_crew,
   get_song_crew,
   day_count,
-  day_range
+  day_range,
+  get_random_song_crew,
+  get_random_collaborators
 }
 
