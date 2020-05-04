@@ -1,30 +1,55 @@
 .mainContainer{
     
 }
-.searchBarContainer {
+.bodyCardContainer {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: flex-start; */
+}
+
+.searchBarContainer {
+    width: 20%; 
+    padding: 24px; 
+    display: flex; 
+    flex-direction: column;
+    justify-content:flex-start; 
+    align-items:flex-start; 
+    /* background-color: green; */
+}
+
+.findRandomContainer {
+    width: 20%;
     padding: 24px;
-    /* background-color: pink; */
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    background-color:''; 
 }
 
 .mainCardContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: '100%';
+    width: 60%; 
     padding: 24px;
+    padding-top: 56px;
+    /* background-color: pink; */
+
 }
 .leftContainer {
     display: flex;
     flex-direction: column;    
     justify-content: center;
     padding: 48px;
+    width: 25%; 
     /* color: white */
 }
 
 .rightContainer {
     background-color: white;
+    width: 75%; 
 }
 
 .topRowContainer {
@@ -56,5 +81,5 @@
 .singleTableContainer {
     display: flex;
     flex-direction: column;
-    padding: 24px;
+    padding: 12px;
 }

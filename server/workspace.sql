@@ -179,3 +179,6 @@ SELECT DISTINCT s.title, s.song_art_image_thumbnail_url, s.id as song_id,
   JOIN Songs s on s.id = t.song_id
   JOIN Sings s2 on s2.song_id = s.id
   JOIN Person a on s2.artist_id = a.id
+
+
+
