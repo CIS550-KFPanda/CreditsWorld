@@ -225,8 +225,6 @@ VALUES ('160032', 'Louie Lastic', 'https://images.genius.com/ee27a61769e10cd12a0
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('33076', 'The Arcade', 'https://images.genius.com/4bdcc48a27aaaa21a88c4d955414a5ef.646x646x1.png', 'https://genius.com/artists/The-arcade');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('28906', '​benny blanco', 'https://images.genius.com/07647177780837286bcd0fa950819462.1000x1000x1.jpg', 'https://genius.com/artists/Benny-blanco');
-INSERT INTO Person (id, name, image_url, url)
 VALUES ('1015154', 'Alex Ben-Abdullah', 'https://images.genius.com/ed96aab805e84d2b098c083ef41bbf8f.500x500x1.jpg', 'https://genius.com/artists/Alex-ben-abdullah');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('651315', 'Jon Mills', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Jon-mills');
