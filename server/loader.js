@@ -246,7 +246,8 @@ const writeToFile = function() {
   const total = [...drops, ...adds, ...songSql, ...personSql, ...artistSql, ...singsSql, ...crewinSql, ...entriesSql]
 
   let str = total.reduce((acc, query) => acc += query + '\n', "")
-  str += `CREATE TABLE Popularity AS
+  str += `DROP TABLE IF EXISTS Popularity;
+  CREATE TABLE Popularity AS
   SELECT Songs.id, scores.cumulative_score 
   FROM Sings LEFT JOIN Person ON Person.id = Sings.artist_id
   LEFT JOIN Songs ON Sings.song_id = Songs.id
