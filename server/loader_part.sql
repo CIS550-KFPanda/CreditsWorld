@@ -53,187 +53,67 @@ CREATE TABLE Entries (
   FOREIGN KEY (song_id) REFERENCES Songs(id)
 );
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2928485', 'New Music Friday 12/09/16', 'New Music Friday Playlists 2016', NULL, 'NULL', 'https://images.genius.com/a453d01209dfbdb6c76a990c2be18bf1.300x300x1.jpg', 'December 9, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2852482', 'OVO Sound Radio Episode 31 Tracklist', 'OVO Sound Radio Tracklists', NULL, 'NULL', 'https://images.genius.com/056421efa6cc338499fea25e5a8be6a1.300x300x1.png', 'October 8, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2891157', 'Best Songs of 2016 Nominations', 'Genius Best of 2016', NULL, 'NULL', 'https://images.genius.com/ca26177152bbe276a2fbc90b0ca7495a.300x300x1.png', 'October 24, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2960556', 'Call On Me (Ryan Riback Extended Remix)', 'Call On Me (Remixes)', NULL, 'http://www.youtube.com/watch?v=I-VsisgVkHw', 'https://images.genius.com/2e8226cc229896b07d6418688e2fbd82.300x300x1.jpg', 'October 14, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('5110616', 'April 2020 Singles Release Calendar', '2020 Singles Release Calendar', NULL, 'NULL', 'https://images.genius.com/a13a61b9220c6e609be5d1168c95da8b.300x300x1.jpg', 'April 2020');
+VALUES ('3857644', '2017 Playlist', 'Decades Of The 21st Century:2010-2019', NULL, 'NULL', 'https://images.genius.com/f0c7eb4741875841755dbc6a19b680f0.300x300x1.jpg', '2019');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
 VALUES ('3036726', 'In The Name Of Love (Snavs Remix)', 'In the Name of Love (Remixes)', 'STMPD RCRDS', 'http://www.youtube.com/watch?v=yCYT9X8KE2w', 'https://images.genius.com/6aea4958a5d0cc197597bc4946f312ba.300x300x1.jpg', 'November 10, 2017');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2104392', 'Scars to Your Beautiful', 'Know-It-All', 'Def Jam Recordings', 'http://www.youtube.com/watch?v=Em7vc8NWUNY', 'https://images.genius.com/bc662d47cd6425f84fbc911b498734a6.300x300x1.jpg', 'November 13, 2015');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2924188', 'Deja Vu', '4 Your Eyez Only', NULL, 'http://www.youtube.com/watch?v=9d_jOIwEKPY', 'https://images.genius.com/37291e01ab860f66509cc60d0f0c75bf.300x300x1.jpg', 'December 9, 2016');
+VALUES ('2436402', 'Caroline', 'Good For You', 'Universal Music Group,Republic Records', 'http://www.youtube.com/watch?v=3j8ecF8Wt4E', 'https://images.genius.com/e5b85886dea15403c0e28e312bb22e1e.300x300x1.jpg', 'March 9, 2016');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
 VALUES ('2890675', 'The 25 Best Pop Songs of 2016: Nominations', '2016 Year-End List', NULL, 'NULL', 'https://images.genius.com/7e177b5f3341d07397a75c280dfc54ed.300x300x1.png', 'October 23, 2016');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
+VALUES ('2911255', 'Party Monster', 'Starboy', 'Republic Records,The Weeknd XO, Inc.,Universal Music Group', 'http://www.youtube.com/watch?v=diW6jXhLE0E', 'https://images.genius.com/235fbb681a9b3e40af8aa474ba16b9cd.300x300x1.jpg', 'November 18, 2016');
+INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
+VALUES ('2891157', 'Best Songs of 2016 Nominations', 'Genius Best of 2016', NULL, 'NULL', 'https://images.genius.com/ca26177152bbe276a2fbc90b0ca7495a.300x300x1.png', 'October 24, 2016');
+INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
+VALUES ('2924188', 'Deja Vu', '4 Your Eyez Only', NULL, 'http://www.youtube.com/watch?v=9d_jOIwEKPY', 'https://images.genius.com/37291e01ab860f66509cc60d0f0c75bf.300x300x1.jpg', 'December 9, 2016');
+INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
 VALUES ('2336758', 'Chill Bill', 'Straight Bummin’', NULL, 'http://www.youtube.com/watch?v=J7IMwop3RHs', 'https://images.genius.com/952d814fc11cc4f5a0d2e5ec5e84e89a.300x300x1.jpg', 'June 25, 2015');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2436402', 'Caroline', 'Good For You', 'Universal Music Group,Republic Records', 'http://www.youtube.com/watch?v=3j8ecF8Wt4E', 'https://images.genius.com/e5b85886dea15403c0e28e312bb22e1e.300x300x1.jpg', 'March 9, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2811214', 'Mercy', 'Illuminate', NULL, 'http://www.youtube.com/watch?v=KkGVmN68ByU', 'https://images.genius.com/ced6fec4819853ecb50da2322f9d46a9.300x300x1.jpg', 'August 18, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2924189', 'Neighbors', '4 Your Eyez Only', 'Interscope Records,Roc Nation,Dreamville', 'http://www.youtube.com/watch?v=9nfVWiXY3WY', 'https://images.genius.com/e8867c7f0c8a290e03aaa2fbc804fdbf.300x300x1.jpg', 'December 9, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2413890', 'Needed Me', 'ANTi', 'Roc Nation,Westbury Road', 'http://www.youtube.com/watch?v=wfN4PVaOU5Q', 'https://images.rapgenius.com/13031e30d3fe64f307ed762d387d58f2.300x300x1.jpg', 'January 28, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2890555', 'Sneakin’', 'NULL', 'Republic Records,OVO Sound,Young Money,Cash Money Records', 'http://www.youtube.com/watch?v=ThaBFEJIV_E', 'https://images.genius.com/81118b1faf9c7377180039e385a15543.300x300x1.jpg', 'October 23, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2456795', 'You Was Right', 'Lil Uzi Vert vs. The World', 'Atlantic Records,Generation Now', 'http://www.youtube.com/watch?v=55iN4H6kRN4', 'https://images.genius.com/91c497688eacb83a8d4c3e8f2a0cb418.300x300x1.png', 'April 15, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('3857644', '2017 Playlist', 'Decades Of The 21st Century:2010-2019', NULL, 'NULL', 'https://images.genius.com/f0c7eb4741875841755dbc6a19b680f0.300x300x1.jpg', '2019');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
 VALUES ('2890553', 'Fake Love', 'More Life', 'Cash Money Records,Young Money,Republic Records,Octobers Very Own', 'http://www.youtube.com/watch?v=jz_01KVkOBI', 'https://images.genius.com/4672f8523e0fbf7f7848185256e946f4.300x300x1.jpg', 'October 23, 2016');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2913726', 'Six Feet Under', 'Starboy', 'The Weeknd XO, Inc.,Republic Records,Universal Music Group', 'http://www.youtube.com/watch?v=Jt5nPuMgKA8', 'https://images.genius.com/2c1f31ee6278b9ccf7be5b6a3ab190ab.300x300x1.jpg', 'November 25, 2016');
+VALUES ('2820703', 'X', 'Savage Mode', NULL, 'http://www.youtube.com/watch?v=SpXw0qiy3Wo', 'https://images.genius.com/74fd790126e1e11b02aa8a560e195859.300x300x1.jpg', 'July 15, 2016');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2851057', 'Don’t Wanna Know', 'Red Pill Blues', 'Top Dawg Entertainment,Aftermath,Friends Keep Secrets,Interscope Records,222 Records', 'http://www.youtube.com/watch?v=OxPv8mSTv9U', 'https://images.genius.com/73a34d501ab0ea962a4fcda19a957f86.300x300x1.jpg', 'October 12, 2016');
+VALUES ('2893922', 'Bounce Back', 'I Decided.', 'G.O.O.D. Music,Def Jam Recordings', 'http://www.youtube.com/watch?v=phr1pOFK1V8', 'https://images.genius.com/6dbe3c351a64ae50d44858c7502c4365.300x300x1.jpg', 'October 31, 2016');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
 VALUES ('2451433', 'Broccoli', 'Big Baby DRAM', NULL, 'http://www.youtube.com/watch?v=K44j-sb1SRY', 'https://images.genius.com/5c743f0ab4939e1b435db108b4118040.300x300x1.jpg', 'April 6, 2016');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2911554', 'Sidewalks', 'Starboy', 'The Weeknd XO, Inc.,Republic Records,Universal Music Group', 'http://www.youtube.com/watch?v=uxBganA7KnY', 'https://images.genius.com/2c1f31ee6278b9ccf7be5b6a3ab190ab.300x300x1.jpg', 'November 25, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2820703', 'X', 'Savage Mode', NULL, 'http://www.youtube.com/watch?v=SpXw0qiy3Wo', 'https://images.genius.com/74fd790126e1e11b02aa8a560e195859.300x300x1.jpg', 'July 15, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2465219', 'Into You', 'Dangerous Woman', 'Republic Records', 'http://www.youtube.com/watch?v=1ekZEVeXwek', 'https://images.genius.com/8cb124754c813c5231a333b984711669.300x300x1.jpg', 'May 6, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2474069', 'OOOUUU', 'Herstory', NULL, 'http://www.youtube.com/watch?v=gVf_4Ns3qLU', 'https://images.genius.com/6697b65322ef90e9777557e902c1b3c4.300x300x1.jpg', 'May 12, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2467204', 'CAN’T STOP THE FEELING!', 'NOW That’s What I Call Music! 94 [UK]', NULL, 'http://www.youtube.com/watch?v=p5RobDomh5U', 'https://images.genius.com/ceaaa71bda62cfba769bb82cdf068fb5.300x300x1.jpg', 'May 6, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2463453', 'This Is What You Came For', 'NOW That’s What I Call Music! 94 [UK]', 'Westbury Road,Columbia Records', 'http://www.youtube.com/watch?v=kOkQ4T5WO9E', 'https://images.genius.com/3cb8d810e54624e96b8e786d80a731fd.300x300x1.jpg', 'April 29, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2391084', 'Cheap Thrills', 'This Is Acting ', NULL, 'http://www.youtube.com/watch?v=31crA53Dgu0', 'https://images.genius.com/1338ed41f569e94944c52d58812c9152.300x300x1.png', 'February 11, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2819932', 'Black Beatles', 'SremmLife 2', NULL, 'http://www.youtube.com/watch?v=b8m9zhNAgKs', 'https://images.genius.com/3ae5fce394cec0598165a7fe68c8fa74.300x300x1.jpg', 'August 12, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2471960', 'No Problem', 'Coloring Book', NULL, 'http://www.youtube.com/watch?v=DVkkYlQNmbc', 'https://images.genius.com/bd58f880e3639190c45ab29cd1bdf354.300x300x1.png', 'May 12, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2427392', 'Work from Home', '7/27', NULL, 'http://www.youtube.com/watch?v=5GL9JoH4Sws', 'https://images.rapgenius.com/ec8ba94f6c3b8512a7447f0947afbf49.300x300x1.jpg', 'February 26, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2875301', 'Love Me Now', 'Darkness and Light', 'Columbia Records,G.O.O.D. Music', 'http://www.youtube.com/watch?v=NmCFY1oYDeM', 'https://images.genius.com/0fc0ccdc6e6ab2a0100feab5b0c0f9b5.300x300x1.jpg', 'October 7, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2457495', 'Side To Side', 'Dangerous Woman', 'Republic Records', 'http://www.youtube.com/watch?v=SXiSVQZLje8', 'https://images.genius.com/93e981120ecd5a594ba68ce3de503275.300x300x1.jpg', 'May 20, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2911255', 'Party Monster', 'Starboy', 'Republic Records,The Weeknd XO, Inc.,Universal Music Group', 'http://www.youtube.com/watch?v=diW6jXhLE0E', 'https://images.genius.com/235fbb681a9b3e40af8aa474ba16b9cd.300x300x1.jpg', 'November 18, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2880960', 'Rockabye', 'What Is Love?', 'Atlantic Records', 'http://www.youtube.com/watch?v=papuvlVeZg8', 'https://images.genius.com/bcbbb88e18587909cc8c4ac4c1bed346.300x300x1.jpg', 'October 21, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2872960', '24K Magic', '24K Magic', 'Atlantic Records', 'http://www.youtube.com/watch?v=UqyT8IEBkvY', 'https://images.genius.com/b282bdd631cf951aad0ed03f69a58356.300x300x1.jpg', 'October 7, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
 VALUES ('2909921', 'I Feel It Coming', 'Starboy', 'The Weeknd XO, Inc.,Universal Music Group,Republic Records', 'http://www.youtube.com/watch?v=qFLhGq0060w', 'https://images.genius.com/02d44f528e2f14794c9ac02eeb6268f3.300x300x1.jpg', 'November 18, 2016');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2464123', 'Controlla', 'Views', 'Cash Money Records,Young Money,Republic Records', 'http://www.youtube.com/watch?v=cl5QcdUI158', 'https://images.genius.com/6f4b9c41ccb18485cccd6aa364ccc3b8.300x300x1.jpg', 'April 29, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2416822', 'Don’t Let Me Down', 'Collage', 'Disruptor Records,Columbia Records', 'http://www.youtube.com/watch?v=Io0fBr1XBUA', 'https://images.genius.com/c68b35253766908063c6ea38f457974d.300x300x1.jpg', 'February 5, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2450584', 'One Dance', 'Views', 'Universal Music Group,Cash Money Records,Young Money,Republic Records', 'http://www.youtube.com/watch?v=iAbnEUA0wpA', 'https://images.rapgenius.com/103e5aed5053b63991934deae026b9d3.300x300x1.jpg', 'April 5, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2820812', 'No Heart', 'Savage Mode', NULL, 'http://www.youtube.com/watch?v=6wtwpUwxQik', 'https://images.genius.com/74fd790126e1e11b02aa8a560e195859.300x300x1.jpg', 'July 15, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2849861', 'Say You Won’t Let Go', 'Back from the Edge', NULL, 'http://www.youtube.com/watch?v=0yW7w8F2TVA', 'https://images.genius.com/90d5d7bec926733d6764a8f45d3f95f9.300x300x1.jpg', 'September 9, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2457826', 'Swang', 'SremmLife 2', 'Ear Drummers,Interscope Records', 'http://www.youtube.com/watch?v=dmJefsOErr0', 'https://images.genius.com/3ae5fce394cec0598165a7fe68c8fa74.300x300x1.jpg', 'August 12, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2922155', '​iSpy', 'Light of Mine', '​independently popular.,Atlantic Records', 'http://www.youtube.com/watch?v=5XK4v2fgMPU', 'https://images.genius.com/ebbb6ff360a4666aa2f50d08d5e7ecd6.300x300x1.jpg', 'December 2, 2016');
+VALUES ('2851057', 'Don’t Wanna Know', 'Red Pill Blues', 'Top Dawg Entertainment,Aftermath,Friends Keep Secrets,Interscope Records,222 Records', 'http://www.youtube.com/watch?v=OxPv8mSTv9U', 'https://images.genius.com/73a34d501ab0ea962a4fcda19a957f86.300x300x1.jpg', 'October 12, 2016');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
 VALUES ('2819412', 'Let Me Love You', 'Encore', 'DJ Snake Productions Limited,Interscope Records', 'http://www.youtube.com/watch?v=euCqAq6BRa4', 'https://images.genius.com/073cd0dbdf330c416680c3705d09270a.300x300x1.jpg', 'August 4, 2016');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2398213', 'Work', 'ANTi', 'Westbury Road,Roc Nation', 'http://www.youtube.com/watch?v=HL1UzIK-flA', 'https://images.genius.com/286c7810f1bbcc0d5465b9ecab71c29b.300x300x1.jpg', 'January 27, 2016');
+VALUES ('2872960', '24K Magic', '24K Magic', 'Atlantic Records', 'http://www.youtube.com/watch?v=UqyT8IEBkvY', 'https://images.genius.com/b282bdd631cf951aad0ed03f69a58356.300x300x1.jpg', 'October 7, 2016');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2867244', 'All We Know', 'Collage', NULL, 'http://www.youtube.com/watch?v=7mWQ38SpEf8', 'https://images.genius.com/b88df63fd6fa744089bb3b07188f4249.300x300x1.jpg', 'September 30, 2016');
+VALUES ('2819932', 'Black Beatles', 'SremmLife 2', NULL, 'http://www.youtube.com/watch?v=b8m9zhNAgKs', 'https://images.genius.com/3ae5fce394cec0598165a7fe68c8fa74.300x300x1.jpg', 'August 12, 2016');
+INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
+VALUES ('2450584', 'One Dance', 'Views', 'Universal Music Group,Cash Money Records,Young Money,Republic Records', 'http://www.youtube.com/watch?v=iAbnEUA0wpA', 'https://images.rapgenius.com/103e5aed5053b63991934deae026b9d3.300x300x1.jpg', 'April 5, 2016');
+INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
+VALUES ('2474069', 'OOOUUU', 'Herstory', NULL, 'http://www.youtube.com/watch?v=gVf_4Ns3qLU', 'https://images.genius.com/6697b65322ef90e9777557e902c1b3c4.300x300x1.jpg', 'May 12, 2016');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
 VALUES ('2845980', 'Bad and Boujee', 'Culture', 'Quality Control', 'http://www.youtube.com/watch?v=S-sJp1FfG7Q', 'https://images.genius.com/2fec6685c2aa2f875cab422bdb68d099.300x300x1.png', 'August 27, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2478138', 'Treat You Better', 'Illuminate', 'Island Records', 'http://www.youtube.com/watch?v=lY2yjAdbvdQ', 'https://images.genius.com/bf004d7c1ba188cb06c28e8966788a6d.300x300x1.jpg', 'June 3, 2016');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
 VALUES ('2851948', 'Starboy', 'Starboy', 'The Weeknd XO, Inc.,Universal Music Group,Republic Records', 'http://www.youtube.com/watch?v=34Na4j8AVgA', 'https://images.genius.com/1df3b30ecda8ca80f687230b43897ed1.300x300x1.jpg', 'September 21, 2016');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
 VALUES ('2458848', 'Closer', 'Collage', NULL, 'http://www.youtube.com/watch?v=0zGcUoRlhmw', 'https://images.genius.com/6e44a91448d28714d0a0f91a27193e91.300x300x1.jpg', 'July 29, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2893922', 'Bounce Back', 'I Decided.', 'G.O.O.D. Music,Def Jam Recordings', 'http://www.youtube.com/watch?v=phr1pOFK1V8', 'https://images.genius.com/6dbe3c351a64ae50d44858c7502c4365.300x300x1.jpg', 'October 31, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2463402', 'Too Good', 'Views', 'Cash Money Records,Young Money,Republic Records', 'http://www.youtube.com/watch?v=-MZAiIuAEnk', 'https://images.genius.com/6f4b9c41ccb18485cccd6aa364ccc3b8.300x300x1.jpg', 'April 29, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2481759', 'Cold Water', 'Major Lazer Essentials', 'Mad Decent,Because Music', 'http://www.youtube.com/watch?v=nBtDsQ4fhXY', 'https://images.genius.com/fcbb9f99e72af79537b124f0fc4084d0.300x300x1.jpg', 'July 22, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2400811', 'Panda', 'New English', 'G.O.O.D. Music,Def Jam Recordings', 'http://www.youtube.com/watch?v=E5ONTXHS2mM', 'https://images.genius.com/2facb805b5003f53a51edda12ae4eb36.300x300x1.jpg', 'December 15, 2015');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2905167', 'Redbone', '“Awaken, My Love!”', 'Glassnote Records', 'http://www.youtube.com/watch?v=Kp7eSUU9oy8', 'https://images.genius.com/ff5ee117884906685f99f5a37747bcaf.300x300x1.jpg', 'November 17, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2532266', 'Heathens', 'Suicide Squad: The Album', 'Warner Music Group,Atlantic Records', 'http://www.youtube.com/watch?v=UprcpdwuwCg', 'https://images.genius.com/985db59572de79931cfcb00a4379ac0e.300x300x1.png', 'June 16, 2016');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('177756', 'Rae Sremmurd', 'https://images.genius.com/c1c133f78a89899c77f8ac4329d4298b.645x645x1.jpg', 'https://genius.com/artists/Rae-sremmurd');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('500', 'Bruno Mars', 'https://images.genius.com/edca1a867127a07d29f959070b1a2a5f.838x838x1.png', 'https://genius.com/artists/Bruno-mars');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('984358', 'Starley', 'https://images.genius.com/581ff42d240d4e5d521645a704ed79e3.1000x638x1.jpg', 'https://genius.com/artists/Starley');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('16775', 'Sia', 'https://images.genius.com/6bcd2bd1708eeae7282400f1e4be633f.600x600x1.jpg', 'https://genius.com/artists/Sia');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('2358', 'The Weeknd', 'https://images.genius.com/6dddd0ef3b7f04df34e6bf95ca70975e.683x683x1.jpg', 'https://genius.com/artists/The-weeknd');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('625410', 'Rob $tone', 'https://images.genius.com/b4c411442720c17c11a38b90d3eb360d.683x683x1.png', 'https://genius.com/artists/Rob-stone');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('2069', 'Calvin Harris', 'https://images.genius.com/5a4c19533211eca706c6abdef9f14586.960x960x1.jpg', 'https://genius.com/artists/Calvin-harris');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('69342', 'Spotify', 'https://images.genius.com/141d96cdaf6ed557155c18ed91af11e6.1000x1000x1.png', 'https://genius.com/artists/Spotify');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('365', 'John Legend', 'https://images.genius.com/bd03e06628a565b7838715dfd78e346c.1000x1000x1.jpg', 'https://genius.com/artists/John-legend');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('60437', 'Fifth Harmony', 'https://images.genius.com/357e0be14e32a48ef2120ea81f0ebd64.400x400x1.jpg', 'https://genius.com/artists/Fifth-harmony');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('13539', 'Maroon 5', 'https://images.genius.com/52af76244f7392149389dfc653cd0ec1.960x960x1.jpg', 'https://genius.com/artists/Maroon-5');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('150934', 'The Chainsmokers', 'https://images.genius.com/3dbdcbf24ff923ce4e5feb7d777e76d1.400x400x1.png', 'https://genius.com/artists/The-chainsmokers');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('16751', 'Chance the Rapper', 'https://images.genius.com/9db1a9643a028d62543e44c90da3a6ad.1000x1000x1.jpg', 'https://genius.com/artists/Chance-the-rapper');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('334', 'Justin Timberlake', 'https://images.genius.com/d33775ee78f5b76308d1e024eb2c5867.1000x1000x1.jpg', 'https://genius.com/artists/Justin-timberlake');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('34107', 'James Arthur', 'https://images.genius.com/e4300142f1d00d122aebf79c77adb5d4.476x476x1.jpg', 'https://genius.com/artists/James-arthur');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('41287', 'DJ Snake', 'https://images.genius.com/788e25951d4ca358d84a6237f53b7393.1000x1000x1.jpg', 'https://genius.com/artists/Dj-snake');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('394321', 'Alessia Cara', 'https://images.genius.com/b7cacdee274b088f932aa14c4ecb2ea7.300x300x1.jpg', 'https://genius.com/artists/Alessia-cara');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('106693', 'Clean Bandit', 'https://images.genius.com/5c00e16caadfb26bdd99183ccadbd6ae.1000x1000x1.png', 'https://genius.com/artists/Clean-bandit');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('89', 'Rihanna', 'https://images.genius.com/8856725837a6157e574488f78d2804a2.960x960x1.jpg', 'https://genius.com/artists/Rihanna');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('26507', 'Ariana Grande', 'https://images.genius.com/3b393fc39f48d3acb3566075b1565ce5.320x320x1.jpg', 'https://genius.com/artists/Ariana-grande');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('204611', 'Genius', 'https://images.genius.com/8ed669cadd956443e29c70361ec4f372.1000x1000x1.png', 'https://genius.com/artists/Genius');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('980465', '21 Savage & Metro Boomin', 'https://images.genius.com/d80415ba54e748cced97ffd872f1a482.630x630x1.jpg', 'https://genius.com/artists/21-savage-and-metro-boomin');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('151666', 'Pop Genius', 'https://images.genius.com/7e177b5f3341d07397a75c280dfc54ed.512x512x1.png', 'https://genius.com/artists/Pop-genius');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('339543', 'Young M.A', 'https://images.genius.com/eac22acf0996fe81401676d52fe00183.803x803x1.jpg', 'https://genius.com/artists/Young-ma');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('23796', '​twenty one pilots', 'https://images.genius.com/5187915a46562e8316fa62a49ff1aee7.1000x1000x1.jpg', 'https://genius.com/artists/Twenty-one-pilots');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('37880', 'P-Money (Producer)', 'https://images.genius.com/dc9332ab2324e93927e007470ab16e03.489x448x1.jpg', 'https://genius.com/artists/P-money-producer');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('1061395', 'Ryan Riback', 'https://images.genius.com/453e6bc099b44b1be15ad885584e5da2.1000x1000x1.jpg', 'https://genius.com/artists/Ryan-riback');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('65238', 'Martin Garrix', 'https://images.genius.com/055a3f25a6c81bcadd91c5bf0ab6d056.400x400x1.jpg', 'https://genius.com/artists/Martin-garrix');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('241761', 'DRAM', 'https://images.genius.com/6356cb78f83b5bd8c293e6eb87909206.1000x750x1.jpg', 'https://genius.com/artists/Dram');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('195029', 'Shawn Mendes', 'https://images.genius.com/0ca4a269702ad6b21bd96a8233c33bd7.499x499x1.jpg', 'https://genius.com/artists/Shawn-mendes');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('626678', 'Desiigner', 'https://images.genius.com/cffc1f76ca88c79f2628fee1e4386a22.640x640x1.jpg', 'https://genius.com/artists/Desiigner');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('26577', 'Aminé', 'https://images.genius.com/b84dcf6b373199720716085d766624a1.540x540x1.jpg', 'https://genius.com/artists/Amine');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('665', 'Major Lazer', 'https://images.genius.com/626ea490847672aa129086040ecb259b.1000x1000x1.jpg', 'https://genius.com/artists/Major-lazer');
+VALUES ('992687', 'Vimto(TaylorSwift14)', 'https://images.genius.com/f0c7eb4741875841755dbc6a19b680f0.1000x1000x1.jpg', 'https://genius.com/artists/Vimtotaylorswift14');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('69', 'J. Cole', 'https://images.genius.com/034c70a439a2b0c4c13b8b346b560111.999x999x1.jpg', 'https://genius.com/artists/J-cole');
+VALUES ('177756', 'Rae Sremmurd', 'https://images.genius.com/c1c133f78a89899c77f8ac4329d4298b.645x645x1.jpg', 'https://genius.com/artists/Rae-sremmurd');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('980465', '21 Savage & Metro Boomin', 'https://images.genius.com/d80415ba54e748cced97ffd872f1a482.630x630x1.jpg', 'https://genius.com/artists/21-savage-and-metro-boomin');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('500', 'Bruno Mars', 'https://images.genius.com/edca1a867127a07d29f959070b1a2a5f.838x838x1.png', 'https://genius.com/artists/Bruno-mars');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('241761', 'DRAM', 'https://images.genius.com/6356cb78f83b5bd8c293e6eb87909206.1000x750x1.jpg', 'https://genius.com/artists/Dram');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('151666', 'Pop Genius', 'https://images.genius.com/7e177b5f3341d07397a75c280dfc54ed.512x512x1.png', 'https://genius.com/artists/Pop-genius');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('2180892', 'Peter Karlsson, watt & Ali Payami, Taylor Swift, Ali Payami, Max Martin & Shellback,  Clara Taroncher, Luis Ángel O’Neill, Eric Pérez, Jorge Class & Matt Rad and many more', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Peter-karlsson-watt-and-ali-payami-taylor-swift-ali-payami-max-martin-and-shellback-clara-taroncher-luis-angel-oneill-eric-perez-jorge-class-and-matt-rad-and-many-more');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('65238', 'Martin Garrix', 'https://images.genius.com/055a3f25a6c81bcadd91c5bf0ab6d056.400x400x1.jpg', 'https://genius.com/artists/Martin-garrix');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('639684', 'Snavs', 'https://images.genius.com/4fed0665ede0977530a6784a3ac935df.512x512x1.jpg', 'https://genius.com/artists/Snavs');
 INSERT INTO Person (id, name, image_url, url)
@@ -249,21 +129,43 @@ VALUES ('309511', 'Matt Rad', 'https://images.genius.com/4079e482fdc825c4fb0acbb
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('104044', 'Bebe Rexha', 'https://images.genius.com/bff53ef87d2d92efc61b59aa3dfc2539.400x400x1.jpg', 'https://genius.com/artists/Bebe-rexha');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('1745', 'Childish Gambino', 'https://images.genius.com/90d733d87dcdbe5bb5f89062e6fb381f.500x500x1.jpg', 'https://genius.com/artists/Childish-gambino');
+VALUES ('41287', 'DJ Snake', 'https://images.genius.com/788e25951d4ca358d84a6237f53b7393.1000x1000x1.jpg', 'https://genius.com/artists/Dj-snake');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('653076', 'Pop & Oak', 'https://images.genius.com/c0561d9357efa99cc71691a26085390d.286x286x1.jpg', 'https://genius.com/artists/Pop-and-oak');
+VALUES ('13539', 'Maroon 5', 'https://images.genius.com/52af76244f7392149389dfc653cd0ec1.960x960x1.jpg', 'https://genius.com/artists/Maroon-5');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('394320', 'Sebastian Kole', 'https://images.genius.com/aaf366a2883abea4b39ad4f70cc6da06.1000x600x1.jpg', 'https://genius.com/artists/Sebastian-kole');
+VALUES ('204611', 'Genius', 'https://images.genius.com/8ed669cadd956443e29c70361ec4f372.1000x1000x1.png', 'https://genius.com/artists/Genius');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('675997', 'Coleridge Tillman', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Coleridge-tillman');
+VALUES ('1002050', 'Pasqué', 'https://s3.amazonaws.com/filepicker-images-rapgenius/DrpFz7maSSm1S6zE9Y9F_15035648_2150274645197051_2348732213329133568_n.jpg', 'https://genius.com/artists/Pasque');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('625410', 'Rob $tone', 'https://images.genius.com/b4c411442720c17c11a38b90d3eb360d.683x683x1.png', 'https://genius.com/artists/Rob-stone');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('150934', 'The Chainsmokers', 'https://images.genius.com/3dbdcbf24ff923ce4e5feb7d777e76d1.400x400x1.png', 'https://genius.com/artists/The-chainsmokers');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('44080', 'Migos', 'https://images.genius.com/f9c991a8f021b26424a0ce9efa8ccee3.1000x1000x1.jpg', 'https://genius.com/artists/Migos');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('2358', 'The Weeknd', 'https://images.genius.com/6dddd0ef3b7f04df34e6bf95ca70975e.683x683x1.jpg', 'https://genius.com/artists/The-weeknd');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('339543', 'Young M.A', 'https://images.genius.com/eac22acf0996fe81401676d52fe00183.803x803x1.jpg', 'https://genius.com/artists/Young-ma');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('130', 'Drake', 'https://images.genius.com/bc985312781041952f9a11b657d7d0b8.905x905x1.jpg', 'https://genius.com/artists/Drake');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('492', 'Big Sean', 'https://images.genius.com/fe9d52d64ed689e2e66252f43efab598.1000x1000x1.jpg', 'https://genius.com/artists/Big-sean');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('34533', 'Ben Billions', 'https://images.genius.com/09f61531af507bb45d353f1d3e6545ae.522x522x1.jpg', 'https://genius.com/artists/Ben-billions');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('27655', 'Doc McKinney', 'https://images.genius.com/3d76bf45c9a8ac094098e8630665e9d6.999x999x1.jpg', 'https://genius.com/artists/Doc-mckinney');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('1362', 'Belly', 'https://s3.amazonaws.com/filepicker-images-rapgenius/HorpSGA7Qqar8HM5ScIx_Belly1.jpg', 'https://genius.com/artists/Belly');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('15740', 'Lana Del Rey', 'https://images.genius.com/e2096df3a04a6860907c2ba8a9b89126.1000x1000x1.jpg', 'https://genius.com/artists/Lana-del-rey');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('69', 'J. Cole', 'https://images.genius.com/034c70a439a2b0c4c13b8b346b560111.999x999x1.jpg', 'https://genius.com/artists/J-cole');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('182877', 'Velous', 'https://images.genius.com/0d601c26fcba5b61abcb4b6bad3b78b5.964x964x1.jpg', 'https://genius.com/artists/Velous');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('662', 'Boi-1da', 'https://images.genius.com/f1b95b403a63c49b2248d0e5c153092a.858x858x1.jpg', 'https://genius.com/artists/Boi-1da');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('27616', 'Vinylz', 'https://s3.amazonaws.com/rapgenius/1372924433_Vinylz-e1366826599913.jpg', 'https://genius.com/artists/Vinylz');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('44080', 'Migos', 'https://images.genius.com/f9c991a8f021b26424a0ce9efa8ccee3.1000x1000x1.jpg', 'https://genius.com/artists/Migos');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('51166', 'Purp Dogg', 'https://images.genius.com/2a80f7adf7dd1656b6145f75c03e86a3.640x640x1.jpg', 'https://genius.com/artists/Purp-dogg');
 INSERT INTO Person (id, name, image_url, url)
@@ -279,69 +181,45 @@ VALUES ('10586', 'Spooks', 'https://images.genius.com/dd0f83ca3b12867ca2926978df
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('579526', 'J. Davi$', 'https://s3.amazonaws.com/filepicker-images-rapgenius/fZWy1dVS0yFt9YCWjCWQ_avatars-000215087193-52zi81-t500x500.jpg', 'https://genius.com/artists/J-davi');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('1002050', 'Pasqué', 'https://s3.amazonaws.com/filepicker-images-rapgenius/DrpFz7maSSm1S6zE9Y9F_15035648_2150274645197051_2348732213329133568_n.jpg', 'https://genius.com/artists/Pasque');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('992687', 'Vimto(TaylorSwift14)', 'https://images.genius.com/f0c7eb4741875841755dbc6a19b680f0.1000x1000x1.jpg', 'https://genius.com/artists/Vimtotaylorswift14');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('130', 'Drake', 'https://images.genius.com/bc985312781041952f9a11b657d7d0b8.905x905x1.jpg', 'https://genius.com/artists/Drake');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('217208', 'Lil Uzi Vert', 'https://images.genius.com/05f2ee7ef53d1a68352ec67cda793d0c.469x469x1.jpg', 'https://genius.com/artists/Lil-uzi-vert');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('52806', 'Jake Gosling', 'https://images.genius.com/68f24fd6e97083af9dd6700777fdf6fc.1000x708x1.jpg', 'https://genius.com/artists/Jake-gosling');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('354283', 'Teddy Geiger', 'https://images.genius.com/79af4a2ba84ef0254d9bf68913a7c792.432x432x1.png', 'https://genius.com/artists/Teddy-geiger');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('652571', 'Danny Parker', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Danny-parker');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('14777', 'Elite', 'https://images.genius.com/5fbda8ecf10964f411746a9e716b5e91.340x223x1.png', 'https://genius.com/artists/Elite');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('647112', 'Ronnie Foster', 'https://images.genius.com/782aa8312de16d34082f3dbebe95f0dc.400x400x1.jpg', 'https://genius.com/artists/Ronnie-foster');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('39585', 'Kuk Harrell', 'https://images.genius.com/a16a2b3bcebd44e926a780725d37e9c7.400x400x1.jpg', 'https://genius.com/artists/Kuk-harrell');
-INSERT INTO Person (id, name, image_url, url)
 VALUES ('28169', 'Frank Dukes', 'https://images.genius.com/cdc1e3192af06b780209ec9e4959d1b1.1000x1000x1.jpg', 'https://genius.com/artists/Frank-dukes');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('55089', 'Twice as Nice', 'https://images.genius.com/722bcad19536a240e5608d83933a1ba7.200x200x1.jpg', 'https://genius.com/artists/Twice-as-nice');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('29780', 'Mustard', 'https://s3.amazonaws.com/filepicker-images-rapgenius/a5Gy2GnyR0ijw96H739w_dj-mustard-bw-2016-billboard-1548.jpg', 'https://genius.com/artists/Mustard');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('671661', 'Nicholas Audino', 'https://images.genius.com/9c061e33bcb99d8777d86a96f7aa66a5.361x361x1.png', 'https://genius.com/artists/Nicholas-audino');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('642979', 'Sickdrumz', 'https://images.genius.com/1aa98ae799be2f0a74a2ca6734adc385.573x573x1.jpg', 'https://genius.com/artists/Sickdrumz');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('1306886', 'Derrus Rachel', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Derrus-rachel');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('499861', 'Lewis Hughes', 'https://images.genius.com/b17a4a1ed8a7e5ce08daa1abeb57f837.394x394x1.png', 'https://genius.com/artists/Lewis-hughes');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('325049', 'Khaled Rohaim', 'https://images.genius.com/49caf45c9dfa0d332c9b3ad3e68522a7.376x376x1.jpg', 'https://genius.com/artists/Khaled-rohaim');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('19132', 'Prince Charlez', 'https://images.genius.com/7b8078f770bc6602fb81b64b25632fad.1000x1000x1.jpg', 'https://genius.com/artists/Prince-charlez');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('162702', 'Starrah', 'https://images.genius.com/1ea6c29578bc6e73588d14f269246ffb.770x770x1.png', 'https://genius.com/artists/Starrah');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('44575', 'London on da Track', 'https://images.genius.com/fcb14975af51a27a0ffb278a7524c81d.400x400x1.jpg', 'https://genius.com/artists/London-on-da-track');
-INSERT INTO Person (id, name, image_url, url)
 VALUES ('430404', '21 Savage', 'https://images.genius.com/38af6f15c4c3af0551bde5b9ee778d6e.889x889x1.jpg', 'https://genius.com/artists/21-savage');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('492', 'Big Sean', 'https://images.genius.com/fe9d52d64ed689e2e66252f43efab598.1000x1000x1.jpg', 'https://genius.com/artists/Big-sean');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('33010', 'Metro Boomin', 'https://images.genius.com/94086fe06834a3f3147dfbd52f729cad.940x940x1.jpg', 'https://genius.com/artists/Metro-boomin');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('2180892', 'Peter Karlsson, watt & Ali Payami, Taylor Swift, Ali Payami, Max Martin & Shellback,  Clara Taroncher, Luis Ángel O’Neill, Eric Pérez, Jorge Class & Matt Rad and many more', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Peter-karlsson-watt-and-ali-payami-taylor-swift-ali-payami-max-martin-and-shellback-clara-taroncher-luis-angel-oneill-eric-perez-jorge-class-and-matt-rad-and-many-more');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('27655', 'Doc McKinney', 'https://images.genius.com/3d76bf45c9a8ac094098e8630665e9d6.999x999x1.jpg', 'https://genius.com/artists/Doc-mckinney');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('34533', 'Ben Billions', 'https://images.genius.com/09f61531af507bb45d353f1d3e6545ae.522x522x1.jpg', 'https://genius.com/artists/Ben-billions');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('30425', 'Cirkut', 'https://s3.amazonaws.com/rapgenius/cirkut.jpg', 'https://genius.com/artists/Cirkut');
-INSERT INTO Person (id, name, image_url, url)
 VALUES ('2197', 'Future', 'https://images.genius.com/833e2b1d817f1320be26668c01b3be33.780x780x1.png', 'https://genius.com/artists/Future');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('1362', 'Belly', 'https://s3.amazonaws.com/filepicker-images-rapgenius/HorpSGA7Qqar8HM5ScIx_Belly1.jpg', 'https://genius.com/artists/Belly');
+VALUES ('27486', 'TM88', 'https://images.genius.com/8bdb068c7401b48e7d04f2d6316de50f.526x526x1.png', 'https://genius.com/artists/Tm88');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('574528', 'DaHeala', 'https://images.genius.com/9c08e6de716f1f6838672ca295a32747.1000x1000x1.jpg', 'https://genius.com/artists/Daheala');
+VALUES ('336528', 'Smash David', 'https://images.genius.com/efb300f752bca48079bc4d94587fb7f3.382x382x1.png', 'https://genius.com/artists/Smash-david');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('6412', 'KYLE', 'https://images.genius.com/699fca331388df27700e999e21f833db.717x717x1.jpg', 'https://genius.com/artists/Kyle');
+VALUES ('330059', 'Amaire Johnson', 'https://images.genius.com/522ae0fe61ca0000abd18f8011a9fc80.525x525x1.jpg', 'https://genius.com/artists/Amaire-johnson');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('11305', 'Hitmaka', 'https://images.genius.com/41879576f4a18b2015200b6f7b27b635.304x304x1.jpg', 'https://genius.com/artists/Hitmaka');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('72', 'Kanye West', 'https://images.genius.com/0a1795a288ff88f7bb6026880dcaf9a9.1000x1000x1.jpg', 'https://genius.com/artists/Kanye-west');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('278', 'Jeremih', 'https://images.genius.com/59567e4918671304d37eb021331d239d.550x550x1.jpg', 'https://genius.com/artists/Jeremih');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('643405', 'Rogét Chahayed', 'https://images.genius.com/0ec7d86de5ad68aa2006d7707595ae7f.400x400x1.jpg', 'https://genius.com/artists/Roget-chahayed');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('579558', 'Karl Rubin Brutus', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Karl-rubin-brutus');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('51380', 'J Gramm', 'https://images.genius.com/a2988797673127ae5dfe26f242d01ed9.1000x1000x1.jpg', 'https://genius.com/artists/J-gramm');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('610968', 'Lil Yachty', 'https://images.genius.com/e9ed7a062d51e2c00a01c863ce55826f.851x851x1.jpg', 'https://genius.com/artists/Lil-yachty');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('13585', 'Daft Punk', 'https://images.genius.com/a508888fd6a96cadcf835ecf95b1c1ae.1000x1000x1.jpg', 'https://genius.com/artists/Daft-punk');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('1033803', 'Eric Chedeville', 'https://images.genius.com/fecb00f20126f25b5c2ccd77af3aa17e.581x581x1.jpg', 'https://genius.com/artists/Eric-chedeville');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('31634', 'Guy-Manuel de Homem-Christo', 'https://images.genius.com/ebe2e5dbb54f1414d3d0cbfd6c5c5d52.593x593x1.jpg', 'https://genius.com/artists/Guy-manuel-de-homem-christo');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('42463', 'Thomas Bangalter', 'https://images.genius.com/f96ae0accbefb5cea27439d1060fc259.813x813x1.jpg', 'https://genius.com/artists/Thomas-bangalter');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('30425', 'Cirkut', 'https://s3.amazonaws.com/rapgenius/cirkut.jpg', 'https://genius.com/artists/Cirkut');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('160032', 'Louie Lastic', 'https://images.genius.com/ee27a61769e10cd12a06ab5016d15324.638x638x1.jpg', 'https://genius.com/artists/Louie-lastic');
 INSERT INTO Person (id, name, image_url, url)
@@ -365,35 +243,31 @@ VALUES ('1421', 'Kendrick Lamar', 'https://images.genius.com/25d8a9c93ab97e9e6d5
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('669', 'Adam Levine', 'https://images.genius.com/cc964ee2d36cd6f5046f18c6696f6992.1000x1000x1.jpg', 'https://genius.com/artists/Adam-levine');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('643405', 'Rogét Chahayed', 'https://images.genius.com/0ec7d86de5ad68aa2006d7707595ae7f.400x400x1.jpg', 'https://genius.com/artists/Roget-chahayed');
+VALUES ('576544', '​watt', 'https://s3.amazonaws.com/filepicker-images-rapgenius/ioZag93cQyC14aoRUlrY_C1iBmacUkAAYmDp.jpg', 'https://genius.com/artists/Watt');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('579558', 'Karl Rubin Brutus', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Karl-rubin-brutus');
+VALUES ('143754', 'Louis Bell', 'https://images.genius.com/e5e5ab07410bcde1d4bc916ee86f6ec1.727x727x1.jpg', 'https://genius.com/artists/Louis-bell');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('51380', 'J Gramm', 'https://images.genius.com/a2988797673127ae5dfe26f242d01ed9.1000x1000x1.jpg', 'https://genius.com/artists/J-gramm');
+VALUES ('468880', 'Edwin Perez', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Edwin-perez');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('610968', 'Lil Yachty', 'https://images.genius.com/e9ed7a062d51e2c00a01c863ce55826f.851x851x1.jpg', 'https://genius.com/artists/Lil-yachty');
+VALUES ('468879', 'Teddy Mendez', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Teddy-mendez');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('147213', 'Bobby Raps', 'https://images.genius.com/e9a2b46e9953b94dba77a50118e800ba.705x705x1.jpg', 'https://genius.com/artists/Bobby-raps');
+VALUES ('401980', 'Steve Marsden', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Steve-marsden');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('27467', 'Ali Shaheed Muhammad', 'https://images.genius.com/ace9cb697c36e9db11a9e1cc64a76b01.224x224x1.jpg', 'https://genius.com/artists/Ali-shaheed-muhammad');
+VALUES ('1009606', 'Lumidee Cedeno', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Lumidee-cedeno');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('162101', 'Daniel Wilson', 'https://images.genius.com/456e4d65147d28270b66bbccaa8aa7fb.512x512x1.jpg', 'https://genius.com/artists/Daniel-wilson');
+VALUES ('149418', 'Brian Lee', 'https://images.genius.com/f6afbd9c79c2861ab29f6343eb30ac5a.330x330x1.jpg', 'https://genius.com/artists/Brian-lee');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('155062', 'ILYA', 'https://images.genius.com/addfef0d7220105b2f51da5a73fa008c.587x587x1.jpg', 'https://genius.com/artists/Ilya');
+VALUES ('986640', 'Austin Rosen', 'https://images.genius.com/3ec6fe9a0ee0dc90c755de7ddf95138a.296x296x1.png', 'https://genius.com/artists/Austin-rosen');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('27835', 'Max Martin', 'https://images.genius.com/a51caeddc969b881e80f7da75b6930ba.539x539x1.jpg', 'https://genius.com/artists/Max-martin');
+VALUES ('357', 'Justin Bieber', 'https://images.genius.com/b8a71aef947716b9e24dcbea07fd23d1.800x800x1.jpg', 'https://genius.com/artists/Justin-bieber');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('302826', 'Alexander Kronlund', 'https://images.genius.com/392e64ad9329d57363b34d41f13e2a35.401x401x1.jpg', 'https://genius.com/artists/Alexander-kronlund');
+VALUES ('329564', 'Ali Tamposi', 'https://images.genius.com/6174204cacce64faf00b87547367d359.1000x1000x1.jpg', 'https://genius.com/artists/Ali-tamposi');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('179206', 'Savan Kotecha', 'https://images.genius.com/4bc4f41a26a9ddccb4016b909f0c2ca0.438x344x1.jpg', 'https://genius.com/artists/Savan-kotecha');
+VALUES ('1012903', 'Shampoo Press & Curl', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Shampoo-press-and-curl');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('64420', 'NY Bangers', 'https://images.genius.com/c22166ff72aeed946c07612b6ba3758e.512x512x1.jpg', 'https://genius.com/artists/Ny-bangers');
+VALUES ('49094', 'Philip Lawrence', 'https://images.genius.com/6ee4730c24f39ead0ad526ecc8d4fc8e.300x300x1.jpg', 'https://genius.com/artists/Philip-lawrence');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('27836', 'Shellback', 'https://images.genius.com/9389950a951ffc6fa639e2817609adee.618x348x1.jpg', 'https://genius.com/artists/Shellback');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('1177', 'Taylor Swift', 'https://images.genius.com/7b60eaf2dfa28ce4267bf59f30f352d1.400x400x1.jpg', 'https://genius.com/artists/Taylor-swift');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('55444', 'Greg Kurstin', 'https://images.genius.com/1e4b1db8fef9629acc9f622e3f4ecbf9.440x440x1.jpg', 'https://genius.com/artists/Greg-kurstin');
+VALUES ('47127', 'Brody Brown', 'https://images.genius.com/31498855fd807d98e9593889d040e3c0.400x400x1.jpg', 'https://genius.com/artists/Brody-brown');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('29978', 'Mike WiLL Made-It', 'https://images.genius.com/1d29ef19a466f4bf49282b4d020cb593.895x895x1.jpg', 'https://genius.com/artists/Mike-will-made-it');
 INSERT INTO Person (id, name, image_url, url)
@@ -402,102 +276,6 @@ INSERT INTO Person (id, name, image_url, url)
 VALUES ('335759', 'Slim Jxmmi', 'https://images.genius.com/0611b61677b3163a555e15a1ee50fe0a.976x976x1.jpg', 'https://genius.com/artists/Slim-jxmmi');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('209139', 'Swae Lee', 'https://images.genius.com/9a8ca2288987bb9d4e450ff5de598c78.905x905x1.jpg', 'https://genius.com/artists/Swae-lee');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('143593', 'Brasstracks', 'https://images.genius.com/c52a776fa9f1b7902f7cc6a24b926b23.400x400x1.jpg', 'https://genius.com/artists/Brasstracks');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('130026', '​theMIND', 'https://images.genius.com/e698c1c195f0b946157be8602c3c4902.467x467x1.jpg', 'https://genius.com/artists/Themind');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('668557', 'Rachel Cato', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Rachel-cato');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('4', 'Lil Wayne', 'https://images.genius.com/b42bde67bc461dd55a00b577f33673bb.745x745x1.jpg', 'https://genius.com/artists/Lil-wayne');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('668556', 'Lakeitsha Williams', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Lakeitsha-williams');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('668555', 'Jonathan Hoard', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Jonathan-hoard');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('641040', 'Jeff Lane', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Jeff-lane');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('668554', 'Jamie Woods', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Jamie-woods');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('668553', 'James Francies', 'https://images.genius.com/441e8e3225533e1e9f2ad635b79c61ec.1000x1000x1.jpg', 'https://genius.com/artists/James-francies');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('668366', 'HaHa Davis', 'https://images.genius.com/cbae93de42ce26cdca81fe7bab952c35.300x300x1.jpg', 'https://genius.com/artists/Haha-davis');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('572674', 'Cam O’bi', 'https://images.genius.com/4a69e4b0d7ab72f32a7c0adb9d002296.313x313x1.jpg', 'https://genius.com/artists/Cam-obi');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('668552', 'Ashwin Torke', 'https://i.genius.com/bb9c12197ce3e7557ebab26678cffd7d30c88a85?url=https%3A%2F%2Fplatform-lookaside.fbsbx.com%2Fplatform%2Fprofilepic%2F%3Fasid%3D661287730881020%26height%3D200%26width%3D200%26ext%3D1529167957%26hash%3DAeTwlqoWdtBRmw4z', 'https://genius.com/artists/Ashwin-torke');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('14325', '2 Chainz', 'https://images.genius.com/f82a00deb2e816cc89005a9839eead69.1000x1000x1.jpg', 'https://genius.com/artists/2-chainz');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('325827', 'DallasK', 'https://images.genius.com/ab1227a9cca02d3ae5a918ab4d1a378b.500x500x1.jpg', 'https://genius.com/artists/Dallask');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('9654', 'Ammo', 'https://images.genius.com/50659c5a49a5e2c51914e685479fabaa.220x280x1.jpg', 'https://genius.com/artists/Ammo');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('653079', 'Jude Demorest', 'https://images.genius.com/c73492943bebf167d5ff4fb93b750817.1000x1000x1.jpg', 'https://genius.com/artists/Jude-demorest');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('149418', 'Brian Lee', 'https://images.genius.com/f6afbd9c79c2861ab29f6343eb30ac5a.330x330x1.jpg', 'https://genius.com/artists/Brian-lee');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('25005', 'Ty Dolla $ign', 'https://images.genius.com/d07735e0ce367e88926fd0bb120fb90d.1000x1000x1.jpg', 'https://genius.com/artists/Ty-dolla-sign');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('77014', 'Eskeerdo', 'https://images.genius.com/cf0771ffe13e96b1a59720cfa5f5bc34.1000x1000x1.jpg', 'https://genius.com/artists/Eskeerdo');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('228334', 'Blake Mills', 'https://images.genius.com/4d750318687e942ca5ad07efc09d6c48.700x700x1.jpg', 'https://genius.com/artists/Blake-mills');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('92', 'Nicki Minaj', 'https://images.genius.com/262312ddbb51aa7e96309f5a9d5daa97.843x843x1.jpg', 'https://genius.com/artists/Nicki-minaj');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('15740', 'Lana Del Rey', 'https://images.genius.com/e2096df3a04a6860907c2ba8a9b89126.1000x1000x1.jpg', 'https://genius.com/artists/Lana-del-rey');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('51766', 'Steve Mac', 'https://images.genius.com/22c669fee07999a9a8f32a6e47ed11d3.452x452x1.jpg', 'https://genius.com/artists/Steve-mac');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('188055', 'Mark Ralph', 'https://images.genius.com/432b37bfaca9f57e21966ccd609edfd1.356x356x1.jpg', 'https://genius.com/artists/Mark-ralph');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('740', 'Sean Paul', 'https://images.genius.com/0ee770c8815ffef8de79f96ea89705a3.1000x1000x1.jpg', 'https://genius.com/artists/Sean-paul');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('262801', 'Ina Wroldsen', 'https://images.genius.com/f5a6bf30936fc220300e13bc71576490.249x249x1.jpg', 'https://genius.com/artists/Ina-wroldsen');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('188054', 'Jack Patterson', 'https://images.genius.com/078f4541df880eebb368d24289e5352d.1000x1000x1.jpg', 'https://genius.com/artists/Jack-patterson');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('296675', 'Anne-Marie', 'https://images.genius.com/0f27e23577a8586401d9dac5f3d0e132.1000x1000x1.jpg', 'https://genius.com/artists/Anne-marie');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('1012903', 'Shampoo Press & Curl', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Shampoo-press-and-curl');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('49094', 'Philip Lawrence', 'https://images.genius.com/6ee4730c24f39ead0ad526ecc8d4fc8e.300x300x1.jpg', 'https://genius.com/artists/Philip-lawrence');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('47127', 'Brody Brown', 'https://images.genius.com/31498855fd807d98e9593889d040e3c0.400x400x1.jpg', 'https://genius.com/artists/Brody-brown');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('13585', 'Daft Punk', 'https://images.genius.com/a508888fd6a96cadcf835ecf95b1c1ae.1000x1000x1.jpg', 'https://genius.com/artists/Daft-punk');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('1033803', 'Eric Chedeville', 'https://images.genius.com/fecb00f20126f25b5c2ccd77af3aa17e.581x581x1.jpg', 'https://genius.com/artists/Eric-chedeville');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('31634', 'Guy-Manuel de Homem-Christo', 'https://images.genius.com/ebe2e5dbb54f1414d3d0cbfd6c5c5d52.593x593x1.jpg', 'https://genius.com/artists/Guy-manuel-de-homem-christo');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('42463', 'Thomas Bangalter', 'https://images.genius.com/f96ae0accbefb5cea27439d1060fc259.813x813x1.jpg', 'https://genius.com/artists/Thomas-bangalter');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('34522', 'Supa Dups', 'https://images.genius.com/927589eb674709d92438f81ae2cf2c23.630x420x1.jpg', 'https://genius.com/artists/Supa-dups');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('69949', 'Di Genius', 'https://images.genius.com/a5df7a4dc09ea8129e75470118c5d779.459x344x1.jpg', 'https://genius.com/artists/Di-genius');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('55684', 'Allen Ritter', 'https://images.genius.com/527f5a08bbacac18e6873e1d3817f386.400x400x1.jpg', 'https://genius.com/artists/Allen-ritter');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('663015', 'Andrew Thomas', 'https://images.genius.com/fbdc3e1bcfe871617b7dd098a24419e3.300x300x1.jpg', 'https://genius.com/artists/Andrew-thomas');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('663014', 'Patrick Roberts', 'https://images.genius.com/1c959687f9363e36de8ac55e4373e1bc.345x345x1.jpg', 'https://genius.com/artists/Patrick-roberts');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('663013', 'Garu Jackson', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Garu-jackson');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('663012', 'Donald Dennis', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Donald-dennis');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('663011', 'Aquaman', 'https://images.genius.com/f1681f41c7b8022ab48828671a79f550.479x479x1.jpg', 'https://genius.com/artists/Aquaman');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('8550', 'Beenie Man', 'https://images.genius.com/b32c23227d1261eac85227d5867eab2e.788x788x1.jpg', 'https://genius.com/artists/Beenie-man');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('71876', 'Scott Harris', 'https://images.genius.com/c9b03c89c8b881a36166d1099c4d7778.1000x1000x1.jpg', 'https://genius.com/artists/Scott-harris');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('551992', 'Emily Warren', 'https://images.genius.com/dee60c7cd10972d77896ce60fc308523.400x400x1.jpg', 'https://genius.com/artists/Emily-warren');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('660558', 'Andrew Taggart', 'https://images.genius.com/5365afd9d2fbedf518a6d079b4573b8f.766x766x1.jpg', 'https://genius.com/artists/Andrew-taggart');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('508218', 'Daya', 'https://images.genius.com/0397fc4cb5fad9d8d7c665e48995ab0d.400x400x1.png', 'https://genius.com/artists/Daya');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('64581', 'Nineteen85', 'https://images.genius.com/552cc3e0e81342a8f8fe386f00592a3e.1000x1000x1.jpg', 'https://genius.com/artists/Nineteen85');
 INSERT INTO Person (id, name, image_url, url)
@@ -515,71 +293,17 @@ VALUES ('20148', 'Wizkid', 'https://images.genius.com/e529d883159b0d872b49e9e67b
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('27612', '40', 'https://images.genius.com/c999dd154986a45b8981323a2ea53f98.620x380x1.jpg', 'https://genius.com/artists/40');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('23315', 'Southside', 'https://images.genius.com/4aafba6bdefe067064ef8448e66fd8a8.429x429x1.png', 'https://genius.com/artists/Southside');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('32429', 'CuBeatz', 'https://images.genius.com/100abac48eecf513dad29bf17db16013.700x700x1.jpg', 'https://genius.com/artists/Cubeatz');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('669794', 'Tim Gomringer', 'https://images.genius.com/cb7ce8780ac63d3fd5d53e34f4e4f758.205x205x1.png', 'https://genius.com/artists/Tim-gomringer');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('669795', 'Kevin Gomringer', 'https://images.genius.com/3b2945045a96fcdb6567cb5647f22712.212x212x1.png', 'https://genius.com/artists/Kevin-gomringer');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('1028969', 'Alex Beitzke', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Alex-beitzke');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('618451', 'Bradley Spence', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Bradley-spence');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('997039', 'Neil Ormandy', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Neil-ormandy');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('997040', 'Steve Solomon', 'https://images.genius.com/aa488e485081376b670b5e0536af95a5.510x510x1.png', 'https://genius.com/artists/Steve-solomon');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('43733', 'P-Nasty', 'https://images.genius.com/2d36dd42cb4872649f750fd2403db38c.537x537x1.jpg', 'https://genius.com/artists/P-nasty');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('988135', 'Naz', 'https://images.genius.com/7c98869718692329e3d2bda4ad66ecda.500x500x1.jpg', 'https://genius.com/artists/Naz');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('593495', 'Lege Kale', 'https://images.genius.com/7d46cda7ceb1c3f6f27b525bbe2629e0.1000x1000x1.jpg', 'https://genius.com/artists/Lege-kale');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('573625', 'SuperDuperBrick', 'https://images.genius.com/305dd26443f68aafe10993e48727703c.804x804x1.jpg', 'https://genius.com/artists/Superduperbrick');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('576544', '​watt', 'https://s3.amazonaws.com/filepicker-images-rapgenius/ioZag93cQyC14aoRUlrY_C1iBmacUkAAYmDp.jpg', 'https://genius.com/artists/Watt');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('143754', 'Louis Bell', 'https://images.genius.com/e5e5ab07410bcde1d4bc916ee86f6ec1.727x727x1.jpg', 'https://genius.com/artists/Louis-bell');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('468880', 'Edwin Perez', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Edwin-perez');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('468879', 'Teddy Mendez', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Teddy-mendez');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('401980', 'Steve Marsden', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Steve-marsden');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('1009606', 'Lumidee Cedeno', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Lumidee-cedeno');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('986640', 'Austin Rosen', 'https://images.genius.com/3ec6fe9a0ee0dc90c755de7ddf95138a.296x296x1.png', 'https://genius.com/artists/Austin-rosen');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('357', 'Justin Bieber', 'https://images.genius.com/b8a71aef947716b9e24dcbea07fd23d1.800x800x1.jpg', 'https://genius.com/artists/Justin-bieber');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('329564', 'Ali Tamposi', 'https://images.genius.com/6174204cacce64faf00b87547367d359.1000x1000x1.jpg', 'https://genius.com/artists/Ali-tamposi');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('139040', 'Sevn Thomas', 'https://images.genius.com/988261766b0700b37e539389f8b39808.428x428x1.jpg', 'https://genius.com/artists/Sevn-thomas');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('634300', 'Rich Stephenson', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Rich-stephenson');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('329739', 'Monte Moir', 'https://images.genius.com/94731fb20c81097bb6987dabe6eac4f8.240x239x1.jpg', 'https://genius.com/artists/Monte-moir');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('47131', 'PARTYNEXTDOOR', 'https://images.genius.com/2c94d878675cd182a5b52c28073f67eb.683x683x1.jpg', 'https://genius.com/artists/Partynextdoor');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('876840', 'SHY Martin', 'https://images.genius.com/9c76e8d16bcd127a5038da103994264d.1000x1000x1.jpg', 'https://genius.com/artists/Shy-martin');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('660556', 'SHY Nodi', 'https://images.genius.com/04dc52cc0891ace128c100a3083c7e09.640x640x1.jpg', 'https://genius.com/artists/Shy-nodi');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('227626', 'Phoebe Ryan', 'https://images.genius.com/36f629b7a8fb9fe41e9313e2bea04a2e.770x600x1.jpg', 'https://genius.com/artists/Phoebe-ryan');
+VALUES ('64420', 'NY Bangers', 'https://images.genius.com/c22166ff72aeed946c07612b6ba3758e.512x512x1.jpg', 'https://genius.com/artists/Ny-bangers');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('59421', 'G Koop', 'https://images.genius.com/ae27979a9a5c251125d89ae28f83064a.315x315x1.jpg', 'https://genius.com/artists/G-koop');
+INSERT INTO Person (id, name, image_url, url)
+VALUES ('217208', 'Lil Uzi Vert', 'https://images.genius.com/05f2ee7ef53d1a68352ec67cda793d0c.469x469x1.jpg', 'https://genius.com/artists/Lil-uzi-vert');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('88813', 'Offset', 'https://images.genius.com/c7998ea0216f8ddeaaadb5ca063b4ae3.1000x1000x1.jpg', 'https://genius.com/artists/Offset');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('61600', 'Quavo', 'https://images.genius.com/f1ff6c1619a1b9e7adaa8b8789f23c68.563x563x1.jpg', 'https://genius.com/artists/Quavo');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('1030827', 'DJ Kyriakides', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Dj-kyriakides');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('131676', 'Dan Romer', 'https://images.genius.com/8e40b78c5a581a8096e134e24cc5b593.521x521x1.jpg', 'https://genius.com/artists/Dan-romer');
+VALUES ('574528', 'DaHeala', 'https://images.genius.com/9c08e6de716f1f6838672ca295a32747.1000x1000x1.jpg', 'https://genius.com/artists/Daheala');
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('658975', 'Joe King', 'https://images.genius.com/e07dc06f917b0cd5fca17f959a46b398.442x442x1.jpg', 'https://genius.com/artists/Joe-king');
 INSERT INTO Person (id, name, image_url, url)
@@ -591,357 +315,147 @@ VALUES ('984204', 'Shaun Frank', 'https://images.genius.com/86cbbdff403c8d88e791
 INSERT INTO Person (id, name, image_url, url)
 VALUES ('984008', 'Frederic Kennett', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/Frederic-kennett');
 INSERT INTO Person (id, name, image_url, url)
-VALUES ('27486', 'TM88', 'https://images.genius.com/8bdb068c7401b48e7d04f2d6316de50f.526x526x1.png', 'https://genius.com/artists/Tm88');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('336528', 'Smash David', 'https://images.genius.com/efb300f752bca48079bc4d94587fb7f3.382x382x1.png', 'https://genius.com/artists/Smash-david');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('330059', 'Amaire Johnson', 'https://images.genius.com/522ae0fe61ca0000abd18f8011a9fc80.525x525x1.jpg', 'https://genius.com/artists/Amaire-johnson');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('11305', 'Hitmaka', 'https://images.genius.com/41879576f4a18b2015200b6f7b27b635.304x304x1.jpg', 'https://genius.com/artists/Hitmaka');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('72', 'Kanye West', 'https://images.genius.com/0a1795a288ff88f7bb6026880dcaf9a9.1000x1000x1.jpg', 'https://genius.com/artists/Kanye-west');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('278', 'Jeremih', 'https://images.genius.com/59567e4918671304d37eb021331d239d.550x550x1.jpg', 'https://genius.com/artists/Jeremih');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('541009', 'Maneesh', 'https://images.genius.com/9f5500f8c96ae5235a7572eaac467bce.512x512x1.jpg', 'https://genius.com/artists/Maneesh');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('29497', 'Dre Skull', 'https://images.genius.com/3a01965b067fead843b0a00a1f86a0d7.1000x668x1.jpg', 'https://genius.com/artists/Dre-skull');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('17195', 'Popcaan', 'https://images.genius.com/22ad26a6ad5981df00cee1a55f31fcbc.741x741x1.jpg', 'https://genius.com/artists/Popcaan');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('663034', 'A. Martin', 'https://assets.genius.com/images/default_avatar_300.png?1588262610', 'https://genius.com/artists/A-martin');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('25983', 'King Henry', 'https://images.genius.com/17f4117f4f11952c9704a97863bebcd4.1000x1000x1.jpg', 'https://genius.com/artists/King-henry');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('412137', 'Jr. Blender', 'https://images.genius.com/52a046e93831673d5c359ba5364bc09a.400x400x1.jpg', 'https://genius.com/artists/Jr-blender');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('12908', 'Diplo', 'https://images.genius.com/a5dfb8cc4e373238068b89a15b3194aa.1000x1000x1.jpg', 'https://genius.com/artists/Diplo');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('21871', 'MØ', 'https://images.genius.com/9081365f904ad5e8b1442689cc335820.777x777x1.jpg', 'https://genius.com/artists/M');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('164761', 'Jamie Scott', 'https://images.genius.com/243c87a40a9c071b51ded302691ccc9f.499x499x1.png', 'https://genius.com/artists/Jamie-scott');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('12418', 'Ed Sheeran', 'https://images.genius.com/1ff6b6189e1a78e497e09c90c1f6692e.1000x1000x1.jpg', 'https://genius.com/artists/Ed-sheeran');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('7161', 'MIKE DEAN', 'https://images.genius.com/2b6c06b7eda50aef9ab31b2998b2298e.1000x1000x1.jpg', 'https://genius.com/artists/Mike-dean');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('639900', 'Menace', 'https://images.rapgenius.com/avatars/medium/1d04f2dbd7e5a9548c20e671afe71c5e', 'https://genius.com/artists/Menace');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('27935', 'Ludwig Göransson', 'https://images.genius.com/f91489201992d781cc5d5fb70b7ae268.395x395x1.jpg', 'https://genius.com/artists/Ludwig-goransson');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('668957', 'Gary Mudbone Cooper', 'https://images.genius.com/24bb9be47d95794435f471de700ea3c1.175x175x1.jpg', 'https://genius.com/artists/Gary-mudbone-cooper');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('351', 'George Clinton', 'https://images.genius.com/3acf457834e812fe27f0309541e53e35.933x933x1.jpg', 'https://genius.com/artists/George-clinton');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('6471', 'Bootsy Collins', 'https://images.genius.com/ce3cef6abc250a60a8efdcf6e679dfed.400x400x1.jpg', 'https://genius.com/artists/Bootsy-collins');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('34793', 'Mike Elizondo', 'https://images.genius.com/40a2e2fe01d307e9b4f44a6b9a50ddec.280x232x1.jpg', 'https://genius.com/artists/Mike-elizondo');
-INSERT INTO Person (id, name, image_url, url)
-VALUES ('50268', 'Tyler Joseph', 'https://images.genius.com/027669db179451836c4fcdd12550e320.960x960x1.jpg', 'https://genius.com/artists/Tyler-joseph');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('177756', '1076', NULL);
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('500', '1578', '250');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('984358', '7', NULL);
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('16775', '1124', '7045');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('2358', '7331', '6225');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('625410', '62', '1814');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('2069', '451', '130');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('69342', '223', NULL);
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('365', '1204', '1847');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('60437', '557', NULL);
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('13539', '581', NULL);
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('150934', '1002', '640');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('16751', '8800', '46911');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('334', '1783', '425');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('34107', '213', '2747');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('41287', '169', '227');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('394321', '952', '8643');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('106693', '177', NULL);
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('89', '4756', '2048');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('26507', '4510', '1784');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('204611', '1861', '73419');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('980465', '143', NULL);
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('151666', '1', NULL);
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('339543', '313', '4440');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('23796', '4235', NULL);
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('1061395', NULL, NULL);
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('65238', '307', NULL);
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('241761', '372', '9706');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('195029', '1715', NULL);
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('626678', '989', '14929');
+VALUES ('660558', 'Andrew Taggart', 'https://images.genius.com/5365afd9d2fbedf518a6d079b4573b8f.766x766x1.jpg', 'https://genius.com/artists/Andrew-taggart');
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
 VALUES ('26577', '801', '10604');
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('665', '366', '425');
+VALUES ('992687', '10', '2842');
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('69', '9635', '355');
+VALUES ('177756', '1076', NULL);
+INSERT INTO Artists (artist_id, genius_followers, genius_iq)
+VALUES ('980465', '143', NULL);
+INSERT INTO Artists (artist_id, genius_followers, genius_iq)
+VALUES ('500', '1578', '250');
+INSERT INTO Artists (artist_id, genius_followers, genius_iq)
+VALUES ('241761', '372', '9706');
+INSERT INTO Artists (artist_id, genius_followers, genius_iq)
+VALUES ('151666', '1', NULL);
+INSERT INTO Artists (artist_id, genius_followers, genius_iq)
+VALUES ('65238', '307', NULL);
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
 VALUES ('104044', NULL, '6332');
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('1745', '8619', '4554');
+VALUES ('41287', '169', '227');
+INSERT INTO Artists (artist_id, genius_followers, genius_iq)
+VALUES ('13539', '581', NULL);
+INSERT INTO Artists (artist_id, genius_followers, genius_iq)
+VALUES ('204611', '1861', '73419');
+INSERT INTO Artists (artist_id, genius_followers, genius_iq)
+VALUES ('625410', '62', '1814');
+INSERT INTO Artists (artist_id, genius_followers, genius_iq)
+VALUES ('150934', '1002', '640');
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
 VALUES ('44080', '3267', '1453');
+INSERT INTO Artists (artist_id, genius_followers, genius_iq)
+VALUES ('2358', '7331', '6225');
+INSERT INTO Artists (artist_id, genius_followers, genius_iq)
+VALUES ('339543', '313', '4440');
+INSERT INTO Artists (artist_id, genius_followers, genius_iq)
+VALUES ('130', '13869', NULL);
+INSERT INTO Artists (artist_id, genius_followers, genius_iq)
+VALUES ('492', '6722', '16220');
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
 VALUES ('10586', NULL, NULL);
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
 VALUES ('579526', NULL, NULL);
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('992687', '10', '2842');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('130', '13869', NULL);
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('217208', '3943', '4679');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('430404', NULL, '4549');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('492', '6722', '16220');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('6412', '959', '12653');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('1421', NULL, '41099');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('610968', NULL, '12207');
+VALUES ('69', '9635', '355');
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
 VALUES ('2197', NULL, '4077');
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('13', NULL, '688');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('14325', NULL, '8051');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('4', NULL, '3960');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('25005', NULL, '1961');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('92', NULL, '3127');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('740', NULL, '1929');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('296675', NULL, '2967');
+VALUES ('610968', NULL, '12207');
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
 VALUES ('13585', NULL, NULL);
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('508218', NULL, '1921');
+VALUES ('1421', NULL, '41099');
+INSERT INTO Artists (artist_id, genius_followers, genius_iq)
+VALUES ('357', NULL, '1525');
+INSERT INTO Artists (artist_id, genius_followers, genius_iq)
+VALUES ('13', NULL, '688');
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
 VALUES ('155256', NULL, NULL);
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
 VALUES ('20148', NULL, NULL);
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('357', NULL, '1525');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('227626', NULL, '310');
+VALUES ('217208', NULL, '4679');
 INSERT INTO Artists (artist_id, genius_followers, genius_iq)
 VALUES ('228636', NULL, '1525');
-INSERT INTO Artists (artist_id, genius_followers, genius_iq)
-VALUES ('21871', NULL, '2587');
 INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('13539', '2851057', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('89', '2398213', 'primary');
+VALUES ('26577', '2436402', 'primary');
 INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('130', '2890553', 'primary');
 INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('177756', '2819932', 'primary');
 INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('339543', '2474069', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('394321', '2104392', 'primary');
+VALUES ('992687', '3857644', 'primary');
 INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('44080', '2845980', 'primary');
 INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('334', '2467204', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('130', '2463402', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('69', '2924189', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('2358', '2851948', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('69', '2924188', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('60437', '2427392', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('626678', '2400811', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('26507', '2465219', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('195029', '2811214', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('69342', '2928485', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('150934', '2867244', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('204611', '5110616', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('2069', '2463453', 'primary');
 INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('500', '2872960', 'primary');
 INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('16775', '2391084', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('150934', '2458848', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('89', '2413890', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('130', '2852482', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('204611', '2891157', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('984358', '2960556', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('1745', '2905167', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('625410', '2336758', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('130', '2890555', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('130', '2450584', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('2358', '2913726', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('980465', '2820812', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('217208', '2456795', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('980465', '2820703', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('23796', '2532266', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('41287', '2819412', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('130', '2464123', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('26577', '2436402', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('2358', '2911554', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('150934', '2416822', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('26507', '2457495', 'primary');
+VALUES ('65238', '3036726', 'primary');
 INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('241761', '2451433', 'primary');
 INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('177756', '2457826', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('151666', '2890675', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('2358', '2909921', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('16751', '2471960', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('65238', '3036726', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('665', '2481759', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('365', '2875301', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('492', '2893922', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('34107', '2849861', 'primary');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('106693', '2880960', 'primary');
+VALUES ('13539', '2851057', 'primary');
 INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('2358', '2911255', 'primary');
 INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('992687', '3857644', 'primary');
+VALUES ('980465', '2820703', 'primary');
 INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('6412', '2922155', 'primary');
+VALUES ('625410', '2336758', 'primary');
 INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('1061395', '2960556', 'featured');
+VALUES ('339543', '2474069', 'primary');
+INSERT INTO Sings (artist_id, song_id, type)
+VALUES ('492', '2893922', 'primary');
+INSERT INTO Sings (artist_id, song_id, type)
+VALUES ('69', '2924188', 'primary');
+INSERT INTO Sings (artist_id, song_id, type)
+VALUES ('2358', '2909921', 'primary');
+INSERT INTO Sings (artist_id, song_id, type)
+VALUES ('151666', '2890675', 'primary');
+INSERT INTO Sings (artist_id, song_id, type)
+VALUES ('41287', '2819412', 'primary');
+INSERT INTO Sings (artist_id, song_id, type)
+VALUES ('204611', '2891157', 'primary');
+INSERT INTO Sings (artist_id, song_id, type)
+VALUES ('130', '2450584', 'primary');
+INSERT INTO Sings (artist_id, song_id, type)
+VALUES ('150934', '2458848', 'primary');
 INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('104044', '3036726', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('195029', '2478138', 'primary');
 INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('10586', '2336758', 'featured');
 INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('579526', '2336758', 'featured');
 INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('430404', '2890555', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('1421', '2851057', 'featured');
+VALUES ('2197', '2820703', 'featured');
 INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('610968', '2451433', 'featured');
 INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('1421', '2911554', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('2197', '2820703', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('89', '2463453', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('13', '2819932', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('14325', '2471960', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('4', '2471960', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('25005', '2427392', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('92', '2457495', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('740', '2880960', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('296675', '2880960', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('13585', '2909921', 'featured');
 INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('508218', '2416822', 'featured');
+VALUES ('1421', '2851057', 'featured');
+INSERT INTO Sings (artist_id, song_id, type)
+VALUES ('357', '2819412', 'featured');
+INSERT INTO Sings (artist_id, song_id, type)
+VALUES ('13', '2819932', 'featured');
 INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('155256', '2450584', 'featured');
 INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('20148', '2450584', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('610968', '2922155', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('357', '2819412', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('130', '2398213', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('227626', '2867244', 'featured');
 INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('217208', '2845980', 'featured');
 INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('13585', '2851948', 'featured');
 INSERT INTO Sings (artist_id, song_id, type)
 VALUES ('228636', '2458848', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('89', '2463402', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('21871', '2481759', 'featured');
-INSERT INTO Sings (artist_id, song_id, type)
-VALUES ('357', '2481759', 'featured');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('37880', '2960556', 'writer');
+VALUES ('2180892', '3857644', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('984358', '2960556', 'writer');
+VALUES ('992687', '3857644', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('639684', '3036726', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
@@ -957,15 +471,29 @@ VALUES ('19818', '3036726', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('309511', '3036726', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('653076', '2104392', 'producer');
+VALUES ('26577', '2436402', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('394320', '2104392', 'producer');
+VALUES ('1002050', '2436402', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('394321', '2104392', 'writer');
+VALUES ('1002050', '2436402', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('675997', '2104392', 'writer');
+VALUES ('26577', '2436402', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('653076', '2104392', 'writer');
+VALUES ('34533', '2911255', 'producer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('27655', '2911255', 'producer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('2358', '2911255', 'producer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('2358', '2911255', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('34533', '2911255', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('27655', '2911255', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('1362', '2911255', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('15740', '2911255', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('69', '2924188', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
@@ -989,82 +517,6 @@ VALUES ('481172', '2336758', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('625410', '2336758', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('26577', '2436402', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('1002050', '2436402', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('1002050', '2436402', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('26577', '2436402', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('52806', '2811214', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('354283', '2811214', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('632021', '2811214', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('354283', '2811214', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('652571', '2811214', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('195029', '2811214', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('69', '2924189', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('14777', '2924189', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('647112', '2924189', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('69', '2924189', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('39585', '2413890', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('28169', '2413890', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('55089', '2413890', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('29780', '2413890', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('671661', '2413890', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('642979', '2413890', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('1306886', '2413890', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('499861', '2413890', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('325049', '2413890', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('39585', '2413890', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('28169', '2413890', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('29780', '2413890', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('89', '2413890', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('19132', '2413890', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('162702', '2413890', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('44575', '2890555', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('44575', '2890555', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('430404', '2890555', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('130', '2890555', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('33010', '2456795', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('33010', '2456795', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('217208', '2456795', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('2180892', '3857644', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('992687', '3857644', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('27616', '2890553', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('28169', '2890553', 'producer');
@@ -1077,31 +529,69 @@ VALUES ('27616', '2890553', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('130', '2890553', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('2358', '2913726', 'producer');
+VALUES ('430404', '2820703', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27655', '2913726', 'producer');
+VALUES ('33010', '2820703', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('34533', '2913726', 'producer');
+VALUES ('33010', '2820703', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('33010', '2913726', 'producer');
+VALUES ('430404', '2820703', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('30425', '2913726', 'producer');
+VALUES ('2197', '2820703', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('2358', '2913726', 'writer');
+VALUES ('27486', '2893922', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('2197', '2913726', 'writer');
+VALUES ('336528', '2893922', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27655', '2913726', 'writer');
+VALUES ('330059', '2893922', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('34533', '2913726', 'writer');
+VALUES ('33010', '2893922', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('33010', '2913726', 'writer');
+VALUES ('11305', '2893922', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('30425', '2913726', 'writer');
+VALUES ('27486', '2893922', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('1362', '2913726', 'writer');
+VALUES ('336528', '2893922', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('574528', '2913726', 'writer');
+VALUES ('72', '2893922', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('278', '2893922', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('330059', '2893922', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('11305', '2893922', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('33010', '2893922', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('492', '2893922', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('643405', '2451433', 'producer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('579558', '2451433', 'producer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('51380', '2451433', 'producer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('51380', '2451433', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('643405', '2451433', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('610968', '2451433', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('241761', '2451433', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('13585', '2909921', 'producer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('2358', '2909921', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('1033803', '2909921', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('31634', '2909921', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('42463', '2909921', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('27655', '2909921', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('30425', '2909921', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('160032', '2851057', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
@@ -1124,336 +614,6 @@ INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('1421', '2851057', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('669', '2851057', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('643405', '2451433', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('579558', '2451433', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('51380', '2451433', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('51380', '2451433', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('643405', '2451433', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('610968', '2451433', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('241761', '2451433', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('2358', '2911554', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('147213', '2911554', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27655', '2911554', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27467', '2911554', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('147213', '2911554', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('2358', '2911554', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27655', '2911554', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('162101', '2911554', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('1421', '2911554', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27467', '2911554', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('430404', '2820703', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('33010', '2820703', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('33010', '2820703', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('430404', '2820703', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('2197', '2820703', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('155062', '2465219', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27835', '2465219', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('155062', '2465219', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('26507', '2465219', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27835', '2465219', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('302826', '2465219', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('179206', '2465219', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('64420', '2474069', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('339543', '2474069', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('334', '2467204', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27836', '2467204', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27835', '2467204', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27836', '2467204', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('334', '2467204', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27835', '2467204', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('39585', '2463453', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('2069', '2463453', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('1177', '2463453', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('2069', '2463453', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('55444', '2391084', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('55444', '2391084', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('16775', '2391084', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('29978', '2819932', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('29978', '2819932', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('13', '2819932', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('335759', '2819932', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('209139', '2819932', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('143593', '2471960', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('130026', '2471960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('668557', '2471960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('4', '2471960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('668556', '2471960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('668555', '2471960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('641040', '2471960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('668554', '2471960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('668553', '2471960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('668366', '2471960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('16751', '2471960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('572674', '2471960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('143593', '2471960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('668552', '2471960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('14325', '2471960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('325827', '2427392', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('9654', '2427392', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('653079', '2427392', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('325827', '2427392', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('149418', '2427392', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('25005', '2427392', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('77014', '2427392', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('9654', '2427392', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('209397', '2875301', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('228334', '2875301', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('209397', '2875301', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('228334', '2875301', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('365', '2875301', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('155062', '2457495', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27835', '2457495', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('155062', '2457495', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('179206', '2457495', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('302826', '2457495', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27835', '2457495', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('92', '2457495', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('26507', '2457495', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('34533', '2911255', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27655', '2911255', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('2358', '2911255', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('2358', '2911255', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('34533', '2911255', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27655', '2911255', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('1362', '2911255', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('15740', '2911255', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('106693', '2880960', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('51766', '2880960', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('188055', '2880960', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('740', '2880960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('51766', '2880960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('262801', '2880960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('188054', '2880960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('155257', '2880960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('1012903', '2872960', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('49094', '2872960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('47127', '2872960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('500', '2872960', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('13585', '2909921', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('2358', '2909921', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('1033803', '2909921', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('31634', '2909921', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('42463', '2909921', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27655', '2909921', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('30425', '2909921', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('34522', '2464123', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('69949', '2464123', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('55684', '2464123', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('662', '2464123', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('663015', '2464123', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('663014', '2464123', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('663013', '2464123', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('663012', '2464123', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('663011', '2464123', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('69949', '2464123', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('55684', '2464123', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('34522', '2464123', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('8550', '2464123', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('130', '2464123', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('662', '2464123', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('150934', '2416822', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('71876', '2416822', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('551992', '2416822', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('660558', '2416822', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('64581', '2450584', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('1054259', '2450584', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('84565', '2450584', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('130', '2450584', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('816604', '2450584', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('459835', '2450584', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('155256', '2450584', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('20148', '2450584', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27612', '2450584', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('64581', '2450584', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('23315', '2820812', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('33010', '2820812', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('32429', '2820812', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('32429', '2820812', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('669794', '2820812', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('669795', '2820812', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('23315', '2820812', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('33010', '2820812', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('430404', '2820812', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('1028969', '2849861', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('618451', '2849861', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('997039', '2849861', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('997040', '2849861', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('34107', '2849861', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('43733', '2457826', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('335759', '2457826', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('209139', '2457826', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('988135', '2922155', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('593495', '2922155', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('988135', '2922155', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('593495', '2922155', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('573625', '2922155', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('610968', '2922155', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('6412', '2922155', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('576544', '2819412', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
@@ -1483,41 +643,47 @@ VALUES ('143754', '2819412', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('576544', '2819412', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('39585', '2398213', 'producer');
+VALUES ('1012903', '2872960', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27612', '2398213', 'producer');
+VALUES ('49094', '2872960', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('662', '2398213', 'producer');
+VALUES ('47127', '2872960', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('39585', '2398213', 'writer');
+VALUES ('500', '2872960', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27612', '2398213', 'writer');
+VALUES ('29978', '2819932', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('139040', '2398213', 'writer');
+VALUES ('29978', '2819932', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('662', '2398213', 'writer');
+VALUES ('13', '2819932', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('634300', '2398213', 'writer');
+VALUES ('335759', '2819932', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('329739', '2398213', 'writer');
+VALUES ('209139', '2819932', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('47131', '2398213', 'writer');
+VALUES ('64581', '2450584', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('130', '2398213', 'writer');
+VALUES ('1054259', '2450584', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('89', '2398213', 'writer');
+VALUES ('84565', '2450584', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('55684', '2398213', 'writer');
+VALUES ('130', '2450584', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('150934', '2867244', 'producer');
+VALUES ('816604', '2450584', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('876840', '2867244', 'writer');
+VALUES ('459835', '2450584', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('660556', '2867244', 'writer');
+VALUES ('155256', '2450584', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('660558', '2867244', 'writer');
+VALUES ('20148', '2450584', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('227626', '2867244', 'writer');
+VALUES ('27612', '2450584', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('64581', '2450584', 'writer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('64420', '2474069', 'producer');
+INSERT INTO Crew_in (crew_id, song_id, type)
+VALUES ('339543', '2474069', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('59421', '2845980', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
@@ -1532,18 +698,6 @@ INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('61600', '2845980', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('59421', '2845980', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('1030827', '2478138', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('131676', '2478138', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('354283', '2478138', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('71876', '2478138', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('354283', '2478138', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('195029', '2478138', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('13585', '2851948', 'producer');
 INSERT INTO Crew_in (crew_id, song_id, type)
@@ -1572,222 +726,50 @@ INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('984008', '2458848', 'writer');
 INSERT INTO Crew_in (crew_id, song_id, type)
 VALUES ('660558', '2458848', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27486', '2893922', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('336528', '2893922', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('330059', '2893922', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('33010', '2893922', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('11305', '2893922', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27486', '2893922', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('336528', '2893922', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('72', '2893922', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('278', '2893922', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('330059', '2893922', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('11305', '2893922', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('33010', '2893922', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('492', '2893922', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('541009', '2463402', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('34522', '2463402', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('64581', '2463402', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('541009', '2463402', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('29497', '2463402', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('17195', '2463402', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('663034', '2463402', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('34522', '2463402', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('64581', '2463402', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('89', '2463402', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('130', '2463402', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('665', '2481759', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('28906', '2481759', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('25983', '2481759', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('412137', '2481759', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('25983', '2481759', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('412137', '2481759', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('12908', '2481759', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('357', '2481759', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('21871', '2481759', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('164761', '2481759', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('12418', '2481759', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('28906', '2481759', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('7161', '2400811', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('639900', '2400811', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('639900', '2400811', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('626678', '2400811', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27616', '2905167', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('1745', '2905167', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27935', '2905167', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('1745', '2905167', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('668957', '2905167', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('351', '2905167', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('6471', '2905167', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('27935', '2905167', 'writer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('34793', '2532266', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('50268', '2532266', 'producer');
-INSERT INTO Crew_in (crew_id, song_id, type)
-VALUES ('50268', '2532266', 'writer');
 INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2851057', 16, 1483246800, 486364);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2398213', 48, 1483246800, 316050);
+VALUES ('2436402', 8, 1483246800, 714839);
 INSERT INTO Entries (song_id, position, date, streams)
 VALUES ('2890553', 2, 1483246800, 1180074);
 INSERT INTO Entries (song_id, position, date, streams)
 VALUES ('2819932', 5, 1483246800, 874289);
 INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2474069', 19, 1483246800, 456308);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2104392', 45, 1483246800, 331379);
+VALUES ('3857644', 15, 1483246800, 507450);
 INSERT INTO Entries (song_id, position, date, streams)
 VALUES ('2845980', 1, 1483246800, 1371493);
 INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2467204', 29, 1483246800, 417329);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2463402', 34, 1483246800, 368536);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2924189', 47, 1483246800, 317884);
-INSERT INTO Entries (song_id, position, date, streams)
 VALUES ('2851948', 3, 1483246800, 1064351);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2924188', 18, 1483246800, 478503);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2427392', 30, 1483246800, 405483);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2400811', 44, 1483246800, 332310);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2465219', 33, 1483246800, 370887);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2811214', 46, 1483246800, 323626);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2928485', 46, 1483333200, 289650);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2867244', 38, 1483246800, 351014);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('5110616', 33, 1483333200, 339562);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2463453', 36, 1483246800, 362959);
 INSERT INTO Entries (song_id, position, date, streams)
 VALUES ('2872960', 12, 1483246800, 574974);
 INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2391084', 41, 1483246800, 345244);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2458848', 4, 1483246800, 1010492);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2413890', 42, 1483246800, 342524);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2852482', 39, 1483246800, 350286);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2891157', 13, 1483246800, 567789);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2960556', 49, 1483246800, 313819);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2905167', 50, 1483333200, 268394);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2336758', 17, 1483246800, 485127);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2890555', 28, 1483246800, 419434);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2450584', 7, 1483246800, 753150);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2913726', 44, 1483333200, 297398);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2820812', 22, 1483246800, 447063);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2456795', 32, 1483246800, 401546);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2820703', 14, 1483246800, 544620);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2532266', 31, 1483246800, 401620);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2819412', 9, 1483246800, 690483);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2464123', 35, 1483246800, 365140);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2436402', 8, 1483246800, 714839);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2911554', 47, 1483333200, 288870);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2416822', 24, 1483246800, 446177);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2457495', 25, 1483246800, 440123);
+VALUES ('3036726', 20, 1483333200, 441973);
 INSERT INTO Entries (song_id, position, date, streams)
 VALUES ('2451433', 6, 1483246800, 763259);
 INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2457826', 50, 1483246800, 308264);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2890675', 23, 1483246800, 446785);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2909921', 11, 1483246800, 651807);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2471960', 21, 1483246800, 449345);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('3036726', 27, 1483246800, 435945);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2481759', 43, 1483246800, 342437);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2875301', 36, 1483333200, 326511);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2893922', 10, 1483246800, 682688);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2849861', 37, 1483246800, 361392);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2880960', 49, 1483333200, 276614);
+VALUES ('2851057', 16, 1483246800, 486364);
 INSERT INTO Entries (song_id, position, date, streams)
 VALUES ('2911255', 20, 1483246800, 456291);
 INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('3857644', 15, 1483246800, 507450);
+VALUES ('2820703', 14, 1483246800, 544620);
 INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2922155', 40, 1483246800, 349836);
+VALUES ('2336758', 17, 1483246800, 485127);
 INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2478138', 26, 1483246800, 438954);
+VALUES ('2474069', 19, 1483246800, 456308);
+INSERT INTO Entries (song_id, position, date, streams)
+VALUES ('2893922', 10, 1483246800, 682688);
+INSERT INTO Entries (song_id, position, date, streams)
+VALUES ('2924188', 18, 1483246800, 478503);
+INSERT INTO Entries (song_id, position, date, streams)
+VALUES ('2909921', 11, 1483246800, 651807);
+INSERT INTO Entries (song_id, position, date, streams)
+VALUES ('2890675', 18, 1483333200, 447433);
+INSERT INTO Entries (song_id, position, date, streams)
+VALUES ('2819412', 9, 1483246800, 690483);
+INSERT INTO Entries (song_id, position, date, streams)
+VALUES ('2891157', 13, 1483246800, 567789);
+INSERT INTO Entries (song_id, position, date, streams)
+VALUES ('2450584', 7, 1483246800, 753150);
+INSERT INTO Entries (song_id, position, date, streams)
+VALUES ('2458848', 4, 1483246800, 1010492);
 INSERT INTO Entries (song_id, position, date, streams)
 VALUES ('2845980', 1, 1483333200, 1161746);
 INSERT INTO Entries (song_id, position, date, streams)
@@ -1823,65 +805,16 @@ VALUES ('2820703', 16, 1483333200, 474705);
 INSERT INTO Entries (song_id, position, date, streams)
 VALUES ('2924188', 17, 1483333200, 473234);
 INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2890675', 18, 1483333200, 447433);
-INSERT INTO Entries (song_id, position, date, streams)
 VALUES ('2336758', 19, 1483333200, 444104);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('3036726', 20, 1483333200, 441973);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2849861', 21, 1483333200, 424490);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2911255', 22, 1483333200, 417288);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2820812', 23, 1483333200, 415453);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2457495', 24, 1483333200, 402640);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2532266', 25, 1483333200, 388696);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2890555', 26, 1483333200, 379428);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2474069', 27, 1483333200, 374661);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2922155', 28, 1483333200, 368515);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2456795', 29, 1483333200, 366167);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2867244', 30, 1483333200, 358902);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2811214', 31, 1483333200, 354581);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2104392', 32, 1483333200, 354408);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2471960', 34, 1483333200, 337218);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2960556', 35, 1483333200, 336502);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2924189', 37, 1483333200, 323494);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2464123', 38, 1483333200, 313087);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2481759', 39, 1483333200, 312401);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2463402', 40, 1483333200, 309703);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2852482', 41, 1483333200, 304264);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2457826', 42, 1483333200, 302738);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2416822', 43, 1483333200, 299373);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2478138', 45, 1483333200, 296263);
-INSERT INTO Entries (song_id, position, date, streams)
-VALUES ('2413890', 48, 1483333200, 288253);
 DROP TABLE IF EXISTS Popularity;
-CREATE TABLE Popularity AS
-SELECT Songs.id, scores.cumulative_score 
-FROM Sings LEFT JOIN Person ON Person.id = Sings.artist_id
-LEFT JOIN Songs ON Sings.song_id = Songs.id
-LEFT JOIN (SELECT id, SUM(score) AS cumulative_score
-  FROM(SELECT song_id as id, (streams / position) AS score
-      FROM Entries) x
-      GROUP BY id)
-  scores ON Songs.id = scores.id
-ORDER BY scores.cumulative_score DESC;
+  CREATE TABLE Popularity AS
+  SELECT Songs.id, scores.cumulative_score 
+  FROM Sings LEFT JOIN Person ON Person.id = Sings.artist_id
+  LEFT JOIN Songs ON Sings.song_id = Songs.id
+  LEFT JOIN (SELECT id, SUM(score) AS cumulative_score
+    FROM(SELECT song_id as id, (streams / position) AS score
+        FROM Entries) x
+        GROUP BY id)
+    scores ON Songs.id = scores.id
+  ORDER BY scores.cumulative_score DESC;
+  
