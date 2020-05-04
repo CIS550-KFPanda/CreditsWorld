@@ -27,7 +27,7 @@ const searchGroup = function(artist1, artist2) {
 
 const leaderboardSongs = function() {
   return db.query(`
-  SELECT s.title, s.song_art_image_thumbnail_url, a.name, s.id as song_id, a.id as artist_id,
+  SELECT DISTINCT s.title, s.song_art_image_thumbnail_url, a.name, s.id as song_id, a.id as artist_id,
        s.album, s.label, s.release_date_for_display as release_date
   FROM Popularity p
   JOIN Songs s on s.id = p.id
@@ -39,7 +39,7 @@ const leaderboardSongs = function() {
 
 const leaderboardArtists = function() {
   return db.query(`
-  SELECT t1.artist_id, t1.name, t1.image_url, t1.url, t1.score, s.id AS top_song_id, s.title as top_song_name
+  SELECT DISTINCT t1.artist_id, t1.name, t1.image_url, t1.url, t1.score, s.id AS top_song_id, s.title as top_song_name
   FROM (
     SELECT per.name, image_url, url, artist_id, SUM(p.cumulative_score) as score
     FROM Sings s
@@ -60,7 +60,7 @@ const leaderboardArtists = function() {
       GROUP BY artist_id
     ) t1 ON s.artist_id = t1.artist_id AND p.cumulative_score = t1.score
   ) t2 ON t1.artist_id = t2.artist_id
-  JOIN Songs s ON s.id = t2.song_id;
+  JOIN Songs s ON s.id = t2.song_id
   `)
 }
 
@@ -72,7 +72,7 @@ const leaderboardArtists = function() {
 
 const leaderboardWriters = function() {
   return db.query(`
-  SELECT per.name, SUM(p.cumulative_score) as score
+  SELECT DISTINCT per.name, SUM(p.cumulative_score) as score
   FROM Crew_in c
   JOIN Popularity p ON p.id = c.song_id
   JOIN Person per ON per.id = c.crew_id
@@ -88,7 +88,7 @@ const leaderboardWriters = function() {
 
 const leaderboardProducers = function() {
   return db.query(`
-  SELECT per.name, SUM(p.cumulative_score) as score
+  SELECT DISTINCT per.name, SUM(p.cumulative_score) as score
   FROM Crew_in c
   JOIN Popularity p ON p.id = c.song_id
   JOIN Person per ON per.id = c.crew_id
@@ -112,11 +112,11 @@ const getCrew = function(id) {
   FROM (
     SELECT crew_id as id, type
     FROM Crew_in
-    WHERE song_id='${id}'
+    WHERE song_id='2450584'
     UNION
     SELECT artist_id as id, type
     FROM Sings
-    WHERE song_id='${id}'
+    WHERE song_id='2450584'
   ) t1
   JOIN Person p ON p.id = t1.id
   `)
@@ -166,7 +166,7 @@ const getPerson = function(id) {
     SELECT *
     FROM Person
     WHERE id=${id}
-  `)
+  `).then(getHead)
 }
 
 const getCollaborators = function(id) {
@@ -208,16 +208,21 @@ const getCollaborators = function(id) {
             });
 
 }
-
+/**
+ * Get the number of days an artist had a song on the charts.
+ * The artist can get more than one point per day, depending on the
+ * number of songs on the chart that day.
+ * @param {String} id 
+ */
 const dayCount = function(id) {
   return db.query(`
-  SELECT SUM(SongCounter.num_days_on_charts) as cumulative_days_on_chart,
+  SELECT SUM(DayCounter.num_days_on_charts) as cumulative_days_on_chart,
   artist_id, Person.name
   FROM (
     SELECT count(DISTINCT date) as num_days_on_charts, song_id
     FROM Entries
-    GROUP BY song_id) SongCounter
-  LEFT JOIN Sings ON SongCounter.song_id = Sings.song_id
+    GROUP BY song_id) DayCounter
+  LEFT JOIN Sings ON DayCounter.song_id = Sings.song_id
   LEFT JOIN Person ON Sings.artist_id = Person.id
   WHERE artist_id=${id}
   GROUP BY artist_id, Person.name
@@ -236,7 +241,7 @@ SELECT s.title, s.song_art_image_thumbnail_url, a.name, s.id as song_id, a.id as
 
 const dayRange = function() {
   return db.query(`
-  SELECT s.title, s.song_art_image_thumbnail_url, a.name, s.id as song_id, a.id as artist_id,
+  SELECT DISTINCT s.title, s.song_art_image_thumbnail_url, s.id as song_id,
        s.album, s.label, s.release_date_for_display as release_date
   FROM (
     SELECT ((max_date - min_date) / 86400 + 1) as days_on_chart, song_id
@@ -269,6 +274,7 @@ module.exports = {
   dayCount,
   dayRange,
   getRandomSongAndCrew,
-  getRandomCollaborators
+  getRandomCollaborators,
+  getPerson
 }
 

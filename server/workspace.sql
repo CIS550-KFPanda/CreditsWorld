@@ -150,3 +150,32 @@ JOIN Person p ON p.id=t1.id
 UPDATE Songs
 SET title = 'rockstar'
 WHERE id=2942139
+
+
+
+SELECT SUM(DayCounter.num_days_on_charts) as cumulative_days_on_chart, artist_id, Person.name
+FROM (
+  SELECT count(DISTINCT date) as num_days_on_charts, song_id
+  FROM Entries
+  GROUP BY song_id) DayCounter
+LEFT JOIN Sings ON DayCounter.song_id = Sings.song_id
+LEFT JOIN Person ON Sings.artist_id = Person.id
+WHERE artist_id=130
+GROUP BY artist_id, Person.name
+ORDER BY cumulative_days_on_chart DESC;
+
+
+SELECT DISTINCT s.title, s.song_art_image_thumbnail_url, s.id as song_id,
+       s.album, s.label, s.release_date_for_display as release_date
+  FROM (
+    SELECT ((max_date - min_date) / 86400 + 1) as days_on_chart, song_id
+    FROM (SELECT MIN(date) as min_date, MAX(date) max_date,song_id
+    FROM Entries e
+    
+    GROUP BY song_id
+    ) x
+    ORDER BY days_on_chart DESC
+    LIMIT 15) t
+  JOIN Songs s on s.id = t.song_id
+  JOIN Sings s2 on s2.song_id = s.id
+  JOIN Person a on s2.artist_id = a.id
