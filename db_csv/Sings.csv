@@ -1,4 +1,4 @@
-concat(artist_id,',',song_id)
+artist_id,song_id
 30989,101491
 30191,101498
 357854,101498
