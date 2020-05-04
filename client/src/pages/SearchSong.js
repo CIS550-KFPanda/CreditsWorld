@@ -15,14 +15,13 @@ export default class SearchSong extends React.Component {
 
     // The state maintained by this React Component.
     this.state = {
+      songsFound: [], 
       song_id: '',
       song: {},
       artists: [],
       writers: [],
       producers: []
     }
-
-    // this.showMovies = this.showMovies.bind(this);
   }
 
   // React function that is called when the page load.
@@ -36,6 +35,10 @@ export default class SearchSong extends React.Component {
       this.setState({ song_id })
       queryString = API_URL + '/getsongcrew/' + song_id
     }
+    this.renderPage(queryString)
+  }
+
+  renderPage = (queryString) => {
     fetch(queryString)
       .then(res => res.json())
       .then(result => {
@@ -67,99 +70,127 @@ export default class SearchSong extends React.Component {
           writers: mat[1],
           producers: mat[2]
         })
+      }) 
+  }
 
-        
-
-
+  handleSearchTextChange = (event) => {
+    fetch(API_URL + '/searchsong?song=' + event.target.value)
+      .then(res => res.json())
+      .then(results => {
+        console.log(results)
+        let songsFound = results.map((song, i) => 
+          <tr key={i}>
+            <td><a href={"/search-song?song_id="+song.id}>{song.title}</a></td>
+          </tr> 
+        ); 
+        this.setState({
+          songsFound: songsFound
+        })
       })
-      
-    
-    
   }
 
   render() { 
     return (
       <div className="mainContainer">
         <PageNavbar active="search-song" />
-        <div className="searchBarContainer"> 
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-        </div>
-
-        <div className="mainCardContainer"> 
-          <div className="leftContainer" style={{backgroundColor: '#E9AFA3'}}> 
-              <h4> Publisher </h4> 
-              <p> We don't have this info </p> 
-              <h4> Label </h4>
-              <p> {this.state.song.label} </p>
-              <h4> Album </h4>
-              <p> {this.state.song.album} </p>
-          </div> 
-          <div className="rightContainer">
-            <div className="topRowContainer"> 
-              <div className="topRowLeftContainer"> 
-    <h1 style={{fontSize: '4.5rem'}}> {this.state.song.title} </h1>
-                <h4 style={{alignSelf:'flex-end', paddingRight: 24, color: '#989898' }}> ({this.state.song.year}) </h4>
+        <div className="bodyCardContainer" > 
+          <div className="searchBarContainer"> 
+            <Form>
+                <FormControl 
+                  type="text" 
+                  placeholder="Search Song" 
+                  className="mr-sm-2"  
+                  onChange={this.handleSearchTextChange}
+                  style={{width:'100%'}}
+                />
+              </Form>
+              <Table hover style={{backgroundColor:'white', width: '95%'}}>
+                <thead>
+                  <tr>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.state.songsFound}
+                </tbody>
+              </Table>
+          </div>
+          <div className="mainCardContainer"> 
+            <div className="leftContainer" style={{backgroundColor: '#E9AFA3'}}> 
+                <h4> Publisher </h4> 
+                <p> We don't have this info </p> 
+                <h4> Label </h4>
+                <p> {this.state.song.label} </p>
+                <h4> Album </h4>
+                <p> {this.state.song.album} </p>
+            </div> 
+            <div className="rightContainer">
+              <div className="topRowContainer"> 
+                <div className="topRowLeftContainer"> 
+                  <h1 style={{fontSize: '4.5rem'}}> {this.state.song.title} </h1>
+                  <h4 style={{alignSelf:'flex-end', paddingRight: 24, color: '#989898' }}> ({this.state.song.year}) </h4>
+                </div>
+                <Image src={this.state.song.song_art_image_thumbnail_url} rounded  height="250"/>
               </div>
-              <Image src={this.state.song.song_art_image_thumbnail_url} rounded  height="250"/>
-            </div>
-            <div className="bottomRowContainer"> 
-              <h2 style={{padding: 8}}> Collaborations</h2> 
-              <div className="tablesContainer">
-                {/* Artists  */}
-                <div className="singleTableContainer">
-                  <h3> Aritsts </h3>
-                  <Table  hover>
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Song</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {this.state.artists}
-                    </tbody>
-                  </Table>
-                </div>
-                {/* Songwriters  */}
-                <div className="singleTableContainer">
-                  <h3> Songwriters </h3>
-                  <Table hover>
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Song</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {this.state.writers}
-                    </tbody>
-                  </Table>
+              <div className="bottomRowContainer"> 
+                <h2 style={{padding: 8}}> Collaborations</h2> 
+                <div className="tablesContainer">
+                  {/* Artists  */}
+                  <div className="singleTableContainer">
+                    <h3> Aritsts </h3>
+                    <Table  hover>
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Song</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {this.state.artists}
+                      </tbody>
+                    </Table>
+                  </div>
+                  {/* Songwriters  */}
+                  <div className="singleTableContainer">
+                    <h3> Songwriters </h3>
+                    <Table hover>
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Song</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {this.state.writers}
+                      </tbody>
+                    </Table>
+                  </div>
+
+                  {/* Producers  */}
+                  <div className="singleTableContainer">
+                    <h3> Producers </h3>
+                    <Table hover>
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Song</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {this.state.producers}
+                      </tbody>
+                    </Table>
+                  </div>
                 </div>
 
-                {/* Producers  */}
-                <div className="singleTableContainer">
-                  <h3> Producers </h3>
-                  <Table hover>
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Song</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {this.state.producers}
-                    </tbody>
-                  </Table>
-                </div>
               </div>
-
-            </div>
-          </div> 
-        </div>
-
+            </div> 
+          </div>
+          <div className="findRandomContainer"> 
+            <div style={{width: '50%'}}> 
+              <Button variant="primary" onClick={() => this.renderPage(API_URL + '/getrandomsongcrew')}>Find Random</Button>
+            </div> 
+          </div>
+        </div> 
       </div>
     );
   }

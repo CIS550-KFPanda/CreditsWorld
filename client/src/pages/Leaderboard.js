@@ -17,8 +17,6 @@ export default class Leaderboard extends React.Component {
     this.state = {
       rows: []
     }
-
-    // this.showMovies = this.showMovies.bind(this);
   }
 
  
