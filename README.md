@@ -50,7 +50,7 @@ Then you should be good to go!
 To load data from the loader, open a new terminal (or logout of mysql) and run:
 ```
 cd server
-mysql -u root -p < loader.sql
+mysql -u root -p creditsworld < loader.sql
 ```
 ## MySQL RDS
 To login to the MySQL RDS run:
