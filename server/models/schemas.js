@@ -7,12 +7,21 @@ const SHA256 = require('crypto-js/sha256');
 const credentials = require('../credentials.js')
 var mysql = require('mysql');
 
-const connection = mysql.createConnection(credentials);
- 
+let test = false;
+
+let test_credentials = {
+  host     : 'localhost',
+  user     : 'root',
+  password : '5648',
+  database : 'creditsworld_test',
+  port     : '3306',
+}
+const connection = mysql.createConnection(test ? test_credentials : credentials);
 connection.connect();
 
 //Wrapped a connection.query in a Promise bec they let you group promises together  
 //and utilize .then that simplifies code 
+
 const query = str => {
   return new Promise(function(resolve, reject) {
     connection.query(str, function (err, rows, fields) {
@@ -36,5 +45,6 @@ db.query(str)
   .then(data => db.query())
   .then(data => ...)
 */
+
 
 module.exports = { query, connection }

@@ -1,0 +1,19 @@
+{
+  "name": "creditsworld",
+  "version": "1.0.0",
+  "description": "Artists and repertoire (known as A&R) is the division of a record label or music publishing company that is responsible for talent scouting and overseeing the artistic development of recording artists and songwriters. To create meaningful music sessions, A&R managers need to pair up artists, songwriters, and producers. This matchmaking is often done by leveraging personal connections and is kept personally.",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd server && jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salo1serfati/CreditsWorld.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/salo1serfati/CreditsWorld/issues"
+  },
+  "homepage": "https://github.com/salo1serfati/CreditsWorld#readme"
+}
