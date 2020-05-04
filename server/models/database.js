@@ -16,6 +16,7 @@ const searchPerson = function(string) {
     SELECT *
     FROM Person
     WHERE name LIKE '%${string}%'
+    ORDER BY name
     LIMIT 15;
     `
     )
@@ -112,11 +113,11 @@ const getCrew = function(id) {
   FROM (
     SELECT crew_id as id, type
     FROM Crew_in
-    WHERE song_id='2450584'
+    WHERE song_id='${id}'
     UNION
     SELECT artist_id as id, type
     FROM Sings
-    WHERE song_id='2450584'
+    WHERE song_id='${id}'
   ) t1
   JOIN Person p ON p.id = t1.id
   `)
