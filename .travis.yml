@@ -2,7 +2,7 @@ language: node_js
 services:
   - mysql
 before_install:
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS creditsworld_test;'
+  - mysql -e "CREATE DATABASE IF NOT EXISTS creditsworld_test;"
   - mysql -u root --default-character-set=utf8 creditsworld_test < server/loader_part.sql
 install:
 - nvm install node
