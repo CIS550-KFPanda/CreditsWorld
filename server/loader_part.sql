@@ -1,5 +1,3 @@
-CREATE DATABASE IF NOT EXISTS creditsworld_test;
-USE creditsworld_test;
 DROP TABLE IF EXISTS Entries;
 DROP TABLE IF EXISTS Crew_in;
 DROP TABLE IF EXISTS Sings;
