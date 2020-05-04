@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS creditsworld_test;
+USE creditsworld_test;
 DROP TABLE IF EXISTS Entries;
 DROP TABLE IF EXISTS Crew_in;
 DROP TABLE IF EXISTS Sings;
@@ -3224,6 +3226,7 @@ INSERT INTO Entries (song_id, position, date, streams)
 VALUES ('725791', 96, 1483333200, 199640);
 INSERT INTO Entries (song_id, position, date, streams)
 VALUES ('2688236', 97, 1483333200, 198702);
+DROP TABLE IF EXISTS Popularity;
 CREATE TABLE Popularity AS
   SELECT Songs.id, scores.cumulative_score 
   FROM Sings LEFT JOIN Person ON Person.id = Sings.artist_id

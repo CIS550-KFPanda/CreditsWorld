@@ -2,7 +2,7 @@ language: node_js
 services:
   - mysql
 before_install:
-  - mysql -u root --password="" creditsworld_test < server/loader_part.sql
+  - mysql -u root --password="" < server/loader_part.sql
 install:
 - nvm install node
 - node -v
