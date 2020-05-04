@@ -91,7 +91,7 @@ export default class SearchSong extends React.Component {
   }
 
   render() {      
-    console.log("Song: ", this.state.s )
+    console.log("Song: ", this.state.song)
     return (
       <div className="mainContainer">
         <PageNavbar active="search-song" />
