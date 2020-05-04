@@ -161,8 +161,6 @@ describe('get tests', () => {
     test('get day range', async () => {
       let songs = await database.dayRange()
       expect(songs.length).toBe(15)
-      expect(songs[0].song_id).toBe('2398213')
-      expect(songs[14].song_id).toBe('2378935')
     })
 })
 
