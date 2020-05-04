@@ -15,6 +15,7 @@ export default class SearchPerson extends React.Component {
 
     // The state maintained by this React Component.
     this.state = {
+      searchText: '', 
       artist_id: '',
       artist: {},
       artists: [],
@@ -68,15 +69,23 @@ export default class SearchPerson extends React.Component {
       })      
     
   }
-
+  //Changes state every time the user enters text into the search bar
+  handleSearchTextChange = (event) => {
+    this.setState({searchText: event.target.value});
+  }
+  
+  //When the Search Button is clicked 
+  handleSearchClick = () => {
+    
+  }
   render() {    
     return (
       <div className="mainContainer">
         <PageNavbar active="search-person" />
         <div className="searchBarContainer"> 
           <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
+            <FormControl type="text" placeholder="Search" className="mr-sm-2"  onChange={this.handleSearchTextChange}/>
+            <Button variant="outline-success" onClick={this.handleSearchClick}>Search</Button>
           </Form>
         </div>
 
