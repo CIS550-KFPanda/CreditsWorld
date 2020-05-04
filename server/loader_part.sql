@@ -125,8 +125,6 @@ VALUES ('599427', 'No Role Modelz', '2014 Forest Hills Drive', NULL, 'http://www
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
 VALUES ('2336620', 'Send My Love (To Your New Lover)', '25 ', NULL, 'http://www.youtube.com/watch?v=fk4BbF7B29w', 'https://images.genius.com/e20c352a7871b6dcadf70428dadfd46b.300x300x1.jpg', 'November 20, 2015');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
-VALUES ('2922155', 'iSpy', 'Light of Mine', '​independently popular.,Atlantic Records', 'http://www.youtube.com/watch?v=5XK4v2fgMPU', 'https://images.genius.com/ebbb6ff360a4666aa2f50d08d5e7ecd6.300x300x1.jpg', 'December 2, 2016');
-INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
 VALUES ('2911255', 'Party Monster', 'Starboy', 'Republic Records,The Weeknd XO, Inc.,Universal Music Group', 'http://www.youtube.com/watch?v=diW6jXhLE0E', 'https://images.genius.com/235fbb681a9b3e40af8aa474ba16b9cd.300x300x1.jpg', 'November 18, 2016');
 INSERT INTO Songs (id, title, album, label,youtube_url, song_art_image_thumbnail_url, release_date_for_display)
 VALUES ('2869012', 'Sunset Lover', 'Presence', NULL, 'http://www.youtube.com/watch?v=5hALH-s6ZkA', 'https://images.genius.com/791fe87320114f112d4c6744d20616f4.300x300x1.jpg', 'February 22, 2015');
