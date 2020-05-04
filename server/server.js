@@ -36,6 +36,7 @@ app.get('/daycount/:id', routes.day_count);
 app.get('/dayrange', routes.day_range);
 app.get('/getcollaborators/:id', routes.get_collaborators)
 app.get('/getrandomcollaborators/', routes.get_random_collaborators)
+app.get('/getrecommendations/:id', routes.get_recommendations)
 
 console.log('Authors: Neil Shweky (nshweky), Salo Serfati (sserfati)');
 const port = process.env.PORT || '8080';

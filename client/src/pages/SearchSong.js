@@ -20,7 +20,8 @@ export default class SearchSong extends React.Component {
       song: {},
       artists: [],
       writers: [],
-      producers: []
+      producers: [], 
+      showMore: false
     }
   }
 
@@ -89,7 +90,7 @@ export default class SearchSong extends React.Component {
       })
   }
 
-  render() { 
+  render() {      
     return (
       <div className="mainContainer">
         <PageNavbar active="search-song" />
