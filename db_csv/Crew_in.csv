@@ -1,4 +1,4 @@
-concat(crew_id,',',song_id)
+crew_id,song_id
 150051,101491
 1007003,101498
 30993,101498
