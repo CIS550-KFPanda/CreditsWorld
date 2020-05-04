@@ -12,7 +12,6 @@ let test = false;
 let test_credentials = {
   host     : 'localhost',
   user     : 'root',
-  password : '',
   database : 'creditsworld_test',
   port     : '3306',
 }
