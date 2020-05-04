@@ -7,25 +7,25 @@ beforeAll(async done => db.connection.changeUser({ database: 'creditsworld_test'
 
 describe('data loaded tests', () => {
   test('count Artists', async () => {
-    expect((await db.query('SELECT COUNT(*) as c FROM Artists;'))[0].c).toBe(62)
+    expect((await db.query('SELECT COUNT(*) as c FROM Artists;'))[0].c).toBe(111)
   })
   test('count Crew_in', async () => {
-    expect((await db.query('SELECT COUNT(*) as c FROM Crew_in;'))[0].c).toBe(368)
+    expect((await db.query('SELECT COUNT(*) as c FROM Crew_in;'))[0].c).toBe(629)
   })
   test('count entries', async () => {
-    expect((await db.query('SELECT COUNT(*) as c FROM Entries;'))[0].c).toBe(100)
+    expect((await db.query('SELECT COUNT(*) as c FROM Entries;'))[0].c).toBe(199)
   })
   test('count Person', async () => {
-    expect((await db.query('SELECT COUNT(*) as c FROM Person;'))[0].c).toBe(236)
+    expect((await db.query('SELECT COUNT(*) as c FROM Person;'))[0].c).toBe(369)
   })
   test('count Popularity', async () => {
-    expect((await db.query('SELECT COUNT(*) as c FROM Popularity;'))[0].c).toBe(88)
+    expect((await db.query('SELECT COUNT(*) as c FROM Popularity;'))[0].c).toBe(166)
   })
   test('count Sings', async () => {
-    expect((await db.query('SELECT COUNT(*) as c FROM Sings;'))[0].c).toBe(88)
+    expect((await db.query('SELECT COUNT(*) as c FROM Sings;'))[0].c).toBe(166)
   })
   test('count Songs', async () => {
-    expect((await db.query('SELECT COUNT(*) as c FROM Songs;'))[0].c).toBe(57)
+    expect((await db.query('SELECT COUNT(*) as c FROM Songs;'))[0].c).toBe(112)
   })
 })
 
@@ -34,10 +34,10 @@ describe('search tests', () => {
     expect((await database.searchSong('despacito')).length).toBe(0)
   })
   test('search song one', async () => { 
-    let songs = await database.searchSong('24K Magic')
+    let songs = await database.searchSong('jumpman')
     expect(songs.length).toBe(1)
-    expect(songs[0].title).toBe('24K Magic')
-    expect(songs[0].id).toBe('2872960')
+    expect(songs[0].title).toBe('Jumpman')
+    expect(songs[0].id).toBe('2311373')
   })
 
   test('search song multiple', async () => { 
@@ -51,15 +51,15 @@ describe('search tests', () => {
     expect((await database.searchPerson('onerepublic')).length).toBe(0)
   })
   test('search person one', async () => { 
-    let artists = await database.searchPerson('future')
+    let artists = await database.searchPerson('& future')
     expect(artists.length).toBe(1)
-    expect(artists[0].name).toBe('Future')
-    expect(artists[0].id).toBe('2197')
+    expect(artists[0].name).toBe('Drake & Future')
+    expect(artists[0].id).toBe('568186')
   })
 
   test('search person multiple', async () => { 
     let artists = await database.searchPerson('one')
-    expect(artists.length).toBe(4)
+    expect(artists.length).toBe(7)
     let bool = artists.reduce((acc, artist) => acc && artist.name.toLowerCase().includes('one') , true)
     expect(bool).toBe(true)
   })
@@ -155,14 +155,14 @@ describe('get tests', () => {
       let dic = await database.dayCount('130')
       expect(dic.artist_id).toBe('130')
       expect(dic.name).toBe('Drake')
-      expect(dic.cumulative_days_on_chart).toBe(13)
+      expect(dic.cumulative_days_on_chart).toBe(17)
     })
 
     test('get day range', async () => {
       let songs = await database.dayRange()
       expect(songs.length).toBe(15)
-      expect(songs[0].song_id).toBe('2104392')
-      expect(songs[14].song_id).toBe('2463402')
+      expect(songs[0].song_id).toBe('2398213')
+      expect(songs[14].song_id).toBe('2378935')
     })
 })
 
