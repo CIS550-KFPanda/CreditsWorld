@@ -182,3 +182,130 @@ SELECT DISTINCT s.title, s.song_art_image_thumbnail_url, s.id as song_id,
 
 
 
+
+SELECT DISTINCT s.title, s.song_art_image_thumbnail_url, a.name, s.id as song_id, a.id as artist_id, s.youtube_url, a.image_url
+FROM Popularity p
+JOIN Songs s on s.id = p.id
+JOIN Sings s2 on s2.song_id = s.id AND s2.type = "primary"
+JOIN Person a on s2.artist_id = a.id
+LIMIT 15;
+
+
+
+
+SELECT DISTINCT t1.crew_id, t1.name, t1.image_url, t1.url, t1.score, s.id AS top_song_id, s.title as top_song_name
+  FROM (
+    SELECT per.name, image_url, url, crew_id, SUM(p.cumulative_score) as score
+    FROM Crew_in c
+    JOIN Popularity p ON p.id = c.song_id
+    JOIN Person per ON per.id = c.crew_id
+    WHERE c.type = "producer"
+    GROUP BY c.crew_id
+    ORDER BY score DESC
+    LIMIT 15
+  ) t1
+  JOIN (
+    SELECT song_id, c.crew_id, c.type
+    FROM Crew_in c
+    JOIN Popularity p ON p.id = c.song_id  
+    JOIN (
+      SELECT c.crew_id, MAX(cumulative_score) as score
+      FROM Crew_in c
+      JOIN Popularity p ON p.id = c.song_id 
+      WHERE c.type = "producer"
+      GROUP BY crew_id
+    ) t1 ON c.crew_id = t1.crew_id AND p.cumulative_score = t1.score
+    WHERE c.type = "producer"
+  ) t2 ON t1.crew_id = t2.crew_id
+  JOIN Songs s ON s.id = t2.song_id
+
+
+/* 
+Query time: 0.33s
+Created index, puhed projections
+ALTER TABLE Popularity DELETE PRIMARY KEY (id);
+THE KICKER Order the CTEs
+*/
+WITH  people_to_songs as ( 
+    SELECT artist_id as id, song_id
+    FROM Sings
+    UNION
+    SELECT crew_id as id, song_id
+    FROM Crew_in
+    ORDER BY id
+),
+songs_by_origin AS (  
+    SELECT ps1.song_id
+    FROM people_to_songs ps1 
+    WHERE ps1.id = 130
+    ORDER BY song_id
+),
+artist_popularity AS (
+  SELECT SUM(p.cumulative_score) as score, per.id as id
+  FROM people_to_songs s
+  JOIN Popularity p ON p.id = s.song_id
+  JOIN Person per ON per.id = s.id
+  GROUP BY s.id
+  ORDER BY score DESC
+)
+SELECT p.name, t1.* 
+FROM (
+    SELECT DISTINCT Person.name, a.score
+    FROM songs_by_origin
+    JOIN people_to_songs ps2 
+        ON ps2.song_id = songs_by_origin.song_id AND ps2.id <> 130
+    JOIN people_to_songs ps3
+        ON ps3.song_id <> ps2.song_id AND ps3.id = ps2.id
+    JOIN people_to_songs ps4 ON ps4.id <> ps3.id
+                            AND ps4.id <> 130
+                            AND ps4.song_id = ps3.song_id
+    JOIN Person ON ps4.id = Person.id
+    JOIN artist_popularity a ON a.id = ps4.id
+    ORDER BY a.score DESC
+
+) t1
+JOIN Person p ON p.id = 130;
+
+
+
+
+
+
+-- initial recommendation query 9.34 s
+WITH  people_to_songs as ( 
+    SELECT artist_id as id, song_id
+    FROM Sings
+    UNION
+    SELECT crew_id as id, song_id
+    FROM Crew_in
+),
+songs_by_origin AS (  
+    SELECT ps1.song_id
+    FROM people_to_songs ps1 
+    WHERE ps1.id = 130
+),
+artist_popularity AS (
+  SELECT per.name, SUM(p.cumulative_score) as score, per.id as id
+  FROM people_to_songs s
+  JOIN Popularity p ON p.id = s.song_id
+  JOIN Person per ON per.id = s.id
+  GROUP BY s.id
+  ORDER BY score DESC
+)
+SELECT p.name, t1.* 
+FROM (
+    SELECT DISTINCT Person.name, a.score
+    FROM songs_by_origin
+    JOIN people_to_songs ps2 
+        ON ps2.song_id = songs_by_origin.song_id AND ps2.id <> 130
+    JOIN people_to_songs ps3
+        ON ps3.song_id <> ps2.song_id AND ps3.id = ps2.id
+    JOIN people_to_songs ps4 ON ps4.id <> ps3.id
+                            AND ps4.id <> 130
+                            AND ps4.song_id = ps3.song_id
+    JOIN Person ON ps4.id = Person.id
+    JOIN artist_popularity a ON a.id = ps4.id
+    ORDER BY a.score DESC
+
+) t1
+JOIN Person p ON p.id = 130;

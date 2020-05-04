@@ -116,6 +116,12 @@ const day_range = (req, res) => {
     .catch(err => res.status(500).send(errorMessageForError(err)))
 }
 
+const get_recommendations = (req, res) => {
+  if (checkMissingParams(req.params.id)) return res.status(400).send(missing_params('id'))
+  db.getRecommendations(req.params.id)
+    .then(rows => res.status(200).send(rows))
+    .catch(err => res.status(500).send(errorMessageForError(err)))
+}
 
 
 module.exports = {
@@ -133,6 +139,7 @@ module.exports = {
   day_count,
   day_range,
   get_random_song_crew,
-  get_random_collaborators
+  get_random_collaborators,
+  get_recommendations
 }
 
