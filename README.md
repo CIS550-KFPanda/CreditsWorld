@@ -1,11 +1,17 @@
 # CreditsWorld
 
+## OVER HERE TAs
+- If you're looking to grade this we have all of the information listed below. Look for the sections Website for the link and Dependecies for the dependencies.
+- If you're looking for the code that loads our data into the database, check for server/data.csv for the actual beginner data, server/loader.js for the code that generates the sql, and loader.sql for the final sql. 
+
+## Description
+
 Artists and repertoire (known as A&R) is the division of a record label or music publishing company that is responsible for talent scouting and overseeing the artistic development of recording artists and songwriters. To create meaningful music sessions, A&R managers need to pair up artists, songwriters, and producers. This matchmaking is often done by leveraging personal connections and is kept personally. 
 
 The goal of this project is to create a website that A&R managers could visit to learn about what type of connections worked in the past, to create more meaningful connections in the future.
 
 ## Website
-The website is now up! https://creditsworld.herokuapp.com/
+The website is now up! http://creditsworld.herokuapp.com/
 
 ## Server
 To run the server:
@@ -60,4 +66,13 @@ Password: KFPanda550
 ```
 
 ## Dependencies 
+React-related dependencies
+qs - parse query strings
+neovis.js - neo4j graph viz
+bootstrap - nice looking react components
+express, express-session, body-parser, cookie-parser, cors - express related dependencies
+jest - testing framework
+morgan - for printing each request
+mysql - for connecting to mysql
+node-fetch - for HTTP requests
 

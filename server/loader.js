@@ -222,7 +222,7 @@ const entriesForRow = function(data) {
 
 const readCsv = function() {
   const promises = []
-  fs.createReadStream('data_part.csv') //Reads csv file line by line
+  fs.createReadStream('data.csv') //Reads csv file line by line
   .pipe(csv({ separator: ',' }))
   .on('data', async data => { //'data' is an event enum
     promises.push(entriesForRow(data)
@@ -260,7 +260,7 @@ ORDER BY scores.cumulative_score DESC;
 ALTER TABLE Popularity ADD CONSTRAINT primaryKey_ID PRIMARY KEY(id);
   `
   const fs1 = require('fs').promises
-  return fs1.writeFile('loader_part.sql', str).catch(console.log)
+  return fs1.writeFile('loader.sql', str).catch(console.log)
 }
 
 
