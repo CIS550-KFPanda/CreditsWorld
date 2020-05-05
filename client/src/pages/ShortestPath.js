@@ -158,9 +158,9 @@ export default class ShortestPath extends React.Component {
               "community": "sings"
             }
       },
-      initial_cypher: "MATCH p = shortestPath((artist1:Person)-[*]-(artist2:Person)) \
-      WHERE artist1.id = '"+ end +"' AND artist2.id = '"+ start +"'  \
-      RETURN p"
+      initial_cypher: `MATCH p = shortestPath((artist1:Person)-[*]-(artist2:Person)) \
+      WHERE artist1.id = '${end}' AND artist2.id = '${start}'  \
+      RETURN p`
   };
     let viz = new NeoVis(config);
     viz.render();
