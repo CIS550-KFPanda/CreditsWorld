@@ -4,9 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PageNavbar from '../components/PageNavbar';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import Image from 'react-bootstrap/Image'
 import logo from '../images/cwlogo.png';
-import chartsLogo from '../images/charts.png';
+// import Image from 'react-bootstrap/Image'
+// import chartsLogo from '../images/charts.png';
 
 export default class Landing extends React.Component {
   constructor(props) {

@@ -8,7 +8,8 @@ import {
 import Landing from './Landing'; 
 import SearchSong from './SearchSong'; 
 import SearchPerson from './SearchPerson'; 
-import Leaderboard from './Leaderboard'; 
+import Leaderboard from './Leaderboard';
+import ShortestPath from './ShortestPath'; 
 
 export default class App extends React.Component {
 
@@ -37,6 +38,12 @@ export default class App extends React.Component {
 							path="/leaderboard"
 							render={() => (
 								<Leaderboard />
+							)}
+						/>
+						<Route
+							path="/shortest-path"
+							render={() => (
+								<ShortestPath />
 							)}
 						/>
 					</Switch>
