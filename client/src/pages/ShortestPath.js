@@ -115,7 +115,7 @@ export default class ShortestPath extends React.Component {
       server_url: "***REMOVED***",
       server_user: "neo4j",
       server_password: "***REMOVED***",
-      arrows: true,
+      arrows: false,
       labels: {
           "Person": {
               "caption": "name",
