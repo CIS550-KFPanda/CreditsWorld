@@ -93,49 +93,52 @@ app.get('/graphviz', (req, res) => {
                 server_url: "bolt://ec2-52-207-251-29.compute-1.amazonaws.com:7687",
                 server_user: "neo4j",
                 server_password: "i-0d771e544f5f4b0b7",
+                arrows: true,
                 labels: {
                     "Person": {
                         "caption": "name",
                         "size": 2,
-                        "community": "community"
+                        "community": "name",
+                        "title_properties": [
+                            "name",
+                            "id"
+                        ]
                     },
                     "Song": {
                       "caption": "title",
                       "size": 2,
-                      "community": "community"
+                      "community": "songs",
+                      "title_properties": [
+                        "title",
+                        "song_id"
+                    ]
                     }
                 },
                 relationships: {
                     "CREW_IN": {
                         "thickness": 1,
-                        "caption": false
+                        "caption": false,
+                        "community": "crew"
                     },
                     "HAS_CREW": {
                       "thickness": 1,
-                      "caption": false
+                      "caption": false,
+                      "community": "crew"
                     },
                     "SINGS": {
                       "thickness": 1,
-                      "caption": false
-                    }
+                      "caption": false,
+                      "community": "sings"
+                    },
+                    "SANG_BY": {
+                        "thickness": 1,
+                        "caption": false,
+                        "community": "sings"
+                      }
                 },
-                initial_cypher: "MATCH (artist1:Person)-[:SINGS]->(song1:Song)-[:HAS_CREW]->(crew1:Person)-[:CREW_IN]-(song2:Song)-[:HAS_CREW]->(crew2:Person), \
-                (artist1)-[:SINGS]->(song3:Song)-[:SANG_BY]->(artist2:Person)-[:SINGS]->(song4:Song)-[:SANG_BY]->(artist3:Person) \
-                WHERE artist1.id <> artist2.id \
-                  AND song1.song_id <> song2.song_id \
-                  AND song1.song_id <> song2.song_id \
-                  AND song3.song_id <> song2.song_id \
-                  AND song3.song_id <> song1.song_id \
-                  AND song4.song_id <> song1.song_id \
-                  AND song4.song_id <> song2.song_id \
-                  AND song4.song_id <> song3.song_id \
-                  AND artist2.id <> artist3.id \
-                  AND crew1.id <> crew2.id \
-                  AND NOT exists ((artist3)-[:SINGS]->(:Song)-[:HAS_CREW]->(crew2)) \
-                  AND NOT exists ((artist1)-[:SINGS]->(:Song)-[:SANG_BY]->(artist3)) \
-                  AND NOT exists ((artist1)-[:SINGS]->(:Song)-[:HAS_CREW]->(crew2)) \
-                RETURN  DISTINCT artist1,artist2,artist3,song1,song2,song3,song4,crew1,crew2 \
-                LIMIT 1;"
+                initial_cypher: "MATCH p = shortestPath((artist1:Person)-[*]-(artist2:Person)) \
+                WHERE artist1.name = 'Drake' AND artist2.name = 'Kendrick Lamar'  \
+                RETURN p"
             };
 
             viz = new NeoVis.default(config);
