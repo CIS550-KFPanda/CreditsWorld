@@ -12,9 +12,11 @@ before_install:
   - mysql --version  
   - sudo cp $TRAVIS_BUILD_DIR/_travis/mysql.cnf /etc/mysql/conf.d/
   - sudo service mysql restart
+  - mysql --version  
   - mysql -e "CREATE DATABASE IF NOT EXISTS creditsworld;"
   - mysql -e "CREATE DATABASE IF NOT EXISTS creditsworld_test;"
-  - mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY '5648';"
+  - mysql -e "GRANT ALL PRIVILEGES ON * . * TO 'root'@'localhost' IDENTIFIED BY '5648';"
+  - mysql -e "FLUSH PRIVILEGES;"
   - mysql -u root --password="5648" --default-character-set=utf8 creditsworld_test < server/loader_part.sql
 install:
 - nvm install node
