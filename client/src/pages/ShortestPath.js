@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 // import Jumbotron from 'react-bootstrap/Button';
 // import Container from 'react-bootstrap/Button';
 import { API_URL } from './Utilities';
-
+import NeoVis from 'neovis.js'
 
 export default class ShortestPath extends React.Component {
   constructor(props) {
@@ -28,6 +28,7 @@ export default class ShortestPath extends React.Component {
 
   // React function that is called when the page load.
   componentDidMount() {
+    this.draw()
   }
 
   selectStartPerson = (crewId, name) => {
@@ -44,16 +45,23 @@ export default class ShortestPath extends React.Component {
       endPeopleFound: []
     })
   }
-  resetState =  () => {
+  resetStartPersonState =  () => {
     this.setState({
         startPersonId: '', 
         startPersonName: '', 
         startPeopleFound: []
     })
   }
+  resetEndPersonState =  () => {
+    this.setState({
+        endPersonId: '', 
+        endPersonName: '', 
+        endPeopleFound: []
+    })
+  }
   handleStartPersonSearchTextChange = (event) => {
     if (this.state.startPersonName !== '') {
-         this.resetState()
+         this.resetStartPersonState()
     }
     fetch(API_URL + '/searchperson?person=' + event.target.value)
     .then(res => res.json())
@@ -74,7 +82,7 @@ export default class ShortestPath extends React.Component {
 
   handleEndPersonSearchTextChange =  event => {
     if (this.state.endPersonName !== '') {
-        this.resetState()
+        this.resetEndPersonState()
     }
     fetch(API_URL + '/searchperson?person=' + event.target.value)
     .then(res => res.json())
@@ -96,9 +104,70 @@ export default class ShortestPath extends React.Component {
   handleSearchClick = () => {
       console.log("startPersonId: ", this.state.startPersonId)
       console.log("endPersonId: ", this.state.endPersonId)
+      if (this.state.startPersonId !=='' && !!this.state.endPersonId !=='') {
+        this.draw(this.state.startPersonId, this.state.endPersonId)
+      }
   }
 
-  render() {    
+  draw = (start, end) => {
+    var config = {
+      container_id: "viz",
+      server_url: "bolt://ec2-52-207-251-29.compute-1.amazonaws.com:7687",
+      server_user: "neo4j",
+      server_password: "i-0d771e544f5f4b0b7",
+      arrows: true,
+      labels: {
+          "Person": {
+              "caption": "name",
+              "size": 2,
+              "community": "name",
+              "title_properties": [
+                  "name",
+                  "id"
+              ]
+          },
+          "Song": {
+            "caption": "title",
+            "size": 2,
+            "community": "songs",
+            "title_properties": [
+              "title",
+              "song_id"
+          ]
+          }
+      },
+      relationships: {
+          "CREW_IN": {
+              "thickness": 1,
+              "caption": false,
+              "community": "crew"
+          },
+          "HAS_CREW": {
+            "thickness": 1,
+            "caption": false,
+            "community": "crew"
+          },
+          "SINGS": {
+            "thickness": 1,
+            "caption": false,
+            "community": "sings"
+          },
+          "SANG_BY": {
+              "thickness": 1,
+              "caption": false,
+              "community": "sings"
+            }
+      },
+      initial_cypher: "MATCH p = shortestPath((artist1:Person)-[*]-(artist2:Person)) \
+      WHERE artist1.id = '"+ end +"' AND artist2.id = '"+ start +"'  \
+      RETURN p"
+  };
+    let viz = new NeoVis(config);
+    viz.render();
+  } 
+
+
+  render() {  
     return (
       <div className="mainContainer">
         <PageNavbar active="shortest-path" />
@@ -158,6 +227,9 @@ export default class ShortestPath extends React.Component {
             </div> 
             <div style={{padding:'24px'}}>
                 <Button variant="primary" onClick={this.handleSearchClick}>Search</Button>
+            </div>
+            <div style={{width:'100%'}}> 
+                <div style={{width:'100%', height: '100%'}} id="viz"></div> 
             </div> 
         </div>
       </div>
