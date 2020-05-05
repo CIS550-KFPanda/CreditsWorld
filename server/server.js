@@ -40,29 +40,9 @@ app.get('/getrecommendations/:id', routes.get_recommendations)
 
 
 app.get('/graphviz', (req, res) => {
-  var html = `
-  <!doctype html>
-  <html>
-      <head>
-          <style type="text/css">
-              html, body {
-                  font: 16pt arial;
-              }
-      
-              #viz {
-                  width: 900px;
-                  height: 700px;
-                  border: 1px solid lightgray;
-                  font: 22pt arial;
-              }
-          </style> 
-      </head>
-      <body onload="draw()">
-          <div id="viz"></div>
-      </body>    
-  </html>
+  var html = ` 
+  <div id="viz"></div>    
   <script src="https://rawgit.com/neo4j-contrib/neovis.js/master/dist/neovis.js"></script>
-
   <script type="text/javascript">
 
       var viz;
@@ -121,6 +101,7 @@ app.get('/graphviz', (req, res) => {
           viz = new NeoVis.default(config);
           viz.render();
       }
+      draw()
   </script>
   `
   res.send(html)
