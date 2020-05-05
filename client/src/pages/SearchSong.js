@@ -138,7 +138,7 @@ export default class SearchSong extends React.Component {
                 <div className="tablesContainer">
                   {/* Artists  */}
                   <div className="singleTableContainer">
-                    <h3> Aritsts </h3>
+                    <h3> Artists </h3>
                     <Table  hover>
                       <thead>
                         <tr>
