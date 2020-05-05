@@ -59,3 +59,5 @@ mysql -h credits-world-db-id.chp4hbnqk2jd.us-east-1.rds.amazonaws.com -P 1521 -u
 Password: KFPanda550
 ```
 
+## Dependencies 
+
