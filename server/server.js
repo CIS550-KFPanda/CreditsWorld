@@ -81,7 +81,6 @@ app.get('/graphviz', (req, res) => {
             <div id="viz"></div>
         </body>    
     </html>
-    <script src="https://cdn.neo4jlabs.com/neovis.js/v1.0.0/neovis.js"></script>
     <script src="https://rawgit.com/neo4j-contrib/neovis.js/master/dist/neovis.js"></script>
 
     <script type="text/javascript">
@@ -97,26 +96,46 @@ app.get('/graphviz', (req, res) => {
                 labels: {
                     "Person": {
                         "caption": "name",
-                        "size": "pagerank",
+                        "size": 2,
                         "community": "community"
                     },
                     "Song": {
                       "caption": "title",
-                      "size": "pagerank",
+                      "size": 2,
                       "community": "community"
                     }
                 },
                 relationships: {
-                    "Crew_in": {
+                    "CREW_IN": {
                         "thickness": 1,
                         "caption": false
                     },
-                    "Sings": {
+                    "HAS_CREW": {
+                      "thickness": 1,
+                      "caption": false
+                    },
+                    "SINGS": {
                       "thickness": 1,
                       "caption": false
                     }
                 },
-                initial_cypher: "MATCH p = shortestPath((artist1:Person)-[*]-(artist2:Person)) WHERE artist1.name = 'Drake' AND artist2.name = 'Kendrick Lamar' RETURN p"
+                initial_cypher: "MATCH (artist1:Person)-[:SINGS]->(song1:Song)-[:HAS_CREW]->(crew1:Person)-[:CREW_IN]-(song2:Song)-[:HAS_CREW]->(crew2:Person), \
+                (artist1)-[:SINGS]->(song3:Song)-[:SANG_BY]->(artist2:Person)-[:SINGS]->(song4:Song)-[:SANG_BY]->(artist3:Person) \
+                WHERE artist1.id <> artist2.id \
+                  AND song1.song_id <> song2.song_id \
+                  AND song1.song_id <> song2.song_id \
+                  AND song3.song_id <> song2.song_id \
+                  AND song3.song_id <> song1.song_id \
+                  AND song4.song_id <> song1.song_id \
+                  AND song4.song_id <> song2.song_id \
+                  AND song4.song_id <> song3.song_id \
+                  AND artist2.id <> artist3.id \
+                  AND crew1.id <> crew2.id \
+                  AND NOT exists ((artist3)-[:SINGS]->(:Song)-[:HAS_CREW]->(crew2)) \
+                  AND NOT exists ((artist1)-[:SINGS]->(:Song)-[:SANG_BY]->(artist3)) \
+                  AND NOT exists ((artist1)-[:SINGS]->(:Song)-[:HAS_CREW]->(crew2)) \
+                RETURN  DISTINCT artist1,artist2,artist3,song1,song2,song3,song4,crew1,crew2 \
+                LIMIT 1;"
             };
 
             viz = new NeoVis.default(config);
