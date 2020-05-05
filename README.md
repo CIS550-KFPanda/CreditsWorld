@@ -1,7 +1,7 @@
 # CreditsWorld
 
 ## OVER HERE TAs
-- If you're looking to grade this we have all of the information listed below. Look for the sections Website for the link and Dependecies for the dependencies.
+- If you're looking to grade this we have all of the information listed below. The website is located [here](creditsworld.heroku_app.com) and Dependecies for the dependencies.
 - If you're looking for the code that loads our data into the database, check for server/data.csv for the actual beginner data, server/loader.js for the code that generates the sql, and loader.sql for the final sql. 
 
 ## Description
