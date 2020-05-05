@@ -157,12 +157,6 @@ export default class SearchPerson extends React.Component {
           </div>
           <div className="mainCardContainer"> 
             <div className="leftContainer" style={{backgroundColor: 'rgba(196, 129, 62, 0.63)'}}> 
-                <h4> Publisher </h4> 
-                <p> Universal Music Group </p> 
-                <h4> Label </h4>
-                <p> Interscope </p>
-                <h4> Location </h4>
-                <p> California, CA </p>
             </div> 
             <div className="rightContainer">
               <div className="topRowContainer"> 
