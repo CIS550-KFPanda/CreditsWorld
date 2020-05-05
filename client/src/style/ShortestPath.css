@@ -5,6 +5,7 @@
     flex-direction: row;
     justify-content: flex-start;
     padding: 32px; 
+    /* background-color: lightblue; */
 }
 
 .leftSearchBarContainerSP {
