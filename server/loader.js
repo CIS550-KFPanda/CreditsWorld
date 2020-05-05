@@ -247,16 +247,17 @@ const writeToFile = function() {
 
   let str = total.reduce((acc, query) => acc += query + '\n', "")
   str += `DROP TABLE IF EXISTS Popularity;
-  CREATE TABLE Popularity AS
-  SELECT Songs.id, scores.cumulative_score 
-  FROM Sings LEFT JOIN Person ON Person.id = Sings.artist_id
-  LEFT JOIN Songs ON Sings.song_id = Songs.id
-  LEFT JOIN (SELECT id, SUM(score) AS cumulative_score
-    FROM(SELECT song_id as id, (streams / position) AS score
-        FROM Entries) x
-        GROUP BY id)
-    scores ON Songs.id = scores.id
-  ORDER BY scores.cumulative_score DESC;
+CREATE TABLE Popularity AS
+SELECT Songs.id, scores.cumulative_score 
+FROM Sings LEFT JOIN Person ON Person.id = Sings.artist_id
+LEFT JOIN Songs ON Sings.song_id = Songs.id
+LEFT JOIN (SELECT id, SUM(score) AS cumulative_score
+  FROM(SELECT song_id as id, (streams / position) AS score
+      FROM Entries) x
+      GROUP BY id)
+  scores ON Songs.id = scores.id
+ORDER BY scores.cumulative_score DESC;
+ALTER TABLE Popularity ADD CONSTRAINT primaryKey_ID PRIMARY KEY(id);
   `
   const fs1 = require('fs').promises
   return fs1.writeFile('loader_part.sql', str).catch(console.log)
