@@ -329,7 +329,7 @@ const getRecommendations = function(id) {
 
   ) t1
   JOIN Person p ON p.id = ${id};
-  `).then(arr => arr.reduce((acc, x) => { acc.push(x.name); return acc }, []))
+  `)
 }
 
 
