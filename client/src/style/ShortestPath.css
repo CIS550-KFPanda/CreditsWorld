@@ -1,0 +1,20 @@
+
+
+.shorestPathMainContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 32px; 
+}
+
+.leftSearchBarContainerSP {
+    display: flex;
+    flex-direction: column;
+    /* background-color: lightblue; */
+}
+
+.rightSearchBarContainerSP {
+    display: flex;
+    flex-direction: column;
+    /* background-color: lightblue; */
+}
