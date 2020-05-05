@@ -1,7 +1,7 @@
 # CreditsWorld
 
 ## OVER HERE TAs
-- If you're looking to grade this we have all of the information listed below. The website is located [here](creditsworld.heroku_app.com) and Dependecies for the dependencies.
+- If you're looking to grade this we have all of the information listed below. The website is located [here](creditsworld.heroku_app.com "Credits World"). Dependecies are located [below](#website).
 - If you're looking for the code that loads our data into the database, check for server/data.csv for the actual beginner data, server/loader.js for the code that generates the sql, and loader.sql for the final sql. 
 
 ## Description
@@ -10,6 +10,7 @@ Artists and repertoire (known as A&R) is the division of a record label or music
 
 The goal of this project is to create a website that A&R managers could visit to learn about what type of connections worked in the past, to create more meaningful connections in the future.
 
+(#website)
 ## Website
 The website is now up! http://creditsworld.herokuapp.com/
 
