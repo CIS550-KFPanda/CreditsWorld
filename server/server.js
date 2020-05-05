@@ -44,7 +44,6 @@ app.get('/graphviz', (req, res) => {
   <!doctype html>
   <html>
       <head>
-          <title>Neovis.js Simple Example</title>
           <style type="text/css">
               html, body {
                   font: 16pt arial;
