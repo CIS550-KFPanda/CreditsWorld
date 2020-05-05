@@ -1,7 +1,7 @@
 # CreditsWorld
 
 ## OVER HERE TAs
-- If you're looking to grade this we have all of the information listed below. The website is located [here](creditsworld.heroku_app.com "Credits World"). Dependecies are located [below](#website).
+- If you're looking to grade this we have all of the information listed below. The website link is located [here](#website). Dependecies are located [below](#dependencies).
 - If you're looking for the code that loads our data into the database, check for server/data.csv for the actual beginner data, server/loader.js for the code that generates the sql, and loader.sql for the final sql. 
 
 ## Description
@@ -66,14 +66,15 @@ mysql -h credits-world-db-id.chp4hbnqk2jd.us-east-1.rds.amazonaws.com -P 1521 -u
 Password: KFPanda550
 ```
 
+(#dependencies)
 ## Dependencies 
-React-related dependencies
-qs - parse query strings
-neovis.js - neo4j graph viz
-bootstrap - nice looking react components
-express, express-session, body-parser, cookie-parser, cors - express related dependencies
-jest - testing framework
-morgan - for printing each request
-mysql - for connecting to mysql
-node-fetch - for HTTP requests
+* `React`-related dependencies
+* `qs` - parse query strings
+* `neovis.js` - neo4j graph viz
+* `bootstrap` - nice looking react components
+* `express`, `express-session`, `body-parser`, `cookie-parser`, `cors` - express related dependencies
+* `jest` - testing framework
+* `morgan` - for printing each request
+* `mysql` - for connecting to mysql
+* `node-fetch` - for HTTP requests
 
