@@ -20,10 +20,17 @@ export default class SearchPerson extends React.Component {
       artist: {},
       artists: [],
       writers: [],
-      producers: []
+      producers: [], 
+      recommendations: [], 
+      crewNames: []  
     }
 
-    // this.showMovies = this.showMovies.bind(this);
+  }
+  //filter Recommendations to make sure they don't appear in collaborators 
+  filterRecommendations = (recommendations) => {
+    return recommendations.filter(recommendation => {
+       return !this.state.crewNames.includes(recommendation.rec_name);
+    }); 
   }
 
   // React function that is called when the page load.
@@ -56,10 +63,8 @@ export default class SearchPerson extends React.Component {
       })
   }
   
-  
-  //When the  "Find Random" Button is clicked 
-  renderPage = (queryString) => {
-    fetch(queryString)
+  findCollaborators = (queryString) => {
+    return fetch(queryString)
       .then(res => res.json())
       .then(result => {
         console.log('HERE', result.person)
@@ -67,11 +72,15 @@ export default class SearchPerson extends React.Component {
         artist.user = "@" + artist.name.replace(" ", "")
         this.setState({ artist })
         let i = 0;
+        var crewNames = []; 
         let mat = result.collaborators.reduce((acc, crew) => {
           let jsx = <tr key={i++}>
             <td><a href={"/search-person?artist_id="+crew.id}>{crew.name}</a></td>
             <td><a href={"/search-song?song_id="+crew.song_id}>{crew.song_title}</a></td>
-          </tr>
+          </tr> 
+          //Record crewNames to make sure we don't have duplicates
+          crewNames.push(crew.name)
+
           if (crew.type === 'primary')
             acc[0].unshift(jsx)
           else if (crew.type === 'featured')
@@ -82,13 +91,42 @@ export default class SearchPerson extends React.Component {
             acc[2].push(jsx)
           return acc
         }, [[],[],[]])
-
         this.setState({
           artists: mat[0],
           writers: mat[1],
-          producers: mat[2]
+          producers: mat[2], 
+          crewNames: crewNames
         })
+        return artist.id
       }) 
+  }
+  findRecommendation = (id) => {
+    console.log("ID: " , id)
+    const queryString = API_URL + '/getrecommendations/' + id;
+    fetch(queryString)
+    .then(res => res.json())
+    .then(results => {
+      console.log('Recommendation: ', results)
+      let filteredRecommendation = this.filterRecommendations(results); 
+      let recommendations = filteredRecommendation.map((result, i) => 
+      <tr key={i}>
+        <td>{++i}</td>
+        <td> 
+          <a href= {"/search-person?artist_id="+ result.rec_id} >
+              <Image src={result.rec_image}  height="50" roundedCircle style={{paddingRight:'8px'}}/> {result.rec_name}
+          </a>
+        </td> 
+        <td><a href={result.rec_url}>{result.rec_url}</a></td>
+      </tr> 
+      ); 
+      this.setState({
+        recommendations: recommendations
+      })
+    });
+  }
+  renderPage = async (queryString) => {
+    let artist_id = await this.findCollaborators(queryString); //Wait until artist_id is set
+    this.findRecommendation(artist_id);
   }
   render() {    
     console.log("People Found: ", this.state.peopleFound)
@@ -134,7 +172,7 @@ export default class SearchPerson extends React.Component {
                 </div>
                 <Image src={this.state.artist.image_url} roundedCircle  height="250"/>
               </div>
-              <div className="bottomRowContainer"> 
+              <div className="bottomRowContainer" style={{backgroundColor:''}}> 
                 <h2 style={{padding: 8}}> Collaborators</h2> 
                 <div className="tablesContainer">
                   {/* Artists  */}
@@ -186,6 +224,21 @@ export default class SearchPerson extends React.Component {
                 </div>
 
               </div>
+              <div className="bottomRowContainer" style={{backgroundColor:''}}> 
+                <h2 style={{padding: 8}}> Recommendations</h2>
+                <Table hover>
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Name</th>
+                          <th>Genius URL</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {this.state.recommendations}
+                      </tbody>
+                </Table>
+              </div> 
             </div> 
           </div>
           <div className="findRandomContainer"> 
