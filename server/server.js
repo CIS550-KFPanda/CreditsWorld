@@ -40,110 +40,91 @@ app.get('/getrecommendations/:id', routes.get_recommendations)
 
 
 app.get('/graphviz', (req, res) => {
-  var neo4j = require('neo4j');
-  var db = new neo4j.GraphDatabase('http://neo4j:i-0d771e544f5f4b0b7@ec2-52-207-251-29.compute-1.amazonaws.com:7474');
+  var html = `
+  <!doctype html>
+  <html>
+      <head>
+          <title>Neovis.js Simple Example</title>
+          <style type="text/css">
+              html, body {
+                  font: 16pt arial;
+              }
+      
+              #viz {
+                  width: 900px;
+                  height: 700px;
+                  border: 1px solid lightgray;
+                  font: 22pt arial;
+              }
+          </style> 
+      </head>
+      <body onload="draw()">
+          <div id="viz"></div>
+      </body>    
+  </html>
+  <script src="https://rawgit.com/neo4j-contrib/neovis.js/master/dist/neovis.js"></script>
 
-  // MATCH p = shortestPath((artist1:Person)-[*]-(artist2:Person))
-  // WHERE artist1.name = 'Drake' AND artist2.name = 'Kendrick Lamar' 
-  // RETURN p
+  <script type="text/javascript">
 
-  // db.cypher({
-  //   query: `
-  // MATCH p = shortestPath((artist1:Person)-[*]-(artist2:Person))
-  // WHERE artist1.name = 'Drake' AND artist2.name = 'Kendrick Lamar' 
-  // RETURN p
-  //   `,
-  //   // params: {
-  //   //     email: 'alice@example.com',
-  //   // },
-  // }, function(err, results) {
-  //   console.log(JSON.stringify(results, null, 2));
-  // })
-    var html = `
-    <!doctype html>
-    <html>
-        <head>
-            <title>Neovis.js Simple Example</title>
-            <style type="text/css">
-                html, body {
-                    font: 16pt arial;
-                }
-        
-                #viz {
-                    width: 900px;
-                    height: 700px;
-                    border: 1px solid lightgray;
-                    font: 22pt arial;
-                }
-            </style> 
-        </head>
-        <body onload="draw()">
-            <div id="viz"></div>
-        </body>    
-    </html>
-    <script src="https://rawgit.com/neo4j-contrib/neovis.js/master/dist/neovis.js"></script>
+      var viz;
 
-    <script type="text/javascript">
-
-        var viz;
-
-        function draw() {
-            var config = {
-                container_id: "viz",
-                server_url: "bolt://ec2-52-207-251-29.compute-1.amazonaws.com:7687",
-                server_user: "neo4j",
-                server_password: "i-0d771e544f5f4b0b7",
-                labels: {
-                    "Person": {
-                        "caption": "name",
-                        "size": 2,
-                        "community": "community"
-                    },
-                    "Song": {
-                      "caption": "title",
+      function draw() {
+          var config = {
+              container_id: "viz",
+              server_url: "bolt://ec2-52-207-251-29.compute-1.amazonaws.com:7687",
+              server_user: "neo4j",
+              server_password: "i-0d771e544f5f4b0b7",
+              labels: {
+                  "Person": {
+                      "caption": "name",
                       "size": 2,
                       "community": "community"
-                    }
-                },
-                relationships: {
-                    "CREW_IN": {
-                        "thickness": 1,
-                        "caption": false
-                    },
-                    "HAS_CREW": {
+                  },
+                  "Song": {
+                    "caption": "title",
+                    "size": 2,
+                    "community": "community"
+                  }
+              },
+              relationships: {
+                  "CREW_IN": {
                       "thickness": 1,
                       "caption": false
-                    },
-                    "SINGS": {
-                      "thickness": 1,
-                      "caption": false
-                    }
-                },
-                initial_cypher: "MATCH (artist1:Person)-[:SINGS]->(song1:Song)-[:HAS_CREW]->(crew1:Person)-[:CREW_IN]-(song2:Song)-[:HAS_CREW]->(crew2:Person), \
-                (artist1)-[:SINGS]->(song3:Song)-[:SANG_BY]->(artist2:Person)-[:SINGS]->(song4:Song)-[:SANG_BY]->(artist3:Person) \
-                WHERE artist1.id <> artist2.id \
-                  AND song1.song_id <> song2.song_id \
-                  AND song1.song_id <> song2.song_id \
-                  AND song3.song_id <> song2.song_id \
-                  AND song3.song_id <> song1.song_id \
-                  AND song4.song_id <> song1.song_id \
-                  AND song4.song_id <> song2.song_id \
-                  AND song4.song_id <> song3.song_id \
-                  AND artist2.id <> artist3.id \
-                  AND crew1.id <> crew2.id \
-                  AND NOT exists ((artist3)-[:SINGS]->(:Song)-[:HAS_CREW]->(crew2)) \
-                  AND NOT exists ((artist1)-[:SINGS]->(:Song)-[:SANG_BY]->(artist3)) \
-                  AND NOT exists ((artist1)-[:SINGS]->(:Song)-[:HAS_CREW]->(crew2)) \
-                RETURN  DISTINCT artist1,artist2,artist3,song1,song2,song3,song4,crew1,crew2 \
-                LIMIT 1;"
-            };
+                  },
+                  "HAS_CREW": {
+                    "thickness": 1,
+                    "caption": false
+                  },
+                  "SINGS": {
+                    "thickness": 1,
+                    "caption": false
+                  }
+              },
+              initial_cypher: "MATCH (artist1:Person)-[:SINGS]->(song1:Song)-[:HAS_CREW]->(crew1:Person)-[:CREW_IN]-(song2:Song)-[:HAS_CREW]->(crew2:Person), \
+              (artist1)-[:SINGS]->(song3:Song)-[:SANG_BY]->(artist2:Person)-[:SINGS]->(song4:Song)-[:SANG_BY]->(artist3:Person) \
+              WHERE artist1.id <> artist2.id \
+                AND song1.song_id <> song2.song_id \
+                AND song1.song_id <> song2.song_id \
+                AND song3.song_id <> song2.song_id \
+                AND song3.song_id <> song1.song_id \
+                AND song4.song_id <> song1.song_id \
+                AND song4.song_id <> song2.song_id \
+                AND song4.song_id <> song3.song_id \
+                AND artist2.id <> artist3.id \
+                AND crew1.id <> crew2.id \
+                AND NOT exists ((artist3)-[:SINGS]->(:Song)-[:HAS_CREW]->(crew2)) \
+                AND NOT exists ((artist1)-[:SINGS]->(:Song)-[:SANG_BY]->(artist3)) \
+                AND NOT exists ((artist1)-[:SINGS]->(:Song)-[:HAS_CREW]->(crew2)) \
+              RETURN  DISTINCT artist1,artist2,artist3,song1,song2,song3,song4,crew1,crew2 \
+              LIMIT 1;"
+          };
 
-            viz = new NeoVis.default(config);
-            viz.render();
-        }
-    </script>
-    `
-    res.send(html)
+          viz = new NeoVis.default(config);
+          viz.render();
+      }
+  </script>
+  `
+  res.send(html)
  
 })
 
