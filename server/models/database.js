@@ -6,8 +6,8 @@ var db = require('./schemas')
 const searchSong = function(string) {
   return db.query(`SELECT * 
   FROM Songs 
-  WHERE title LIKE '%${string}%'
-  LIMIT 15;`)
+  WHERE title LIKE ?
+  LIMIT 15;`, '%' + string + '%')
 }
 
 const searchPerson = function(string) {
@@ -15,10 +15,10 @@ const searchPerson = function(string) {
     `
     SELECT *
     FROM Person
-    WHERE name LIKE '%${string}%'
+    WHERE name LIKE ?
     ORDER BY name
     LIMIT 15;
-    `
+    `, '%' + string + '%'
     )
 }
 
@@ -132,7 +132,7 @@ const leaderboardProducers = function() {
 }
 
 const getSong = function(id) {
-  return db.query(`SELECT * FROM Songs WHERE id = '${id}'`)
+  return db.query(`SELECT * FROM Songs WHERE id = ${db.connection.escape(id)}`)
            .then(rows => rows[0])
 }
 
@@ -142,11 +142,11 @@ const getCrew = function(id) {
   FROM (
     SELECT crew_id as id, type
     FROM Crew_in
-    WHERE song_id='${id}'
+    WHERE song_id=${db.connection.escape(id)}
     UNION
     SELECT artist_id as id, type
     FROM Sings
-    WHERE song_id='${id}'
+    WHERE song_id=${db.connection.escape(id)}
   ) t1
   JOIN Person p ON p.id = t1.id
   `)
@@ -209,9 +209,9 @@ const getCollaborators = function(id) {
   IN(
 	  SELECT song_id
 	  FROM Sings
-	  WHERE artist_id = ${id}
+	  WHERE artist_id = ${db.connection.escape(id)}
 	)
-  AND crew_id <> ${id})
+  AND crew_id <> ${db.connection.escape(id)})
   UNION
   (SELECT artist_id as id, type, song_id
   FROM Sings
@@ -219,9 +219,9 @@ const getCollaborators = function(id) {
   IN(
 	  SELECT song_id
 	  FROM Crew_in
-	  WHERE crew_id = ${id}
+	  WHERE crew_id = ${db.connection.escape(id)}
   )
-  AND artist_id<>${id})
+  AND artist_id<>${db.connection.escape(id)})
   ) t1
   JOIN Person p ON p.id=t1.id
   JOIN Songs s ON s.id = song_id;
@@ -254,7 +254,7 @@ const dayCount = function(id) {
     GROUP BY song_id) DayCounter
   LEFT JOIN Sings ON DayCounter.song_id = Sings.song_id
   LEFT JOIN Person ON Sings.artist_id = Person.id
-  WHERE artist_id=${id}
+  WHERE artist_id=${db.connection.escape(id)}
   GROUP BY artist_id, Person.name
   ORDER BY cumulative_days_on_chart DESC;
   `).then(rows => rows[0])
@@ -297,39 +297,39 @@ const getRecommendations = function(id) {
     SELECT crew_id as id, song_id
     FROM Crew_in
     ORDER BY id
-),
-songs_by_origin AS (  
-    SELECT ps1.song_id
-    FROM people_to_songs ps1 
-    WHERE ps1.id = ${id}
-    ORDER BY song_id
-),
-artist_popularity AS (
-  SELECT SUM(p.cumulative_score) as score, per.id as id
-  FROM people_to_songs s
-  JOIN Popularity p ON p.id = s.song_id
-  JOIN Person per ON per.id = s.id
-  GROUP BY s.id
-  ORDER BY score DESC
-)
-SELECT p.name, t1.* 
-FROM (
-    SELECT DISTINCT Person.name, a.score
-    FROM songs_by_origin
-    JOIN people_to_songs ps2 
-        ON ps2.song_id = songs_by_origin.song_id AND ps2.id <> ${id}
-    JOIN people_to_songs ps3
-        ON ps3.song_id <> ps2.song_id AND ps3.id = ps2.id
-    JOIN people_to_songs ps4 ON ps4.id <> ps3.id
-                            AND ps4.id <> ${id}
-                            AND ps4.song_id = ps3.song_id
-    JOIN Person ON ps4.id = Person.id
-    JOIN artist_popularity a ON a.id = ps4.id
-    ORDER BY a.score DESC
+  ),
+  songs_by_origin AS (  
+      SELECT ps1.song_id
+      FROM people_to_songs ps1 
+      WHERE ps1.id = ${db.connection.escape(id)}
+      ORDER BY song_id
+  ),
+  artist_popularity AS (
+    SELECT SUM(p.cumulative_score) as score, per.id as id
+    FROM people_to_songs s
+    JOIN Popularity p ON p.id = s.song_id
+    JOIN Person per ON per.id = s.id
+    GROUP BY s.id
+    ORDER BY score DESC
+  )
+  SELECT p.name as origin_name, p.id as origin_id, t1.* 
+  FROM (
+      SELECT DISTINCT p.name as rec_name, p.id as rec_id, p.image_url as rec_image, p.url as rec_url, a.score
+      FROM songs_by_origin
+      JOIN people_to_songs ps2 
+          ON ps2.song_id = songs_by_origin.song_id AND ps2.id <> ${db.connection.escape(id)}
+      JOIN people_to_songs ps3
+          ON ps3.song_id <> ps2.song_id AND ps3.id = ps2.id
+      JOIN people_to_songs ps4 ON ps4.id <> ps3.id
+                              AND ps4.id <> ${db.connection.escape(id)}
+                              AND ps4.song_id = ps3.song_id
+      JOIN Person p ON ps4.id = p.id
+      JOIN artist_popularity a ON a.id = ps4.id
+      ORDER BY a.score DESC
 
-) t1
-JOIN Person p ON p.id = ${id};
-  `).then(arr => arr.reduce((acc, x) => { acc.push(x.name); return acc }, []))
+  ) t1
+  JOIN Person p ON p.id = ${db.connection.escape(id)};
+  `)
 }
 
 

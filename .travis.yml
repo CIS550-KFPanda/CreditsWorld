@@ -3,12 +3,19 @@ language: node_js
 services:
   - mysql
 before_install:
+  - wget https://repo.mysql.com//mysql-apt-config_0.8.10-1_all.deb
+  - sudo dpkg -i mysql-apt-config_0.8.10-1_all.deb
+  - sudo apt-get update -q
+  - sudo apt-get install -q -y --allow-unauthenticated -o Dpkg::Options::=--force-confnew mysql-server
+  - sudo systemctl restart mysql
+  - sudo mysql_upgrade
+  - mysql --version  
   - sudo cp $TRAVIS_BUILD_DIR/_travis/mysql.cnf /etc/mysql/conf.d/
   - sudo service mysql restart
+  - mysql --version  
   - mysql -e "CREATE DATABASE IF NOT EXISTS creditsworld;"
   - mysql -e "CREATE DATABASE IF NOT EXISTS creditsworld_test;"
-  - mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY '5648';"
-  - mysql -u root --password="5648" --default-character-set=utf8 creditsworld_test < server/loader_part.sql
+  - mysql -u root --default-character-set=utf8 creditsworld_test < server/loader_part.sql
 install:
 - nvm install node
 - node -v
