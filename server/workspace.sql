@@ -309,3 +309,50 @@ FROM (
 
 ) t1
 JOIN Person p ON p.id = 130;
+
+
+
+
+
+
+-- recommendations adding info
+
+WITH  people_to_songs as ( 
+    SELECT artist_id as id, song_id
+    FROM Sings
+    UNION
+    SELECT crew_id as id, song_id
+    FROM Crew_in
+    ORDER BY id
+),
+songs_by_origin AS (  
+    SELECT ps1.song_id
+    FROM people_to_songs ps1 
+    WHERE ps1.id = 130
+    ORDER BY song_id
+),
+artist_popularity AS (
+  SELECT SUM(p.cumulative_score) as score, per.id as id
+  FROM people_to_songs s
+  JOIN Popularity p ON p.id = s.song_id
+  JOIN Person per ON per.id = s.id
+  GROUP BY s.id
+  ORDER BY score DESC
+)
+SELECT p.name as origin_name, p.id as origin_id, t1.* 
+FROM (
+    SELECT DISTINCT p.name as rec_name, p.id as rec_id, p.image_url as rec_image, p.url as rec_url, a.score
+    FROM songs_by_origin
+    JOIN people_to_songs ps2 
+        ON ps2.song_id = songs_by_origin.song_id AND ps2.id <> 130
+    JOIN people_to_songs ps3
+        ON ps3.song_id <> ps2.song_id AND ps3.id = ps2.id
+    JOIN people_to_songs ps4 ON ps4.id <> ps3.id
+                            AND ps4.id <> 130
+                            AND ps4.song_id = ps3.song_id
+    JOIN Person p ON ps4.id = p.id
+    JOIN artist_popularity a ON a.id = ps4.id
+    ORDER BY a.score DESC
+
+) t1
+JOIN Person p ON p.id = 130;
