@@ -46,3 +46,33 @@ RETURN  DISTINCT artist1,artist2,artist3,song1,song2,song3,song4,crew1,crew2
 LIMIT 1;
 
 
+
+// Find all equal shortest paths between two nodes
+
+
+MATCH p = shortestPath((artist1:Person)-[*]-(artist2:Person))
+WHERE artist1.id = '130' AND artist2.id = '1421' 
+WITH length(p) AS x
+MATCH g = ((artist3: Person)-[*.. toInteger(x)]->(artist4:Person))
+WHERE artist3.id = '130' AND artist4.id = '1421' 
+RETURN g;
+
+MATCH g = ((artist1: Person)-[*4..4]->(song:Person))
+RETURN g;
+
+
+MATCH p = shortestPath((artist1:Person)-[*]-(artist2:Person))
+WHERE artist1.id = '130' AND artist2.id = '1421' 
+WITH length(p) AS x
+
+
+MATCH g = ((artist3: Person)-[*..10]->(artist4:Person))
+WHERE artist3.id = '130' AND artist4.id = '1421' 
+AND length(g) = length(shortestPath((artist3)-[*]-(artist4)))
+RETURN g;
+
+
+
+
+MATCH (p1:Person { id: '130' }),(p2:Person { id: '1421' }), p = allShortestPaths((p1)-[*]-(p2))
+RETURN p

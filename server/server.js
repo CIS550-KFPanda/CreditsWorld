@@ -40,35 +40,55 @@ app.get('/getrecommendations/:id', routes.get_recommendations)
 
 
 app.get('/graphviz', (req, res) => {
-  var html = ` 
-  <div id="viz"></div>    
-  <script src="https://rawgit.com/neo4j-contrib/neovis.js/master/dist/neovis.js"></script>
-  <script type="text/javascript">
 
-      var viz;
+    var html = `
+    <div id="viz"></div>
+    <script src="https://rawgit.com/neo4j-contrib/neovis.js/master/dist/neovis.js"></script>
+    <script type="text/javascript">
 
-      function draw() {
-          var config = {
-              container_id: "viz",
-              server_url: "bolt://ec2-52-207-251-29.compute-1.amazonaws.com:7687",
-              server_user: "neo4j",
-              server_password: "i-0d771e544f5f4b0b7",
-              labels: {
-                  "Person": {
-                      "caption": "name",
+        var viz;
+
+        function draw() {
+            var config = {
+                container_id: "viz",
+                server_url: "bolt://ec2-52-207-251-29.compute-1.amazonaws.com:7687",
+                server_user: "neo4j",
+                server_password: "i-0d771e544f5f4b0b7",
+                arrows: true,
+                labels: {
+                    "Person": {
+                        "caption": "name",
+                        "size": 2,
+                        "community": "name",
+                        "title_properties": [
+                            "name",
+                            "id"
+                        ]
+                    },
+                    "Song": {
+                      "caption": "title",
                       "size": 2,
-                      "community": "community"
-                  },
-                  "Song": {
-                    "caption": "title",
-                    "size": 2,
-                    "community": "community"
-                  }
-              },
-              relationships: {
+                      "community": "songs",
+                      "title_properties": [
+                        "title",
+                        "song_id"
+                      ]
+                    }
+                },
+                relationships: {
                   "CREW_IN": {
                       "thickness": 1,
-                      "caption": false
+                      "caption": false,
+                      "community": "crew"
+                  },
+                  "HAS_CREW": {
+                    "thickness": 1,
+                    "caption": false,
+                    "community": "crew"
+                  },
+                  "SINGS": {
+                    "thickness": 1,
+                    "caption": false
                   },
                   "HAS_CREW": {
                     "thickness": 1,
