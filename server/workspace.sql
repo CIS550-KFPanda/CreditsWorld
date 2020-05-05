@@ -221,7 +221,7 @@ SELECT DISTINCT t1.crew_id, t1.name, t1.image_url, t1.url, t1.score, s.id AS top
 
 
 /* 
-Query time: 0.33s
+Query time: 0.33s, runtime: ~360 ms
 Created index, puhed projections
 ALTER TABLE Popularity DELETE PRIMARY KEY (id);
 THE KICKER Order the CTEs
@@ -271,7 +271,7 @@ JOIN Person p ON p.id = 130;
 
 
 
--- initial recommendation query 9.34 s
+-- initial recommendation query 9.34 s, runtime ~4300 ms
 WITH  people_to_songs as ( 
     SELECT artist_id as id, song_id
     FROM Sings
