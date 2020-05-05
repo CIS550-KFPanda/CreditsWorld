@@ -52,10 +52,55 @@ LIMIT 1;
 
 MATCH p = shortestPath((artist1:Person)-[*]-(artist2:Person))
 WHERE artist1.id = '130' AND artist2.id = '1421' 
-WITH length(p) AS x
+WITH length(p) AS len_p
 MATCH g = ((artist3: Person)-[*.. toInteger(x)]->(artist4:Person))
 WHERE artist3.id = '130' AND artist4.id = '1421' 
 RETURN g;
+
+
+// ----------------------------------------
+
+MATCH p = shortestPath((artist1:Person)-[*]-(artist2:Person))
+WHERE artist1.id = '130' AND artist2.id = '1421' 
+WITH length(p) AS len_p, collect(artist2) AS terminatorNodes
+MATCH (artist3: Person{id: '130'})
+CALL apoc.path.expandConfig(artist3, {
+    relationshipFilter: 'SINGS|SANG_BY|CREW_IN|HAS_CREW',
+    minLevel: len_p,
+    maxLevel: len_p,
+    terminatorNodes: terminatorNodes
+}) YIELD path
+RETURN path;
+
+
+// ----------------------------------------
+
+WITH length(p) AS len_p
+MATCH (charlie:Person {name: 'Charlie Sheen'})
+CALL apoc.path.expandConfig(charlie, {
+    relationshipFilter: 'ACTED_IN',
+    minLevel: len_p,
+    maxLevel: len_p
+}) YIELD path
+RETURN LAST(NODES(path)).title AS title
+
+// ----------------------------------------
+MATCH p = shortestPath((artist1:Person)-[*]-(artist2:Person))
+WHERE artist1.id = '130' AND artist2.id = '1421' 
+WITH length(p) AS len_p
+MATCH (artist3: Person{id: '130'})
+CALL apoc.path.expandConfig(artist3, {
+    relationshipFilter: '*',
+    minLevel: len_p,
+    maxLevel: len_p,
+    terminatorNodes:'/(:Person{id: \'1421\'})'
+}) YIELD path
+RETURN path;
+
+// ----------------------------------------
+
+
+
 
 MATCH g = ((artist1: Person)-[*4..4]->(song:Person))
 RETURN g;
