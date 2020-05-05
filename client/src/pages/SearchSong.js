@@ -118,8 +118,6 @@ export default class SearchSong extends React.Component {
           </div>
           <div className="mainCardContainer"> 
             <div className="leftContainer" style={{backgroundColor: '#E9AFA3'}}> 
-                <h4> Publisher </h4> 
-                <p> We don't have this info </p> 
                 <h4> Label </h4>
                 <p> {this.state.song.label} </p>
                 <h4> Album </h4>
