@@ -114,7 +114,7 @@ export default class ShortestPath extends React.Component {
       container_id: "viz",
       server_url: "bolt://ec2-52-207-251-29.compute-1.amazonaws.com:7687",
       server_user: "neo4j",
-      server_password: "i-0d771e544f5f4b0b7",
+      server_password: "**REMOVED**",
       arrows: false,
       labels: {
           "Person": {
