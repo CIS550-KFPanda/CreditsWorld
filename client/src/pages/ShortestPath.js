@@ -112,9 +112,9 @@ export default class ShortestPath extends React.Component {
   draw = (start, end) => {
     var config = {
       container_id: "viz",
-      server_url: "bolt://ec2-52-207-251-29.compute-1.amazonaws.com:7687",
+      server_url: "***REMOVED***",
       server_user: "neo4j",
-      server_password: "**REMOVED**",
+      server_password: "***REMOVED***",
       arrows: false,
       labels: {
           "Person": {
