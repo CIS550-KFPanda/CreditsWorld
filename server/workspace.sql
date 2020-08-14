@@ -356,3 +356,90 @@ FROM (
 
 ) t1
 JOIN Person p ON p.id = 130;
+
+
+
+
+
+WITH  people_to_songs as ( 
+    SELECT artist_id as id, song_id
+    FROM Sings
+    UNION
+    SELECT crew_id as id, song_id
+    FROM Crew_in
+    ORDER BY id
+  ),
+  songs_by_origin AS (  
+      SELECT ps1.song_id
+      FROM people_to_songs ps1 
+      WHERE ps1.id = ${db.connection.escape(id)}
+      ORDER BY song_id
+  ),
+  artist_popularity AS (
+    SELECT SUM(p.cumulative_score) as score, per.id as id
+    FROM people_to_songs s
+    JOIN Popularity p ON p.id = s.song_id
+    JOIN Person per ON per.id = s.id
+    GROUP BY s.id
+    ORDER BY score DESC
+  )
+  SELECT p.name as origin_name, p.id as origin_id, t1.* 
+  FROM (
+      SELECT DISTINCT p.name as rec_name, p.id as rec_id, p.image_url as rec_image, p.url as rec_url, a.score
+      FROM songs_by_origin
+      JOIN people_to_songs ps2 
+          ON ps2.song_id = songs_by_origin.song_id AND ps2.id <> ${db.connection.escape(id)}
+      JOIN people_to_songs ps3
+          ON ps3.song_id <> ps2.song_id AND ps3.id = ps2.id
+      JOIN people_to_songs ps4 ON ps4.id <> ps3.id
+                              AND ps4.id <> ${db.connection.escape(id)}
+                              AND ps4.song_id = ps3.song_id
+      JOIN Person p ON ps4.id = p.id
+      JOIN artist_popularity a ON a.id = ps4.id
+      ORDER BY a.score DESC
+
+  ) t1
+  JOIN Person p ON p.id = ${db.connection.escape(id)};
+
+
+
+SELECT p.id, p.name, p.image_url, p.url, type, song_id, s.title as song_title
+FROM (
+(SELECT crew_id as id, type, song_id
+FROM Crew_in
+WHERE song_id
+IN(
+  SELECT song_id
+  FROM Sings
+  WHERE artist_id = ${db.connection.escape(id)}
+)
+AND crew_id <> ${db.connection.escape(id)})
+UNION
+(SELECT artist_id as id, type, song_id
+FROM Sings
+WHERE song_id
+IN(
+  SELECT song_id
+  FROM Crew_in
+  WHERE crew_id = ${db.connection.escape(id)}
+)
+AND artist_id<>${db.connection.escape(id)})
+) t1
+JOIN Person p ON p.id=t1.id
+JOIN Songs s ON s.id = song_id;
+
+
+SELECT DISTINCT s.title, s.song_art_image_thumbnail_url, s.id as song_id,
+       s.album, s.label, s.release_date_for_display as release_date
+FROM (
+  SELECT ((max_date - min_date) / 86400 + 1) as days_on_chart, song_id
+  FROM (SELECT MIN(date) as min_date, MAX(date) max_date,song_id
+  FROM Entries e
+  
+  GROUP BY song_id
+  ) x
+  ORDER BY days_on_chart DESC
+  LIMIT 15) t
+JOIN Songs s on s.id = t.song_id
+JOIN Sings s2 on s2.song_id = s.id
+JOIN Person a on s2.artist_id = a.id
