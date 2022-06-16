@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 // import Jumbotron from 'react-bootstrap/Button';
 // import Container from 'react-bootstrap/Button';
 import { API_URL } from './Utilities';
-import NeoVis from 'neovis.js'
+import NeoVis from "neovis.js/dist/neovis.js";
 
 export default class ShortestPath extends React.Component {
   constructor(props) {
@@ -112,9 +112,12 @@ export default class ShortestPath extends React.Component {
   draw = (start, end) => {
     var config = {
       container_id: "viz",
-      server_url: "bolt://ec2-52-207-251-29.compute-1.amazonaws.com:7687",
-      server_user: "neo4j",
-      server_password: "**REMOVED**",
+      encrypted: "ENCRYPTION_ON",
+      trust: "TRUST_SYSTEM_CA_SIGNED_CERTIFICATES",
+      container_id: "viz",
+      server_url: process.env.REACT_APP_NEO4J_URI,
+      server_user: process.env.REACT_APP_NEO4J_USER,
+      server_password: process.env.REACT_APP_NEO4J_USER,
       arrows: false,
       labels: {
           "Person": {
